@@ -72,9 +72,14 @@ body {
 
 .submit-button-wrapper {
   display: flex;
+  position: relative;
 }
 
-.float {
+.float-start {
+  justify-content: flex-start;
+}
+
+.float-end {
   justify-content: flex-end;
 }
 
@@ -93,4 +98,24 @@ body {
 .button-success {
   color: white;
   background-color: #03bb56;
+}
+
+.toast {
+  position: absolute;
+  margin-top: 20px;
+  font-size: 1.3em;
+  background: #d3d3d3;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.5s 0.5s;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s 0.5s;
 }
