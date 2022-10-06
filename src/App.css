@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   list-style: none;
   text-decoration: none;
+  font-family: "Titillium Web";
 }
 
 html,
 body {
-  font-family: 'Roboto', sans-serif;
   font-size: 10px;
 }
 
@@ -32,7 +34,6 @@ body {
 }
 
 .label {
-  font-family: 'Roboto';
   letter-spacing: 0.25px;
   font-weight: 500;
   font-size: 1.35rem;
