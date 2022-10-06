@@ -1,11 +1,12 @@
-import React from 'react';
-import './App.css';
-import Footer from './components/Footer';
+import React from "react";
+import "./App.css";
+import Footer from "./components/Footer";
+import Button from "./components/Button";
 
 function App() {
   const [form, setForm] = React.useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const [toggleClass, setToggleClass] = React.useState(false);
@@ -23,10 +24,8 @@ function App() {
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
-      }, 1000)
+      }, 1000);
     }
-
-
   };
 
   const validateEmail = (email) => {
@@ -35,6 +34,12 @@ function App() {
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
+  };
+
+  const isFormValid = () => {
+    if (form !== null && form !== undefined)
+      return form.password.length > 6 && validateEmail(form.email);
+    return false;
   };
 
   return (
@@ -51,8 +56,9 @@ function App() {
               Email <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
-                }`}
+              className={`input ${
+                !validateEmail(form.email) ? "wrong-input" : "correct-input"
+              }`}
               type="email"
               name="email"
               value={form.email}
@@ -64,11 +70,9 @@ function App() {
           </div>
           <div>
             {!validateEmail(form.email) ? (
-              <p className="warning-message">
-                Enter a valid email id
-              </p>
+              <p className="warning-message">Enter a valid email id</p>
             ) : (
-              ''
+              ""
             )}
           </div>
           <div className="input-block">
@@ -76,8 +80,9 @@ function App() {
               Password <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${form.password.length <= 6 ? 'wrong-input' : 'correct-input'
-                }`}
+              className={`input ${
+                form.password.length <= 6 ? "wrong-input" : "correct-input"
+              }`}
               type="password"
               name="password"
               value={form.password}
@@ -93,22 +98,24 @@ function App() {
                 Password length should be more than 6
               </p>
             ) : (
-              ''
+              ""
             )}
           </div>
           <div
-            className={`submit-button-wrapper ${toggleClass ? 'float-end' : 'float-start'}`}
+            className={`submit-button-wrapper ${
+              toggleClass ? "float-end" : "float-start"
+            }`}
           >
-            <button
-              tabIndex={-1}
-              className={`submit-button ${(form.password.length > 6 && validateEmail(form.email) )? 'button-success' : ''
-                }`}
-              onMouseEnter={annoyingSubmitButton}
-            >
-              Submit
-            </button>
+            <Button
+              {...{
+                onHover: annoyingSubmitButton,
+                isFormValid,
+                text: "Submit",
+                type: "pill",
+              }}
+            />
           </div>
-          <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'}`}>
+          <div className={`toast ${showToast ? "fadeIn" : "fadeOut"}`}>
             You can not submit until you fix all the validation errors...
           </div>
         </form>
