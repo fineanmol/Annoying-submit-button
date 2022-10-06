@@ -76,7 +76,7 @@ function App() {
               Password <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${form.password.length < 6 ? 'wrong-input' : 'correct-input'
+              className={`input ${form.password.length <= 6 ? 'wrong-input' : 'correct-input'
                 }`}
               type="password"
               name="password"
@@ -88,7 +88,7 @@ function App() {
             />
           </div>
           <div>
-            {form.password.length < 6 ? (
+            {form.password.length <= 6 ? (
               <p className="warning-message">
                 Password length should be more than 6
               </p>
