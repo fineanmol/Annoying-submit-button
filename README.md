@@ -2,16 +2,6 @@
 
 You won't be able to submit the form until you enter correct length of password and an valid email ID.  Enjoy playing with it. :)
 
-## Project Image
-
-<img width="960" alt="Capture" src="https://user-images.githubusercontent.com/68921425/194295182-adc3bfc5-3eed-4df3-94df-400877e23952.PNG">
-
-## Project Video 
-https://user-images.githubusercontent.com/68921425/194296042-e6aaf377-f549-4679-815a-a916a156841b.mp4
-
-
-![ANNOYING SUBMIT BUTTON](Screenshot%202022-10-06145750.png)
-
 
 ## Project Preview
 ![alt text](./content/preview.gif)
