@@ -17,13 +17,24 @@ function App() {
 
   const annoyingSubmitButton = () => {
     setShowToast(false);
-    if (form.password.length <= 6) {
+
+    if (form.password.length <= 6 || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
       }, 1000)
     }
+
+
+  };
+
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
   };
 
   return (
@@ -40,7 +51,7 @@ function App() {
               Email <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${form.email.length < 6 ? 'wrong-input' : 'correct-input'
+              className={`input ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
                 }`}
               type="email"
               name="email"
@@ -50,6 +61,15 @@ function App() {
               tabIndex={-1}
               required
             />
+          </div>
+          <div>
+            {!validateEmail(form.email) ? (
+              <p className="warning-message">
+                Enter a valid email id
+              </p>
+            ) : (
+              ''
+            )}
           </div>
           <div className="input-block">
             <label className="label">
@@ -81,7 +101,7 @@ function App() {
           >
             <button
               tabIndex={-1}
-              className={`submit-button ${form.password.length > 6 ? 'button-success' : ''
+              className={`submit-button ${(form.password.length > 6 && validateEmail(form.email) )? 'button-success' : ''
                 }`}
               onMouseEnter={annoyingSubmitButton}
             >
