@@ -94,6 +94,7 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 4px;
+  cursor:pointer;
 }
 
 .button-success {
