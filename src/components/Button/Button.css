@@ -1,0 +1,21 @@
+.submit-button {
+    margin-top: 1.75rem;
+    background-color: #2879ff;
+    color: #fff;
+    letter-spacing: 0.5px;
+    padding: 0.85em 2.2em;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-success {
+    color: white;
+    background-color: #03bb56;
+}
+
+.btn-pill {
+    border-radius: 25px;
+}
