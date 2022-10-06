@@ -31,18 +31,6 @@ Feel free to check the [issues page](../../issues/).
 
 ---
 
-## :pray: Thanks
-
-Thanks to everyone who has contributed towards this project
-
-<div align="center">
-    <a href="https://github.com/fineanmol/Annoying-submit-button/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=fineanmol/Annoying-submit-button" />
-    </a>
-</div>
-
----
-
 ## :people_hugging: Show your support
 
 Give a ⭐️ if you have liked this project and want to support it !
@@ -55,7 +43,17 @@ Give a ⭐️ if you have liked this project and want to support it !
 - Inspiration
 - etc
 ---
+## :pray: Thanks
 
+Thanks to everyone who has contributed towards this project
+
+<div>
+    <a href="https://github.com/fineanmol/Annoying-submit-button/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=fineanmol/Annoying-submit-button" />
+    </a>
+</div>
+
+---
 ## 📝 License
 
 This project is [MIT](./LICENSE) licensed.
