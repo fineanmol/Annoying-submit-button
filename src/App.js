@@ -41,8 +41,8 @@ function App() {
 
   return (
     <>
-      <ThemeButton setThemeState={setThemeState} themeState={themeState}/> 
-      <section className="form-section">
+      <ThemeButton setThemeState={setThemeState} themeState={themeState}/>
+      <section className={`form-section ${themeState}-theme`}>
         <h1 className="heading">Annoying Submit Button 😡🙃</h1>
         <form
           autoComplete="false"
@@ -50,11 +50,11 @@ function App() {
           method="POST"
         >
           <div className="input-block">
-            <label className="label">
+            <label className={`label ${themeState}-theme`}>
               Email <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
+              className={`input ${themeState}-theme ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
                 }`}
               type="email"
               name="email"
@@ -75,12 +75,12 @@ function App() {
             )}
           </div>
           <div className="input-block">
-            <label className="label">
+            <label className={`label ${themeState}-theme`}>
               Password <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${form.password.length <= 6 ? 'wrong-input' : 'correct-input'
-                }`}
+                } ${themeState}-theme`}
               type="password"
               name="password"
               value={form.password}
@@ -111,12 +111,12 @@ function App() {
               Submit
             </button>
           </div>
-          <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'}`}>
+          <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'} ${themeState}-theme-toast`}>
             You can not submit until you fix all the validation errors...
           </div>
         </form>
       </section>
-      <Footer />
+      <Footer theme={themeState}/>
     </>
   );
 }
