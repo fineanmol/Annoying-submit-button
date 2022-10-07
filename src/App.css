@@ -1,105 +1,125 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    text-decoration: none;
-    font-family: "Titillium Web";
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Titillium Web";
 }
 
 html,
 body {
-    font-size: 10px;
-    overflow-x: hidden;
+  font-size: 10px;
+  overflow-x: hidden;
 }
 
 .heading {
-    text-align: center;
-    font-size: 2.75rem;
-    margin-bottom: 1em;
+  text-align: center;
+  font-size: 2.75rem;
+  margin-bottom: 1em;
 }
 
 .form-section {
-    min-height: 84vh;
-    display: grid;
-    place-content: center;
+  min-height: 77.8vh;
+  display: grid;
+  place-content: center;
 }
 
 .input-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 2em 0 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 2em 0 0.5em;
 }
 
 .label {
-    letter-spacing: 0.25px;
-    font-weight: 500;
-    font-size: 1.35rem;
-    color: #000;
-    margin-bottom: 0.35em;
+  letter-spacing: 0.25px;
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: #000;
+  margin-bottom: 0.35em;
 }
 
 .requiredLabel {
-    color: red;
-    font-weight: bold;
+  color: red;
+  font-weight: bold;
 }
 
 .input {
-    padding: 1.35em 1em;
-    width: 350px;
-    background-color: #fff;
-    outline: none;
-    border: 1px solid rgb(130, 130, 130);
-    border-radius: 0.25em;
+  padding: 1.35em 1em;
+  width: 350px;
+  background-color: #fff;
+  outline: none;
+  border: 1px solid rgb(130, 130, 130);
+  border-radius: 0.25em;
 }
 
 .warning-message {
-    color: #ff0000;
-    font-weight: 500;
-    font-size: 1rem;
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .wrong-input {
-    border: 2px solid #ff0000;
-    color: #ff0000;
+  border: 2px solid #ff0000;
+  color: #ff0000;
 }
 
 .correct-input {
-    border: 2px solid #03bb56;
-    color: #03bb56;
+  border: 2px solid #03bb56;
+  color: #03bb56;
 }
 
 .submit-button-wrapper {
-    display: flex;
-    position: relative;
+  display: flex;
+  position: relative;
 }
 
 .float-start {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .float-end {
-    justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.submit-button {
+  margin-top: 1.75rem;
+  background-color: #2879ff;
+  color: #fff;
+  letter-spacing: 0.5px;
+  padding: 0.85em 2.2em;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 4px;
+
+  cursor:pointer;
+}
+
+.button-success {
+  color: white;
+  background-color: #03bb56;
 }
 
 .toast {
-    position: absolute;
-    margin-top: 20px;
-    font-size: 1.3em;
-    background: #d3d3d3;
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 20px;
+  position: absolute;
+  margin-top: 20px;
+  font-size: 1.3em;
+  background: #d3d3d3;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 20px;
 }
 
 .fadeIn {
-    opacity: 1;
-    transition: opacity 0.5s 0.5s;
+  opacity: 1;
+  transition: opacity 0.5s 0.5s;
 }
 
 .fadeOut {
-    opacity: 0;
-    transition: opacity 0.5s 0.5s;
+  opacity: 0;
+  transition: opacity 0.5s 0.5s;
 }
