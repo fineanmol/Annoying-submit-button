@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 footer {
-  background: #111;
   width: 100vw;
   padding: 30px;
-  color: #fff;
 }
 
 .footer-content {
@@ -79,7 +77,7 @@ footer {
   margin: 10px auto;
   line-height: 28px;
   font-size: 14px;
-  color: #cacdd2;
+  color: #ffffff;
 }
 
 .socials {
@@ -114,7 +112,6 @@ footer {
   font-size: 1.1rem;
   width: 20px;
   height: 20px;
-  transition: color 0.4s ease;
   /* Center content */
   display: flex;
   flex-direction: column;
@@ -170,18 +167,6 @@ footer {
   text-transform: capitalize;
 }
 
-.footer-bottom p a {
-  color: #44bae8;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.footer-bottom span {
-  text-transform: uppercase;
-  opacity: 0.4;
-  font-weight: 200;
-}
-
 .footer-menu {
   float: right;
 }
@@ -210,4 +195,14 @@ footer {
     margin-top: 10px;
     margin-bottom: 20px;
   }
+}
+.dark-footer{
+  background-color: rgb(0, 0, 0);
+  color:rgb(204, 198, 198);
+  transition: .5s ease-in-out;
+}
+.bright-footer{
+  color: rgb(45, 43, 43);
+  background: rgb(145, 143, 143);
+  transition: .5s ease-in-out;
 }

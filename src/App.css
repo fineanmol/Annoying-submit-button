@@ -25,6 +25,7 @@ body {
   min-height: 77.8vh;
   display: grid;
   place-content: center;
+  transition: .5s color ease-in-out;
 }
 
 .input-block {
@@ -38,7 +39,6 @@ body {
   letter-spacing: 0.25px;
   font-weight: 500;
   font-size: 1.35rem;
-  color: #000;
   margin-bottom: 0.35em;
 }
 
@@ -50,7 +50,6 @@ body {
 .input {
   padding: 1.35em 1em;
   width: 350px;
-  background-color: #fff;
   outline: none;
   border: 1px solid rgb(130, 130, 130);
   border-radius: 0.25em;
@@ -122,4 +121,18 @@ body {
 .fadeOut {
   opacity: 0;
   transition: opacity 0.5s 0.5s;
+}
+
+.dark-theme{
+  background-color: rgb(22, 20, 20);
+  color:rgb(204, 198, 198);
+  transition: .5s ease-in-out;
+}
+.bright-theme{
+  background-color: #fff;
+  transition: .5s ease-in-out;
+  color: #000;
+}
+.dark-theme-toast{
+  background-color: rgb(0, 0, 0);
 }
