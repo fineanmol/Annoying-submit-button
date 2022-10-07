@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Footer from './components/Footer';
+import ThemeButton from './components/ThemeButton'
 
 function App() {
   const [form, setForm] = React.useState({
@@ -10,6 +11,7 @@ function App() {
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
+  const [themeState, setThemeState] = React.useState("dark")
 
   const handleForm = (e) => {
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
@@ -39,6 +41,7 @@ function App() {
 
   return (
     <>
+      <ThemeButton setThemeState={setThemeState} themeState={themeState}/> 
       <section className="form-section">
         <h1 className="heading">Annoying Submit Button 😡🙃</h1>
         <form

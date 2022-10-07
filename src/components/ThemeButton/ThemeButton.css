@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.theme-button-container{
+    width: 50px;
+    height: 30px;
+    position: fixed;
+    right: 0;
+    margin: 1rem 2rem;
+    border-radius: 20px;
+    border: 2px solid rgb(58, 56, 56);
+}
+.bright{
+    background-color: #fff;
+    border-color:rgb(1, 0, 0);
+}
+.dark{
+    background-color: rgb(58, 56, 56);
+    border-color: rgb(146, 134, 117);
+}
+.button-blob{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.button-blob:hover{
+    cursor: pointer;
+}
+.bright-blob{
+    background-color: antiquewhite;
+    margin-left: 50%;
+    transition: .6s;
+}
+.dark-blob{
+    background-color: black;
+    margin-left: 10%;
+    transition: .6s;
+}
