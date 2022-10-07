@@ -5,9 +5,9 @@ const Footer = ({theme}) => {
   return (
     <footer className={theme+"-footer"}>
       <div className="footer-content">
-        <h1 className="glitch">Hacktoberfest 2022</h1>
+      <a href="https://hacktoberfest.com/"><h1 className="glitch">Hacktoberfest 2022</h1></a>
         <p>
-          This Project is participating in <b>Hacktoberfest</b>. Copyright
+          This Project is participating in <b><a href="https://hacktoberfest.com/">Hacktoberfest</a></b>. Copyright
           &copy; 2022.
         </p>
         <div className="footer-menu">
