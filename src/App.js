@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Footer from './components/Footer';
+import ThemeButton from './components/ThemeButton'
 
 function App() {
   const [form, setForm] = React.useState({
@@ -10,6 +11,7 @@ function App() {
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
+  const [themeState, setThemeState] = React.useState("dark")
 
   const handleForm = (e) => {
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
@@ -39,7 +41,8 @@ function App() {
 
   return (
     <>
-      <section className="form-section">
+      <ThemeButton setThemeState={setThemeState} themeState={themeState}/>
+      <section className={`form-section ${themeState}-theme`}>
         <h1 className="heading">Annoying Submit Button 😡🙃</h1>
         <form
           autoComplete="false"
@@ -47,11 +50,11 @@ function App() {
           method="POST"
         >
           <div className="input-block">
-            <label className="label">
+            <label className={`label ${themeState}-theme`}>
               Email <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
+              className={`input ${themeState}-theme ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
                 }`}
               type="email"
               name="email"
@@ -72,12 +75,12 @@ function App() {
             )}
           </div>
           <div className="input-block">
-            <label className="label">
+            <label className={`label ${themeState}-theme`}>
               Password <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${form.password.length <= 6 ? 'wrong-input' : 'correct-input'
-                }`}
+                } ${themeState}-theme`}
               type="password"
               name="password"
               value={form.password}
@@ -108,12 +111,12 @@ function App() {
               Submit
             </button>
           </div>
-          <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'}`}>
+          <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'} ${themeState}-theme-toast`}>
             You can not submit until you fix all the validation errors...
           </div>
         </form>
       </section>
-      <Footer />
+      <Footer theme={themeState}/>
     </>
   );
 }

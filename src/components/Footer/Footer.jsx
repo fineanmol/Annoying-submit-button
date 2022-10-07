@@ -1,11 +1,11 @@
 import React from "react";
 import "./Footer.css";
 
-const Footer = () => {
+const Footer = ({theme}) => {
   return (
-    <footer>
+    <footer className={theme+"-footer"}>
       <div className="footer-content">
-        <h1 class="glitch">Hacktoberfest 2022</h1>
+        <h1 className="glitch">Hacktoberfest 2022</h1>
         <p>
           This Project is participating in <b>Hacktoberfest</b>. Copyright
           &copy; 2022.
