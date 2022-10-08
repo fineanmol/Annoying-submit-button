@@ -8,6 +8,9 @@
     border-radius: 20px;
     border: 2px solid rgb(58, 56, 56);
 }
+.theme-container *{
+    cursor: pointer;
+}
 .bright{
     background-color: #fff;
     border-color:rgb(1, 0, 0);
@@ -24,9 +27,6 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-}
-.button-blob:hover{
-    cursor: pointer;
 }
 .bright-blob{
     background-color: antiquewhite;
