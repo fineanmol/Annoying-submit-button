@@ -15,7 +15,7 @@ footer {
 .glitch {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 5px;
-	font-size: 30px;
+	font-size: 25px;
 	text-decoration: none;
 	color: #fff;
 	transform: translate(0%, 0%);
@@ -74,9 +74,9 @@ footer {
 
 .footer-content p {
   max-width: 500px;
-  margin: 10px auto;
+  margin: 5px auto;
   line-height: 28px;
-  font-size: 14px;
+  font-size: 12px;
   color: #ffffff;
 }
 
@@ -85,7 +85,7 @@ footer {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  margin: 1.5rem 0 2rem 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .socials li {
