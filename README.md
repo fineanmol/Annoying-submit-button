@@ -23,17 +23,17 @@ You won't be able to submit the form until you enter correct length of password 
 
 ---
 
+## :people_hugging: Show your support
+
+Give a ⭐️ if you have liked this project and want to support it !
+
+---
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
-
----
-
-## :people_hugging: Show your support
-
-Give a ⭐️ if you have liked this project and want to support it !
 
 ---
 
