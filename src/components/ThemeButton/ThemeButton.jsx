@@ -1,11 +1,14 @@
 import React from "react";
 import "./ThemeButton.css";
 
-const ThemeButton = ({ setThemeState, themeState }) => {
+const ThemeButton = ({ setThemeState, themeState, setDark }) => {
   return (
     <div className="theme-container">
       <div onClick={() => {
-        setThemeState(() => themeState === "bright" ? "dark" : "bright");
+        setDark((prev)=> !prev)
+        setThemeState(() => {
+          
+          return themeState === "bright" ? "dark" : "bright"});
       }} className={`theme-button-container ${themeState}`}>
         <button
           className={`button-blob ${themeState === "bright" ? "dark-blob" : "bright-blob"

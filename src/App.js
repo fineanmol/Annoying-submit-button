@@ -1,19 +1,30 @@
-import React from 'react';
+import {React,useState} from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import ThemeButton from './components/ThemeButton'
 
+
+
 function App() {
-  const [form, setForm] = React.useState({
+  const [form, setForm] = useState({
     email: '',
     password: '',
   });
 
-  const [toggleClass, setToggleClass] = React.useState(false);
-  const [showToast, setShowToast] = React.useState(false);
-  const [themeState, setThemeState] = React.useState("dark")
+  const [toggleClass, setToggleClass] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [themeState, setThemeState] = useState("dark")
+  const [isDark,setDark] = useState(true);
+ 
+  //styling the border dynamically
+  const style = {
+    border:`2px solid ${isDark ? "white" : "black"}`,
+    borderRadius : "5px"
+  }
 
+  console.log(style)
   const handleForm = (e) => {
+    e.preventDefault();
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
   };
 
@@ -41,13 +52,19 @@ function App() {
 
   return (
     <>
-      <ThemeButton setThemeState={setThemeState} themeState={themeState}/>
+      <ThemeButton 
+      setThemeState={setThemeState}
+       themeState={themeState}
+       setDark={setDark}
+       />
       <section className={`form-section ${themeState}-theme`}>
         <h1 className="heading">Annoying Submit Button 😡🙃</h1>
         <form
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
+          className="form-container"
+          style = {style}
         >
           <div className="input-block">
             <label className={`label ${themeState}-theme`}>
