@@ -74,7 +74,7 @@ footer {
 
 .footer-content p {
   max-width: 500px;
-  margin: 10px auto;
+  margin: 0px auto;
   line-height: 28px;
   font-size: 14px;
   color: #ffffff;
@@ -85,7 +85,7 @@ footer {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  margin: 1.5rem 0 2rem 0;
+  margin: 2.5rem 0 2rem 0;
 }
 
 .socials li {
@@ -95,7 +95,7 @@ footer {
 .socials a {
   text-decoration: none;
   color: #fff;
-  border: 1.1px solid white;
+  border: 1.5px solid white;
   text-decoration: none;
   /* Center content */
   display: flex;
@@ -109,7 +109,7 @@ footer {
 }
 
 .socials a i {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   width: 20px;
   height: 20px;
   /* Center content */
@@ -121,23 +121,21 @@ footer {
 
 /* Invert colors when hover mouse */
 .socials a:hover {
-  background-color: white;
+  /* background-color: white; */
+  transition: all ease 0.4s;
+  transform: scale(1.2);
 }
 
 .socials li:nth-child(1) a:hover {
-  background-color: #3B5998;
+  background-color: #385999;
 }
 
 .socials li:nth-child(2) a:hover {
-  background-color: #3F9CEA;
-}
-
-.socials li:nth-child(2) a:hover i {
-  color: #111;
+  background-color: #E4405F;
 }
 
 .socials li:nth-child(3) a:hover {
-  background-color: #DA547F;
+  background-color: #3F9CEA;
 }
 
 .socials li:nth-child(4) a:hover {
