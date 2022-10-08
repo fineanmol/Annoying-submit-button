@@ -121,33 +121,51 @@ footer {
 
 /* Invert colors when hover mouse */
 .socials a:hover {
-  /* background-color: white; */
-  transition: all ease 0.4s;
-  transform: scale(1.2);
+  transition: all ease 0.3s;
+  transform: scale(1.3);
 }
 
 .socials li:nth-child(1) a:hover {
-  background-color: #385999;
+  background-color: #4267B2;
 }
 
 .socials li:nth-child(2) a:hover {
-  background-color: #E4405F;
+  background-image: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
 }
 
 .socials li:nth-child(3) a:hover {
-  background-color: #3F9CEA;
+  background-color: #1DA1F2;
 }
 
 .socials li:nth-child(4) a:hover {
-  background-color: #E24712;
+  background-color: #FF0000;
 }
 
 .socials li:nth-child(5) a:hover {
-  background-color: #2E77B5;
+  background-color: #0077b5;
 }
 
 .socials a:hover i {
   color: white;
+}
+
+#hf-theme{
+  font-size: 2rem;
+  background-color: red;
+  background-image: linear-gradient(45deg, #F2DBAF, #8FC0BD, #2B1D3E);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 .footer-bottom {
@@ -174,7 +192,6 @@ footer {
 }
 
 .footer-menu ul li {
-  padding-right: 10px;
   display: block;
 }
 
