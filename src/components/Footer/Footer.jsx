@@ -7,22 +7,7 @@ const Footer = ({theme}) => {
   return (
     <footer className={theme+"-footer"}>
       <div className="footer-content">
-<<<<<<< HEAD
       <a href="https://hacktoberfest.com/"><h1 className="glitch" id="hacktoberfest-text">Hacktoberfest 2022</h1></a>
-=======
-<<<<<<< HEAD
-      <a href="https://hacktoberfest.com/"><h1 className="glitch">Hacktoberfest 2022</h1></a>
-<<<<<<< HEAD
-        <p>
-          This Project is participating in <b><a href="https://hacktoberfest.com/">Hacktoberfest</a></b> Copyright
-          &copy; 2022.
-        </p>
-=======
->>>>>>> 9fbef0b (footer improved)
-=======
-      <a href="https://hacktoberfest.com/"><h1 className="glitch" id="hacktoberfest-text">Hacktoberfest 2022</h1></a>
->>>>>>> 7105682 (text align property fixed for mobile design)
->>>>>>> himanshu30-max-Footer-change
         <div className="footer-menu">
           <ul className="socials">
             <li>
