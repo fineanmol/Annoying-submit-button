@@ -2,12 +2,15 @@ import React from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import ThemeButton from './components/ThemeButton'
+import {motion} from 'framer-motion'
 
 function App() {
   const [form, setForm] = React.useState({
     email: '',
     password: '',
   });
+
+ 
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
@@ -16,6 +19,10 @@ function App() {
   const handleForm = (e) => {
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
   };
+
+  const transition={duration:1,type:'string'}
+
+  
 
   const annoyingSubmitButton = () => {
     setShowToast(false);
@@ -99,20 +106,25 @@ function App() {
               ''
             )}
           </div>
-          <div
+          <motion.div
             className={`submit-button-wrapper ${toggleClass ? 'float-end' : 'float-start'}`}
+            whileHover={{left:"50%"}}
+            transition={transition}
           >
             <button
               tabIndex={-1}
               className={`submit-button ${(form.password.length > 6 && validateEmail(form.email) )? 'button-success' : ''
                 }`}
               onMouseEnter={annoyingSubmitButton}
+              
+              
             >
               Submit
             </button>
-          </div>
+          </motion.div>
           <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'} ${themeState}-theme-toast`}>
-            You can not submit until you fix all the validation errors...
+           <p>You can not submit until you fix all the validation errors...</p> 
+            <p>(You can try cathing me once I become Green 😎😎)</p>
           </div>
         </form>
       </section>
