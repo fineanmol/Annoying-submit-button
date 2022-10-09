@@ -3,13 +3,14 @@ import "./ThemeButton.css";
 
 const ThemeButton = ({ setThemeState, themeState, setDark }) => {
   return (
-    <div className="theme-container">
+    <div className="theme-container" title="Change Theme">
       <div onClick={() => {
         setDark((prev)=> !prev)
         setThemeState(() => {
           
           return themeState === "bright" ? "dark" : "bright"});
       }} className={`theme-button-container ${themeState}`}>
+      <p className="theme" style={{color:`${themeState === "bright" ? "black":"white"}`}}>{`${themeState === "bright" ? "Dark":"Bright"} Theme`}</p>
         <button
           className={`button-blob ${themeState === "bright" ? "dark-blob" : "bright-blob"
             }`}
