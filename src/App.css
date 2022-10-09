@@ -21,6 +21,7 @@ body {
   margin-bottom: 1em;
 }
 
+
 .form-section {
   min-height: 77.8vh;
   display: grid;
@@ -57,7 +58,6 @@ body {
 
 .warning-message {
   color: #ff0000;
-
   font-weight: 500;
   font-size: 1rem;
 }
@@ -87,8 +87,7 @@ body {
 
 .submit-button {
   margin-top: 1.75rem;
-  /* background-color: #2879ff; */
-  background-color: black;
+  background-color: #2879ff;
   color: #fff;
   letter-spacing: 0.5px;
   padding: 0.85em 2.2em;
@@ -134,12 +133,79 @@ body {
   background-color: #fff;
   transition: .5s ease-in-out;
   color: #000;
-  
 }
 .dark-theme-toast{
   background-color: rgb(0, 0, 0);
 }
-.fieldset{
-  padding: 25px;
-  border-radius: 10px;
+
+
+.link{
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+  font-weight: 700;
+  margin-left: -58px;
+  height: 30px;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mask {
+  position: relative;
+  padding: 0;
+  height: 23px;
+
+  /*  Remove overflow to see how it works　:) */
+  overflow: hidden;
+}
+
+.link-container {
+  transition: transform 0.4s ease;
+}
+
+.title {
+  display: block;
+
+  /*  Set same font-size and line height  */
+  font-size: 22px;
+  line-height: 20px;
+  color: yellow;
+  transition: transform 0.4s ease;
+}
+
+.link-title1 {
+  transform-origin: right center;
+}
+
+.link-title2 {
+  transform-origin: left center;
+  transform: rotate(20deg);
+}
+
+
+
+/* Hover Action*/
+
+/* Move up two texts (20px = font-size) */
+.link:hover .link-container {
+  transform: translateY(-20px);
+}
+
+/* Rotate texts a little bit */
+.link:hover .link-title1 {
+  transform: rotate(20deg);
+}
+
+.link:hover .link-title2 {
+  transform: rotate(0);
+}
+
+/* Move arrows to right */
+.link:hover .icon:first-child {
+  transform: translate(40px);
+}
+
+.link:hover .icon:nth-child(2) {
+  transform: translate(0px);
 }
