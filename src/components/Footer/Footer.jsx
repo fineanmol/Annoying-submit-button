@@ -2,6 +2,8 @@ import React from "react";
 import "./Footer.css";
 
 const Footer = ({theme}) => {
+  const dateObj = new Date();
+  let year = dateObj.getFullYear();
   return (
     <footer className={theme+"-footer"}>
       <div className="footer-content">
@@ -37,7 +39,7 @@ const Footer = ({theme}) => {
         </div>
         <p id="footer-text">
           This Project is participating in <b><a href="https://hacktoberfest.com/" id="hf-theme">Hacktoberfest</a></b>. Copyright
-          &copy; 2022.
+          &copy; {`${year}`}.
         </p>
       </div>
     </footer>
