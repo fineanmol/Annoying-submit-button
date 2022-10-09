@@ -23,7 +23,7 @@ body {
 
 
 .form-section {
-  min-height: 71.8vh;
+  min-height: 77.8vh;
   display: grid;
   place-content: center;
   transition: .5s color ease-in-out;
