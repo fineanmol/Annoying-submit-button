@@ -11,6 +11,9 @@
 .theme-container *{
     cursor: pointer;
 }
+.theme{
+    transform: translate(-40px,-2px);
+}
 .bright{
     background-color: #fff;
     border-color:rgb(1, 0, 0);
