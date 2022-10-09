@@ -120,8 +120,6 @@ function App() {
           >
             <button
               tabIndex={-1}
-              className={`submit-button ${(form.password.length > 6 && validateEmail(form.email)) ? 'button-success' : ''
-                }`}
 
               className={`submit-button ${
                 form.password.length > 6 && validateEmail(form.email)
