@@ -4,7 +4,7 @@ You won't be able to submit the form until you enter correct length of password 
 #Hacktoberfest
 
 ## Project Preview
-![alt text](./content/preview.gif)
+![Preview video of project](./content/preview.gif)
 
 
 ## :bulb: Live Project Link
@@ -25,7 +25,7 @@ You won't be able to submit the form until you enter correct length of password 
 
 ## :people_hugging: Show your support
 
-Give a ⭐️ if you have liked this project and want to support it !
+Give a ⭐️ if you like this project and want to support it!
 
 ---
 
@@ -56,5 +56,5 @@ Thanks to everyone who has contributed towards this project
 ---
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
+This project is under the [MIT](./LICENSE) license.
 

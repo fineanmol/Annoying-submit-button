@@ -76,7 +76,7 @@ function App() {
           </div>
           <div>
             {!validateEmail(form.email) ? (
-              <p className="warning-message">Enter a valid email id</p>
+              <p className="warning-message">Enter a valid email ID</p>
             ) : (
               ""
             )}
@@ -101,7 +101,7 @@ function App() {
           <div>
             {form.password.length <= 6 ? (
               <p className="warning-message">
-                Password length should be more than 6
+                Password should be at least 7 characters long
               </p>
             ) : (
               ""
