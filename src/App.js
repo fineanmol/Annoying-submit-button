@@ -1,9 +1,34 @@
+import {React,useState} from 'react';
+import './App.css';
+import Footer from './components/Footer';
+import ThemeButton from './components/ThemeButton'
+
 import React from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
 
+
+
+
 function App() {
+
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  });
+
+  const [toggleClass, setToggleClass] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [themeState, setThemeState] = useState("dark")
+  const [isDark,setDark] = useState(true);
+ 
+  //styling the border dynamically
+  const style = {
+    border:`2px solid ${isDark ? "white" : "black"}`,
+    borderRadius : "5px"
+  }
+
   const [form, setForm] = React.useState({
     email: "",
     password: "",
@@ -13,7 +38,10 @@ function App() {
   const [showToast, setShowToast] = React.useState(false);
   const [themeState, setThemeState] = React.useState("dark");
 
+
+  console.log(style)
   const handleForm = (e) => {
+    e.preventDefault();
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
   };
 
@@ -39,7 +67,15 @@ function App() {
 
   return (
     <>
+
+      <ThemeButton 
+      setThemeState={setThemeState}
+       themeState={themeState}
+       setDark={setDark}
+       />
+
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
+
       <section className={`form-section ${themeState}-theme`}>
 
         <a href="#" className="link">
@@ -55,6 +91,8 @@ function App() {
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
+          className="form-container"
+          style = {style}
         >
           <div className="input-block">
             <label className={`label ${themeState}-theme`}>
