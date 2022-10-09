@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
@@ -12,7 +12,7 @@ function App() {
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
-  const [themeState, setThemeState] = React.useState("dark");
+  const [themeState, setThemeState] = React.useState(localStorage.getItem("theme") || "dark");
 
   const handleForm = (e) => {
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
@@ -32,12 +32,17 @@ function App() {
 
   const validateEmail = (email) => {
     return String(email)
-      .toLowerCase().trim()
+      .toLowerCase().trim() //Trim to ignore spaces after user email input
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
 
+  // To remember user's selected theme.
+  useEffect(() => {
+    localStorage.setItem("theme",themeState)
+  }, [themeState])
+  
   return (
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
@@ -46,8 +51,8 @@ function App() {
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-              <span className="link-title1 title">Annoying Submit Button 😡🙃</span>
-              <span className="link-title2 title">Annoying Submit Button 😡🙃</span>
+              <span className="link-title1 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
+              <span className="link-title2 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
             </div>
           </span>
         </a>
