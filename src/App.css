@@ -27,6 +27,12 @@ body {
   display: grid;
   place-content: center;
   transition: .5s color ease-in-out;
+ 
+}
+
+.form-container{
+  /* border:2px solid black; */
+  padding:20px;
 }
 
 .input-block {
