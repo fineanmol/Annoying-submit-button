@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import ThemeButton from './components/ThemeButton'
-
+import { motion } from 'framer-motion'
 function App() {
   const [form, setForm] = React.useState({
     email: '',
@@ -102,14 +102,16 @@ function App() {
           <div
             className={`submit-button-wrapper ${toggleClass ? 'float-end' : 'float-start'}`}
           >
-            <button
+            <motion.button
               tabIndex={-1}
               className={`submit-button ${(form.password.length > 6 && validateEmail(form.email) )? 'button-success' : ''
                 }`}
               onMouseEnter={annoyingSubmitButton}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               Submit
-            </button>
+            </motion.button>
           </div>
           <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'} ${themeState}-theme-toast`}>
             You can not submit until you fix all the validation errors...
