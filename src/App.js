@@ -41,9 +41,18 @@ function App() {
 
   return (
     <>
-      <ThemeButton setThemeState={setThemeState} themeState={themeState}/>
+      <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-        <h1 className="heading">Annoying Submit Button 😡🙃</h1>
+
+        <a href="#" className="link">
+          <span className="mask">
+            <div className="link-container">
+              <span className="link-title1 title">Annoying Submit Button 😡🙃</span>
+              <span className="link-title2 title">Annoying Submit Button 😡🙃</span>
+            </div>
+          </span>
+        </a>
+        
         <form
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
@@ -104,7 +113,7 @@ function App() {
           >
             <button
               tabIndex={-1}
-              className={`submit-button ${(form.password.length > 6 && validateEmail(form.email) )? 'button-success' : ''
+              className={`submit-button ${(form.password.length > 6 && validateEmail(form.email)) ? 'button-success' : ''
                 }`}
               onMouseEnter={annoyingSubmitButton}
             >
@@ -116,7 +125,7 @@ function App() {
           </div>
         </form>
       </section>
-      <Footer theme={themeState}/>
+      <Footer theme={themeState} />
     </>
   );
 }
