@@ -211,6 +211,11 @@ footer {
     margin-bottom: 20px;
   }
 }
+@media (max-width: 450px) {
+  .glitch {
+    font-size: 2.2em;
+  }
+}
 .dark-footer{
   background-color: rgb(0, 0, 0);
   color:rgb(204, 198, 198);

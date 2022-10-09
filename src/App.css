@@ -57,6 +57,7 @@ body {
 
 .warning-message {
   color: #ff0000;
+
   font-weight: 500;
   font-size: 1rem;
 }
@@ -86,7 +87,8 @@ body {
 
 .submit-button {
   margin-top: 1.75rem;
-  background-color: #2879ff;
+  /* background-color: #2879ff; */
+  background-color: black;
   color: #fff;
   letter-spacing: 0.5px;
   padding: 0.85em 2.2em;
@@ -132,7 +134,12 @@ body {
   background-color: #fff;
   transition: .5s ease-in-out;
   color: #000;
+  
 }
 .dark-theme-toast{
   background-color: rgb(0, 0, 0);
+}
+.fieldset{
+  padding: 25px;
+  border-radius: 10px;
 }
