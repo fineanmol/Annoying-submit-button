@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -120,7 +121,6 @@ function App() {
           >
             <button
               tabIndex={-1}
-
               className={`submit-button ${
                 form.password.length > 6 && validateEmail(form.email)
                   ? "button-success"

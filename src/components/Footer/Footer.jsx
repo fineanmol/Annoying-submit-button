@@ -38,7 +38,8 @@ const Footer = ({theme}) => {
           </ul>
         </div>
         <p id="footer-text">
-          This Project is participating in <b><a href="https://hacktoberfest.com/" id="hf-theme">Hacktoberfest</a></b>. Copyright
+          This Project is participating in <b><a href="https://hacktoberfest.com/" id="hf-theme">Hacktoberfest</a></b> .
+           <br/>Copyright
           &copy; {`${year}`}.
         </p>
       </div>
