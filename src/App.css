@@ -23,16 +23,10 @@ body {
 
 
 .form-section {
-  min-height: 71.8vh;
+  min-height: 77.8vh;
   display: grid;
   place-content: center;
   transition: .5s color ease-in-out;
- 
-}
-
-.form-container{
-  /* border:2px solid black; */
-  padding:20px;
 }
 
 .input-block {
@@ -92,7 +86,7 @@ body {
 }
 
 .submit-button {
-  /* margin-top: 1.75rem;
+  margin-top: 1.75rem;
   background-color: #2879ff;
   color: #fff;
   letter-spacing: 0.5px;
@@ -102,38 +96,7 @@ body {
   font-weight: 500;
   border-radius: 4px;
 
-  cursor:pointer; */
-  width: 132x;
-    font-size: 19px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 20px;
-    height: 52px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-    background-image: linear-gradient(to right, #667eea, #764ba2, #6B8DD6, #8E37D7);
-    box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
-	  padding: 14px;
-	  font-family: 'bootstrap-icons';
-    width: 11rem;
-    height: 5rem;
-
-
-}
-
-.submit-button:hover{
-  background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+  cursor:pointer;
 }
 
 .button-success {
