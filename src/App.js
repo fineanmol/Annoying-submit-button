@@ -32,7 +32,7 @@ function App() {
 
   const validateEmail = (email) => {
     return String(email)
-      .toLowerCase()
+      .toLowerCase().trim()
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
@@ -75,11 +75,7 @@ function App() {
             />
           </div>
           <div>
-            {!validateEmail(form.email) ? (
-              <p className="warning-message">Enter a valid email ID</p>
-            ) : (
-              ""
-            )}
+            {!validateEmail(form.email) && <p className="warning-message">Enter a valid email ID</p> }
           </div>
           <div className="input-block">
             <label className={`label ${themeState}-theme`}>
@@ -99,13 +95,10 @@ function App() {
             />
           </div>
           <div>
-            {form.password.length <= 6 ? (
-              <p className="warning-message">
+            {form.password.length <= 6 && <p className="warning-message">
                 Password should be at least 7 characters long
               </p>
-            ) : (
-              ""
-            )}
+            }
           </div>
           <div
             style={{
@@ -136,7 +129,7 @@ function App() {
               showToast ? "fadeIn" : "fadeOut"
             } ${themeState}-theme-toast`}
           >
-            You can not submit until you fix all the validation errors...
+            You cannot submit until you fix all the validation errors...
           </div>
         </form>
       </section>
