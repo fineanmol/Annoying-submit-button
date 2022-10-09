@@ -44,6 +44,7 @@ function App() {
       <ThemeButton setThemeState={setThemeState} themeState={themeState}/>
       <section className={`form-section ${themeState}-theme`}>
         <h1 className="heading">Annoying Submit Button 😡🙃</h1>
+        <fieldset className='fieldset'>
         <form
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
@@ -115,6 +116,7 @@ function App() {
             You can not submit until you fix all the validation errors...
           </div>
         </form>
+        </fieldset>
       </section>
       <Footer theme={themeState}/>
     </>
