@@ -12,7 +12,7 @@ const Button = ({ onHover, isFormValid, text, type }) => {
             `}
             onMouseEnter={onHover}
         >
-            {text}
+                  {text} 
         </button>
     );
 };
