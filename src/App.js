@@ -15,7 +15,7 @@ function App() {
   const [themeState, setThemeState] = React.useState(localStorage.getItem("theme") || "dark");
 
   const handleForm = (e) => {
-    setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const annoyingSubmitButton = () => {
