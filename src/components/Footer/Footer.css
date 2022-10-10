@@ -176,10 +176,19 @@ footer {
   -o-animation: gradientAnimation 3s infinite linear alternate;
   animation: gradientAnimation 3s infinite linear alternate;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
   -ms-background-clip: text;
   -o-background-clip: text;
   background-clip: text;
+}
+
+@keyframes gradientAnimation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
 }
 
 @keyframes gradientAnimation {
