@@ -221,6 +221,32 @@ footer {
   color:rgb(204, 198, 198);
   transition: .5s ease-in-out;
 }
+
+.purple-footer {
+  background-color: rgb(97, 80, 117);
+  color:rgb(204, 198, 198);
+  transition: .5s ease-in-out;
+}
+
+.dark-footer {
+  background-color: rgb(0, 0, 0);
+  color:rgb(204, 198, 198);
+  transition: .5s ease-in-out;
+}
+
+
+.pink-footer {
+  background-color: rgb(182, 77, 112);
+  color:rgb(204, 198, 198);
+  transition: .5s ease-in-out;
+}
+
+.skin-footer {
+  background-color: rgb(185, 81, 90);
+  color:rgb(204, 198, 198);
+  transition: .5s ease-in-out;
+}
+
 .bright-footer{
   color: rgb(45, 43, 43);
   background: rgb(145, 143, 143);

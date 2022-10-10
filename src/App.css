@@ -62,6 +62,14 @@ body {
   font-size: 1rem;
 }
 
+.none {
+  display: none;
+}
+
+.empty {
+  border: 2px solid rgb(74, 136, 206) !important;
+}
+
 .wrong-input {
   border: 2px solid #ff0000;
   color: #ff0000;
@@ -125,10 +133,42 @@ body {
 }
 
 .dark-theme{
-  background-color: rgb(22, 20, 20);
-  color:rgb(204, 198, 198);
+  background-color: rgb(36, 36, 36);
+  color:rgb(235, 235, 235);
   transition: .5s ease-in-out;
 }
+
+.purple-theme {
+  background-color: #f0d9ff;
+  color:rgb(68, 52, 70);
+  transition: .5s ease-in-out;
+}
+
+.pink-theme {
+  background-color: #fde5f1;
+  color:rgb(68, 52, 70);
+  transition: .5s ease-in-out;
+}
+
+
+.skin-theme {
+  background-color: #ffe9e9;
+  color:rgb(68, 52, 70);
+  transition: .5s ease-in-out;
+}
+
+.skin-theme .title {
+  color: rgb(153, 70, 70);
+}
+
+.purple-theme .title {
+  color: rgb(120, 70, 153);
+}
+
+.pink-theme .title {
+  color: rgb(167, 61, 135);
+}
+
 .bright-theme{
   background-color: #fff;
   transition: .5s ease-in-out;

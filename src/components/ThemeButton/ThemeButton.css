@@ -1,13 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 .theme-button-container{
-    width: 50px;
+    display: flex;
+    gap: 10px;
+    width: 120px;
     height: 30px;
     position: fixed;
-    right: 0;
-    margin: 1rem 2rem;
+    right: 0px;
+    margin: 2rem 2rem;
     border-radius: 20px;
-    border: 2px solid rgb(58, 56, 56);
 }
+
+
+.theme-btn {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.purple {
+    background-color: rgb(196, 123, 214);
+    border-color:rgb(1, 0, 0);
+    transition: 0.5s ease-in-out;
+}
+
+.pink {
+    background-color: rgb(255, 138, 210);
+    border-color:rgb(1, 0, 0);
+    transition: 0.5s ease-in-out;
+
+}
+.skin {
+    background-color: rgb(235, 144, 159);
+    border-color:rgb(1, 0, 0);
+    transition: 0.5s ease-in-out;
+}
+
+.dark-a {
+    box-shadow: 0px 0px 2px 1px rgb(236, 236, 236);
+}
+
+.skin-b {
+    box-shadow: 0px 0px 2px 1px rgb(122, 44, 44);
+}
+
+.pink-c {
+    box-shadow: 0px 0px 2px 1px rgb(90, 28, 85);
+}
+
+.purple-d {
+    box-shadow: 0px 0px 2px 1px rgb(110, 40, 110);
+}
+
+
+
 .theme-container *{
     cursor: pointer;
 }
@@ -19,9 +68,12 @@
     border-color:rgb(1, 0, 0);
 }
 .dark{
-    background-color: rgb(58, 56, 56);
-    border-color: rgb(146, 134, 117);
+    background-color: rgb(141, 141, 141);
+    transition: 0.5s ease-in-out;
+
 }
+
+
 .button-blob{
     width: 2rem;
     height: 2rem;
@@ -41,3 +93,7 @@
     margin-left: 10%;
     transition: .6s;
 }
+
+
+
+/*for active themes*/
