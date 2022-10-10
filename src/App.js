@@ -16,6 +16,7 @@ function App() {
   const [themeState, setThemeState] = React.useState("purple");
   const [Email, setEmail] = React.useState(null);
   const [Password, setPassword] = React.useState(null);
+  const [emojiState, setEmojiState] = React.useState();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -60,23 +61,12 @@ function App() {
           <span className="mask">
             <div className="link-container">
 
-              <span className="link-title1 title">
-                Annoying Submit Button 😡🙃
-              </span>
-              <span className="link-title2 title">
-                Annoying Submit Button 😡🙃
-              </span>
-
-
             <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
                 form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smiley"
               }`} style={ { height: 20 } }></span> </span>
-              <span className="link-title2 title">Annoying Submit Button <span className={`${emojiState} ${
+              <span className="link-title2 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
                 form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smiley"
               }`} style={ { height: 20 } }></span> </span>
-              {/* <span className="link-title1 title"><span className="hover">Annoying Submit Button</span>  {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
-              <span className="link-title2 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span> */}
-
 
             </div>
           </span>
@@ -132,7 +122,7 @@ function App() {
               <p className={`${Password ? "warning-message" : "none"}`}>
 
                 Password should be at least 7 characters long
-              </p>
+              </p>):''
             }
           </div>
           <div
