@@ -13,6 +13,7 @@ function App() {
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
   const [themeState, setThemeState] = React.useState(localStorage.getItem("theme") || "dark");
+  const [emojiState, setEmojiState] = React.useState();
 
   const handleForm = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -51,8 +52,14 @@ function App() {
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-              <span className="link-title1 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
-              <span className="link-title2 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
+            <span className="link-title1 title">Annoying Submit Button <span className={`${emojiState} ${
+                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smiley"
+              }`} style={ { height: 20 } }></span> </span>
+              <span className="link-title2 title">Annoying Submit Button <span className={`${emojiState} ${
+                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smiley"
+              }`} style={ { height: 20 } }></span> </span>
+              {/* <span className="link-title1 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
+              <span className="link-title2 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span> */}
             </div>
           </span>
         </a>
