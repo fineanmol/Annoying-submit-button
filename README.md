@@ -1,5 +1,32 @@
 # Annoying Submit Button in a Form using ReactJS
 
+</div>
+<div align="center" >
+<img src="https://media.giphy.com/media/j4A1puoG0sUxOB5rB5/giphy.gif" width=200 />
+<p>
+
+<a href="https://github.com/fineanmol/Annoying-submit-button/graphs/Stars" alt="Stars">
+        <img src="https://img.shields.io/github/stars/fineanmol/Annoying-submit-button" /></a>
+        
+<a href="https://github.com/fineanmol/Annoying-submit-button/graphs/issues" alt="Contributors">
+        <img src="https://img.shields.io/github/issues/fineanmol/Annoying-submit-button" /></a>
+<a href="https://github.com/fineanmol/Annoying-submit-button/graphs/contributors" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/fineanmol/Annoying-submit-button" /></a>
+
+<a href="https://github.com/fineanmol/Annoying-submit-button/forks">
+      <img alt="Issues" src="https://img.shields.io/github/forks/fineanmol/Annoying-submit-button" />
+    </a> 
+    <a href="https://github.com/fineanmol/Annoying-submit-button/license">
+      <img alt="GitHub pull requests" src="https://img.shields.io/github/license/fineanmol/Annoying-submit-button" />
+    </a>
+    <a href="https://github.com/fineanmol/Annoying-submit-button">
+      <img alt="GitHub pull requests" src="https://img.shields.io/badge/version-0.1.0-blue?color=0088ff" />
+    </a>
+
+</p>
+</div>
+
+
 You won't be able to submit the form until you enter correct length of password and an valid email ID.  Enjoy playing with it. :)
 #Hacktoberfest
 
@@ -31,9 +58,22 @@ Give a ⭐️ if you like this project and want to support it!
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 Feel free to check the [issues page](../../issues/).
+---
+## 📝 License
+
+This project is under the [MIT](./LICENSE) license.
 
 ---
 
@@ -54,7 +94,7 @@ Thanks to everyone who has contributed towards this project
 </div>
 
 ---
-## 📝 License
 
-This project is under the [MIT](./LICENSE) license.
+
+
 

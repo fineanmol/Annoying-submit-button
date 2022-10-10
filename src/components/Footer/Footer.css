@@ -15,61 +15,62 @@ footer {
 .glitch {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 5px;
-	font-size: 30px;
-	text-decoration: none;
-	color: #fff;
-	transform: translate(0%, 0%);
-	margin: 0;
+  font-size: 30px;
+  text-decoration: none;
+  color: #fff;
+  transform: translate(0%, 0%);
+  margin: 0;
 }
 
 .glitch::before,
 .glitch::after {
-	content: "Hacktoberfest 2022";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	opacity: 0.8;
+  content: 'Hacktoberfest 2022';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
 }
 
 .glitch::before {
-	color: #0ff;
-	z-index: -1;
+  color: #0ff;
+  z-index: -1;
 }
 
 .glitch::after {
-	color: #f0f;
-	z-index: -2;
+  color: #f0f;
+  z-index: -2;
 }
 
 @keyframes glitch {
-	0% {
-		transform: translate(0);
-	}
-	20% {
-		transform: translate(-5px, 5px);
-	}
-	40% {
-		transform: translate(-5px, -5px);
-	}
-	60% {
-		transform: translate(5px, 5px);
-	}
-	80% {
-		transform: translate(5px, -5px);
-	}
-	to {
-		transform: translate(0);
-	}
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  to {
+    transform: translate(0);
+  }
 }
 
 .glitch:hover::before {
-	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
 }
 .glitch:hover::after {
-	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
+    infinite;
 }
 
 .footer-content p {
@@ -126,7 +127,7 @@ footer {
 }
 
 .socials li:nth-child(1) a:hover {
-  background-color: #4267B2;
+  background-color: #4267b2;
 }
 
 .socials li:nth-child(2) a:hover {
@@ -141,11 +142,11 @@ footer {
 }
 
 .socials li:nth-child(3) a:hover {
-  background-color: #1DA1F2;
+  background-color: #1da1f2;
 }
 
 .socials li:nth-child(4) a:hover {
-  background-color: #FF0000;
+  background-color: #ff0000;
 }
 
 .socials li:nth-child(5) a:hover {
@@ -156,16 +157,47 @@ footer {
   color: white;
 }
 
-#hf-theme{
-  font-size: 2rem;
-  background-color: red;
-  background-image: linear-gradient(45deg, #F2DBAF, #8FC0BD, #2B1D3E);
-  background-size: 100%;
-  background-repeat: repeat;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; 
-  -moz-background-clip: text;
+#hf-theme {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: transparent;
+  background-image: linear-gradient(
+    45deg,
+    #f9d753,
+    #acdfb4,
+    #46d5ff,
+    #62a7ff,
+    #707eff
+  );
+  background-size: 200% 200%;
+  -webkit-animation: gradientAnimation 3s infinite linear alternate;
+  -moz-animation: gradientAnimation 3s infinite linear alternate;
+  -ms-animation: gradientAnimation 3s infinite linear alternate;
+  -o-animation: gradientAnimation 3s infinite linear alternate;
+  animation: gradientAnimation 3s infinite linear alternate;
+  -webkit-background-clip: text;
   -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes gradientAnimation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes gradientAnimation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
 }
 
 .footer-bottom {
@@ -205,8 +237,9 @@ footer {
 }
 
 /* aligning the text to center */
-#footer-text, #hacktoberfest-text{
-  text-align:center;
+#footer-text,
+#hacktoberfest-text {
+  text-align: center;
 }
 
 @media (max-width: 500px) {
@@ -216,13 +249,13 @@ footer {
     margin-bottom: 20px;
   }
 }
-.dark-footer{
+.dark-footer {
   background-color: rgb(0, 0, 0);
-  color:rgb(204, 198, 198);
-  transition: .5s ease-in-out;
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
 }
-.bright-footer{
+.bright-footer {
   color: rgb(45, 43, 43);
   background: rgb(145, 143, 143);
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
