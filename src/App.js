@@ -52,14 +52,16 @@ function App() {
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-            <span className="link-title1 title">Annoying Submit Button <span className={`${emojiState} ${
+
+            <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
                 form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smiley"
               }`} style={ { height: 20 } }></span> </span>
               <span className="link-title2 title">Annoying Submit Button <span className={`${emojiState} ${
                 form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smiley"
               }`} style={ { height: 20 } }></span> </span>
-              {/* <span className="link-title1 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
+              {/* <span className="link-title1 title"><span className="hover">Annoying Submit Button</span>  {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
               <span className="link-title2 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span> */}
+
             </div>
           </span>
         </a>
