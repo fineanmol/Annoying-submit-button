@@ -46,8 +46,8 @@ function App() {
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-              <span className="link-title1 title">Annoying Submit Button 😡🙃</span>
-              <span className="link-title2 title">Annoying Submit Button 😡🙃</span>
+              <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> 😡🙃</span>
+              <span className="link-title2 title"><span className="hover">Annoying Submit Button</span> 😡🙃</span>
             </div>
           </span>
         </a>

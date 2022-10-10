@@ -168,7 +168,7 @@ body {
   display: block;
 
   /*  Set same font-size and line height  */
-  font-size: 22px;
+  font-size: 20px;
   line-height: 20px;
   color: yellow;
   transition: transform 0.4s ease;
@@ -182,7 +182,18 @@ body {
   transform-origin: left center;
   transform: rotate(20deg);
 }
-
+.hover {
+  color: #0000;
+  background: 
+    linear-gradient(90deg,#e0d60c 50%,rgb(222, 14, 14) 0) 
+    var(--_p,100%)/200% no-repeat;
+  -webkit-background-clip: text;
+          background-clip: text;
+  transition: .4s;
+}
+.hover:hover {
+  --_p: 0%;
+}
 
 
 /* Hover Action*/
