@@ -7,7 +7,7 @@
 - Add your name to the contributorsList file.
 - Try to keep pull requests small to minimize merge conflicts.
 
-## Getting started:
+## Getting started 🤩🤟:
 
 - Fork this repo (button on top).
 - Clone on your local machine.
