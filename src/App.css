@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -21,12 +21,11 @@ body {
   margin-bottom: 1em;
 }
 
-
 .form-section {
   min-height: 77.8vh;
   display: grid;
   place-content: center;
-  transition: .5s color ease-in-out;
+  transition: 0.5s color ease-in-out;
 }
 
 .input-block {
@@ -60,6 +59,14 @@ body {
   color: #ff0000;
   font-weight: 500;
   font-size: 1rem;
+}
+
+.none {
+  display: none;
+}
+
+.empty {
+  border: 2px solid rgb(74, 136, 206) !important;
 }
 
 .wrong-input {
@@ -96,7 +103,7 @@ body {
   font-weight: 500;
   border-radius: 4px;
 
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .button-success {
@@ -124,22 +131,52 @@ body {
   transition: opacity 0.5s 0.5s;
 }
 
-.dark-theme{
-  background-color: rgb(22, 20, 20);
-  color:rgb(204, 198, 198);
-  transition: .5s ease-in-out;
+.dark-theme {
+  background-color: rgb(36, 36, 36);
+  color: rgb(235, 235, 235);
+  transition: 0.5s ease-in-out;
 }
-.bright-theme{
+
+.purple-theme {
+  background-color: #f0d9ff;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.pink-theme {
+  background-color: #fde5f1;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.skin-theme {
+  background-color: #ffe9e9;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.skin-theme .title {
+  color: rgb(153, 70, 70);
+}
+
+.purple-theme .title {
+  color: rgb(120, 70, 153);
+}
+
+.pink-theme .title {
+  color: rgb(167, 61, 135);
+}
+
+.bright-theme {
   background-color: #fff;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
   color: #000;
 }
-.dark-theme-toast{
+.dark-theme-toast {
   background-color: rgb(0, 0, 0);
 }
 
-
-.link{
+.link {
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -182,6 +219,7 @@ body {
   transform-origin: left center;
   transform: rotate(20deg);
 }
+
 .hover {
   color: #0000;
   background: 
@@ -194,6 +232,7 @@ body {
 .hover:hover {
   --_p: 0%;
 }
+
 
 
 /* Hover Action*/
