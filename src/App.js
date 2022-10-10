@@ -12,9 +12,17 @@ function App() {
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
-  const [themeState, setThemeState] = React.useState("dark");
+  const [themeState, setThemeState] = React.useState("purple");
+  const [Email, setEmail] = React.useState(null)
+  const [Password, setPassword] = React.useState(null)
 
-  const handleForm = (e) => {
+  const handleEmail = (e) => {
+    setEmail(e.target.value)
+    setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
+  };
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value)
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
   };
 
@@ -40,9 +48,8 @@ function App() {
 
   return (
     <>
-      <ThemeButton setThemeState={setThemeState} themeState={themeState} />
+       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
@@ -62,13 +69,14 @@ function App() {
               Email <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${themeState}-theme ${
+              className={`input ${themeState}-theme ${!Email?'empty':''} ${
+
                 !validateEmail(form.email) ? "wrong-input" : "correct-input"
               }`}
               type="email"
               name="email"
               value={form.email}
-              onChange={handleForm}
+              onChange={(e)=>handleEmail(e)}
               placeholder="coffeewithanmol@gmail.com"
               tabIndex={-1}
               required
@@ -76,7 +84,7 @@ function App() {
           </div>
           <div>
             {!validateEmail(form.email) ? (
-              <p className="warning-message">Enter a valid email ID</p>
+              <p className={`${Email?'warning-message':'none'}`}>Enter a valid email ID</p>
             ) : (
               ""
             )}
@@ -88,11 +96,11 @@ function App() {
             <input
               className={`input ${
                 form.password.length <= 6 ? "wrong-input" : "correct-input"
-              } ${themeState}-theme`}
+              } ${themeState}-theme ${!Password?'empty':''}`}
               type="password"
               name="password"
               value={form.password}
-              onChange={handleForm}
+              onChange={(e) => handlePassword(e)}
               minLength="6"
               tabIndex={-1}
               required
@@ -100,7 +108,7 @@ function App() {
           </div>
           <div>
             {form.password.length <= 6 ? (
-              <p className="warning-message">
+              <p className={`${Password?'warning-message':'none'}`}>
                 Password should be at least 7 characters long
               </p>
             ) : (
