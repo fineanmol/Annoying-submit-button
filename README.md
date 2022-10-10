@@ -1,7 +1,7 @@
 # Annoying Submit Button in a Form using ReactJS
 
-    You won't be able to submit the form until you enter correct length of password and an valid email ID.  Enjoy playing with it. :)
-    #Hacktoberfest
+    You won't be able to submit the form until you enter correct length of password and an valid email ID.
+    Enjoy playing with it. :) #Hacktoberfest
 
 ## Project Preview
 ![Preview video of project](./content/preview.gif)
