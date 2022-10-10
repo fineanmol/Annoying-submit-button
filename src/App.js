@@ -60,12 +60,12 @@ function App() {
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-
+               {/* smiley-icon emojis can check from here https://emoji-css.afeld.me/ */}
             <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smiley"
+                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
               }`} style={ { height: 20 } }></span> </span>
               <span className="link-title2 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smiley"
+                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
               }`} style={ { height: 20 } }></span> </span>
 
             </div>
@@ -121,7 +121,7 @@ function App() {
             {form.password.length <= 6 ? (
               <p className={`${Password ? "warning-message" : "none"}`}>
 
-                Password should be at least 7 characters long
+                Password should be at least 6 characters long
               </p>):''
             }
           </div>
@@ -129,18 +129,17 @@ function App() {
             style={{
               transform: `translateX(${
                 toggleClass &&
-                !(form.password.length > 6 && validateEmail(form.email))
+                !(form.password.length >= 6 && validateEmail(form.email))
                   ? "25vh"
                   : "0"
               }`,
               transition: "transform 190ms ease-in-out",
             }}
-            // className={`submit-button-wrapper ${toggleClass ? 'float-end' : 'float-start'}`}
           >
             <button
               tabIndex={-1}
               className={`submit-button ${
-                form.password.length > 6 && validateEmail(form.email)
+                form.password.length >= 6 && validateEmail(form.email)
                   ? "button-success"
                   : ""
               }`}

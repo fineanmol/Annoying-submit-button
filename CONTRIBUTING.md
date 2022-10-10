@@ -1,11 +1,8 @@
 # Contribution Rules :books: :
 
-- You are allowed to make pull requests that break the rules. We just merge it :)
-- Do NOT add any build steps e.g npm install (we want to keep this a simple static site),
 - Do NOT remove other content.
-- Styling/code can be pretty, ugly or stupid, big or small as long as it works.
-- Add your name to the contributorsList file.
 - Try to keep pull requests small to minimize merge conflicts.
+- Don't push `Yarn.lock` and `Package-lock.json` in your commit.
 
 ## Getting started 🤩🤟:
 
@@ -23,7 +20,6 @@
 - Create a new *branch*
 
         git checkout -b new-branch
-- Add your Name to ``contributors/contributorsList.js``
 
 - Add all the changes that you have made
 
