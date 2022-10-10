@@ -26,11 +26,6 @@ const Footer = ({theme}) => {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/fineanmol">
-                <i className="fa fa-youtube"></i>
-              </a>
-            </li>
-            <li>
               <a href="https://www.linkedin.com/in/fineanmol/">
                 <i className="fa fa-linkedin-square"></i>
               </a>
