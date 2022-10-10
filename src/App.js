@@ -21,7 +21,7 @@ function App() {
   const annoyingSubmitButton = () => {
     setShowToast(false);
 
-    if (form.password.length <= 6 || !validateEmail(form.email)) {
+    if (!validatePassword(form.password) || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
@@ -38,20 +38,29 @@ function App() {
       );
   };
 
+  const validatePassword = (password) => {
+    return String(password).match(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+    );
+  };
+
   return (
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-              <span className="link-title1 title">Annoying Submit Button 😡🙃</span>
-              <span className="link-title2 title">Annoying Submit Button 😡🙃</span>
+              <span className="link-title1 title">
+                Annoying Submit Button 😡🙃
+              </span>
+              <span className="link-title2 title">
+                Annoying Submit Button 😡🙃
+              </span>
             </div>
           </span>
         </a>
-        
+
         <form
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
@@ -87,7 +96,9 @@ function App() {
             </label>
             <input
               className={`input ${
-                form.password.length <= 6 ? "wrong-input" : "correct-input"
+                !validatePassword(form.password)
+                  ? "wrong-input"
+                  : "correct-input"
               } ${themeState}-theme`}
               type="password"
               name="password"
@@ -99,9 +110,12 @@ function App() {
             />
           </div>
           <div>
-            {form.password.length <= 6 ? (
+            {!validatePassword(form.password) ? (
               <p className="warning-message">
-                Password should be at least 7 characters long
+                Password should be at least 8 characters long and should
+                contain: <br />
+                at least one uppercase letter, one lowercase letter and one
+                number.
               </p>
             ) : (
               ""
