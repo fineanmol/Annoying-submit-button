@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
@@ -12,10 +12,10 @@ function App() {
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
-  const [themeState, setThemeState] = React.useState("dark");
+  const [themeState, setThemeState] = React.useState(localStorage.getItem("theme") || "dark");
 
   const handleForm = (e) => {
-    setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const annoyingSubmitButton = () => {
@@ -32,12 +32,17 @@ function App() {
 
   const validateEmail = (email) => {
     return String(email)
-      .toLowerCase()
+      .toLowerCase().trim() //Trim to ignore spaces after user email input
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
 
+  // To remember user's selected theme.
+  useEffect(() => {
+    localStorage.setItem("theme",themeState)
+  }, [themeState])
+  
   return (
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
@@ -46,8 +51,8 @@ function App() {
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-              <span className="link-title1 title">Annoying Submit Button 😡🙃</span>
-              <span className="link-title2 title">Annoying Submit Button 😡🙃</span>
+              <span className="link-title1 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
+              <span className="link-title2 title">Annoying Submit Button {form.password.length > 6 && validateEmail(form.email)?"😄":"😡"}</span>
             </div>
           </span>
         </a>
@@ -75,11 +80,7 @@ function App() {
             />
           </div>
           <div>
-            {!validateEmail(form.email) ? (
-              <p className="warning-message">Enter a valid email ID</p>
-            ) : (
-              ""
-            )}
+            {!validateEmail(form.email) && <p className="warning-message">Enter a valid email ID</p> }
           </div>
           <div className="input-block">
             <label className={`label ${themeState}-theme`}>
@@ -99,13 +100,10 @@ function App() {
             />
           </div>
           <div>
-            {form.password.length <= 6 ? (
-              <p className="warning-message">
+            {form.password.length <= 6 && <p className="warning-message">
                 Password should be at least 7 characters long
               </p>
-            ) : (
-              ""
-            )}
+            }
           </div>
           <div
             style={{
@@ -136,7 +134,7 @@ function App() {
               showToast ? "fadeIn" : "fadeOut"
             } ${themeState}-theme-toast`}
           >
-            You can not submit until you fix all the validation errors...
+            You cannot submit until you fix all the validation errors...
           </div>
         </form>
       </section>
