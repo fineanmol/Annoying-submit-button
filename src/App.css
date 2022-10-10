@@ -185,6 +185,8 @@ body {
 
 
 
+
+
 /* Hover Action*/
 
 /* Move up two texts (20px = font-size) */
@@ -209,3 +211,5 @@ body {
 .link:hover .icon:nth-child(2) {
   transform: translate(0px);
 }
+
+
