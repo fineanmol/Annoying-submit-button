@@ -68,6 +68,16 @@ body {
     border: 2px solid rgb(74, 136, 206) !important;
 }
 
+.neon-theme.empty {
+    border-radius: 10px;
+    border: 1px solid rgb(57, 255, 20) !important;
+}
+
+.neon-theme.wrong-input:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(51, 214, 18, 0.586);
+}
+
 .wrong-input {
     border: 2px solid #ff0000;
     color: #ff0000;
@@ -102,6 +112,13 @@ body {
     font-weight: 500;
     border-radius: 4px;
     cursor: pointer;
+}
+
+.submit-button.neon-th {
+    background-color: transparent;
+    color: rgb(57, 255, 20);
+    border-radius: 12px;
+    border: 2px solid rgb(57, 255, 20);
 }
 
 .button-success {

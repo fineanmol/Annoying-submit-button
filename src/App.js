@@ -155,7 +155,7 @@ function App() {
 						}}>
 						<button
 							tabIndex={-1}
-							className={`submit-button ${
+							className={`submit-button ${themeState}-th ${
 								form.password.length >= 6 && validateEmail(form.email)
 									? "button-success"
 									: ""
