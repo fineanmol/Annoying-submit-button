@@ -1,261 +1,279 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
-
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-decoration: none;
-  font-family: "Titillium Web";
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Titillium Web";
 }
 
 html,
 body {
-  font-size: 10px;
-  overflow-x: hidden;
+    font-size: 10px;
+    overflow-x: hidden;
 }
 
 .heading {
-  text-align: center;
-  font-size: 2.75rem;
-  margin-bottom: 1em;
+    text-align: center;
+    font-size: 2.75rem;
+    margin-bottom: 1em;
 }
 
 .form-section {
-  min-height: 77.8vh;
-  display: grid;
-  place-content: center;
-  transition: 0.5s color ease-in-out;
+    min-height: 77.8vh;
+    display: grid;
+    place-content: center;
+    transition: 0.5s color ease-in-out;
 }
 
 .input-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 2em 0 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2em 0 0.5em;
 }
 
 .label {
-  letter-spacing: 0.25px;
-  font-weight: 500;
-  font-size: 1.35rem;
-  margin-bottom: 0.35em;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+    font-size: 1.35rem;
+    margin-bottom: 0.35em;
 }
 
 .requiredLabel {
-  color: red;
-  font-weight: bold;
+    color: red;
+    font-weight: bold;
 }
 
 .input {
-  padding: 1.35em 1em;
-  width: 350px;
-  outline: none;
-  border: 1px solid rgb(130, 130, 130);
-  border-radius: 0.25em;
+    padding: 1.35em 1em;
+    width: 350px;
+    outline: none;
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 0.25em;
 }
 
 .warning-message {
-  color: #ff0000;
-  font-weight: 500;
-  font-size: 1rem;
+    color: #ff0000;
+    font-weight: 500;
+    font-size: 1rem;
 }
 
 .none {
-  display: none;
+    display: none;
 }
 
 .empty {
-  border: 2px solid rgb(74, 136, 206) !important;
+    border: 2px solid rgb(74, 136, 206) !important;
 }
 
 .wrong-input {
-  border: 2px solid #ff0000;
-  color: #ff0000;
+    border: 2px solid #ff0000;
+    color: #ff0000;
 }
 
 .correct-input {
-  border: 2px solid #03bb56;
-  color: #03bb56;
+    border: 2px solid #03bb56;
+    color: #03bb56;
 }
 
 .submit-button-wrapper {
-  display: flex;
-  position: relative;
+    display: flex;
+    position: relative;
 }
 
 .float-start {
-  justify-content: flex-start;
+    justify-content: flex-start;
 }
 
 .float-end {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .submit-button {
-  margin-top: 1.75rem;
-  background-color: #2879ff;
-  color: #fff;
-  letter-spacing: 0.5px;
-  padding: 0.85em 2.2em;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-  border-radius: 4px;
-
-  cursor: pointer;
+    margin-top: 1.75rem;
+    background-color: #2879ff;
+    color: #fff;
+    letter-spacing: 0.5px;
+    padding: 0.85em 2.2em;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .button-success {
-  color: white;
-  background-color: #03bb56;
+    color: white;
+    background-color: #03bb56;
 }
 
 .toast {
-  position: absolute;
-  margin-top: 20px;
-  font-size: 1.3em;
-  background: #d3d3d3;
-  text-align: center;
-  padding: 10px 20px;
-  border-radius: 20px;
+    position: absolute;
+    margin-top: 20px;
+    font-size: 1.3em;
+    background: #d3d3d3;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
 }
 
 .fadeIn {
-  opacity: 1;
-  transition: opacity 0.5s 0.5s;
+    opacity: 1;
+    transition: opacity 0.5s 0.5s;
 }
 
 .fadeOut {
-  opacity: 0;
-  transition: opacity 0.5s 0.5s;
+    opacity: 0;
+    transition: opacity 0.5s 0.5s;
 }
 
 .dark-theme {
-  background-color: rgb(36, 36, 36);
-  color: rgb(235, 235, 235);
-  transition: 0.5s ease-in-out;
+    background-color: rgb(36, 36, 36);
+    color: rgb(235, 235, 235);
+    transition: 0.5s ease-in-out;
 }
 
 .purple-theme {
-  background-color: #f0d9ff;
-  color: rgb(68, 52, 70);
-  transition: 0.5s ease-in-out;
+    background-color: #f0d9ff;
+    color: rgb(68, 52, 70);
+    transition: 0.5s ease-in-out;
 }
 
 .pink-theme {
-  background-color: #fde5f1;
-  color: rgb(68, 52, 70);
-  transition: 0.5s ease-in-out;
+    background-color: #fde5f1;
+    color: rgb(68, 52, 70);
+    transition: 0.5s ease-in-out;
 }
 
 .skin-theme {
-  background-color: #ffe9e9;
-  color: rgb(68, 52, 70);
-  transition: 0.5s ease-in-out;
+    background-color: #ffe9e9;
+    color: rgb(68, 52, 70);
+    transition: 0.5s ease-in-out;
+}
+
+.neon-theme {
+    background-color: black;
+    color: rgb(57, 255, 20);
 }
 
 .skin-theme .title {
-  color: rgb(153, 70, 70);
+    color: rgb(153, 70, 70);
 }
 
 .purple-theme .title {
-  color: rgb(120, 70, 153);
+    color: rgb(120, 70, 153);
 }
 
 .pink-theme .title {
-  color: rgb(167, 61, 135);
+    color: rgb(167, 61, 135);
 }
 
 .bright-theme {
-  background-color: #fff;
-  transition: 0.5s ease-in-out;
-  color: #000;
+    background-color: #fff;
+    transition: 0.5s ease-in-out;
+    color: #000;
 }
+
 .dark-theme-toast {
-  background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
+}
+
+.neon-theme-toast {
+    background-color: rgb(76, 99, 67);
 }
 
 .link {
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  color: white;
-  font-weight: 700;
-  margin-left: -58px;
-  height: 30px;
-  align-items: center;
-  text-decoration: none;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    font-weight: 700;
+    margin-left: -58px;
+    height: 30px;
+    align-items: center;
+    text-decoration: none;
 }
 
 .mask {
-  position: relative;
-  padding: 0;
-  height: 23px;
-
-  /*  Remove overflow to see how it works　:) */
-  overflow: hidden;
+    position: relative;
+    padding: 0;
+    height: 23px;
+    /*  Remove overflow to see how it works　:) */
+    overflow: hidden;
 }
 
 .link-container {
-  transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .title {
-  display: block;
-
-  /*  Set same font-size and line height  */
-  font-size: 20px;
-  line-height: 20px;
-  color: yellow;
-  transition: transform 0.4s ease;
+    display: block;
+    /*  Set same font-size and line height  */
+    font-size: 20px;
+    line-height: 20px;
+    color: yellow;
+    transition: transform 0.4s ease;
 }
 
 .link-title1 {
-  transform-origin: right center;
+    transform-origin: right center;
 }
 
 .link-title2 {
-  transform-origin: left center;
-  transform: rotate(20deg);
+    transform-origin: left center;
+    transform: rotate(20deg);
+}
+
+.neon-theme .hover {
+    /* color: rgb(57, 255, 20); */
+    background: linear-gradient(90deg, #e0d60c 50%, rgb(57, 255, 20) 0) var(--_p, 100%)/200% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: .4s;
 }
 
 .hover {
-  color: #0000;
-  background: 
-    linear-gradient(90deg,#e0d60c 50%,rgb(222, 14, 14) 0) 
-    var(--_p,100%)/200% no-repeat;
-  -webkit-background-clip: text;
-          background-clip: text;
-  transition: .4s;
-}
-.hover:hover {
-  --_p: 0%;
+    color: #0000;
+    background: linear-gradient(90deg, #e0d60c 50%, rgb(222, 14, 14) 0) var(--_p, 100%)/200% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: .4s;
 }
 
+.hover:hover {
+    --_p: 0%;
+}
 
 
 /* Hover Action*/
 
+
 /* Move up two texts (20px = font-size) */
+
 .link:hover .link-container {
-  transform: translateY(-20px);
+    transform: translateY(-20px);
 }
 
+
 /* Rotate texts a little bit */
+
 .link:hover .link-title1 {
-  transform: rotate(20deg);
+    transform: rotate(20deg);
 }
 
 .link:hover .link-title2 {
-  transform: rotate(0);
+    transform: rotate(0);
 }
 
+
 /* Move arrows to right */
+
 .link:hover .icon:first-child {
-  transform: translate(40px);
+    transform: translate(40px);
 }
 
 .link:hover .icon:nth-child(2) {
-  transform: translate(0px);
+    transform: translate(0px);
 }

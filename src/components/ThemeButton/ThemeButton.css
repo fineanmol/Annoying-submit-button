@@ -1,91 +1,108 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 .theme-button-container {
-  display: flex;
-  gap: 10px;
-  width: 120px;
-  height: 30px;
-  position: fixed;
-  right: 0px;
-  margin: 2rem 2rem;
-  border-radius: 20px;
+    display: flex;
+    gap: 10px;
+    width: 120px;
+    height: 30px;
+    position: fixed;
+    right: 0px;
+    margin: 2rem 2rem;
+    border-radius: 20px;
 }
 
 .theme-btn {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .purple {
-  background-color: rgb(196, 123, 214);
-  border-color: rgb(1, 0, 0);
-  transition: 0.5s ease-in-out;
+    background-color: rgb(196, 123, 214);
+    border-color: rgb(1, 0, 0);
+    transition: 0.5s ease-in-out;
 }
 
 .pink {
-  background-color: rgb(255, 138, 210);
-  border-color: rgb(1, 0, 0);
-  transition: 0.5s ease-in-out;
+    background-color: rgb(255, 138, 210);
+    border-color: rgb(1, 0, 0);
+    transition: 0.5s ease-in-out;
 }
+
 .skin {
-  background-color: rgb(235, 144, 159);
-  border-color: rgb(1, 0, 0);
-  transition: 0.5s ease-in-out;
+    background-color: rgb(235, 144, 159);
+    border-color: rgb(1, 0, 0);
+    transition: 0.5s ease-in-out;
+}
+
+.neon {
+    background-color: rgb(57, 255, 20);
+    border-color: rgb(57, 255, 20);
+    transition: 0.5s ease-in-out;
 }
 
 .dark-a {
-  box-shadow: 0px 0px 2px 1px rgb(236, 236, 236);
+    box-shadow: 0px 0px 2px 1px rgb(236, 236, 236);
 }
 
 .skin-b {
-  box-shadow: 0px 0px 2px 1px rgb(122, 44, 44);
+    box-shadow: 0px 0px 2px 1px rgb(122, 44, 44);
 }
 
 .pink-c {
-  box-shadow: 0px 0px 2px 1px rgb(90, 28, 85);
+    box-shadow: 0px 0px 2px 1px rgb(90, 28, 85);
 }
 
 .purple-d {
-  box-shadow: 0px 0px 2px 1px rgb(110, 40, 110);
+    box-shadow: 0px 0px 2px 1px rgb(110, 40, 110);
+}
+
+.neon-n {
+    box-shadow: 0px 0px 2px 1px rgb(191, 255, 0);
 }
 
 .theme-container * {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 .theme {
-  transform: translate(-40px, -2px);
+    transform: translate(-40px, -2px);
 }
+
 .bright {
-  background-color: #fff;
-  border-color: rgb(1, 0, 0);
+    background-color: #fff;
+    border-color: rgb(1, 0, 0);
 }
+
 .dark {
-  background-color: rgb(141, 141, 141);
-  transition: 0.5s ease-in-out;
+    background-color: rgb(141, 141, 141);
+    transition: 0.5s ease-in-out;
 }
 
 .button-blob {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
+
 .bright-blob {
-  background-color: antiquewhite;
-  margin-left: 50%;
-  transition: 0.6s;
+    background-color: antiquewhite;
+    margin-left: 50%;
+    transition: 0.6s;
 }
+
 .dark-blob {
-  background-color: black;
-  margin-left: 10%;
-  transition: 0.6s;
+    background-color: black;
+    margin-left: 10%;
+    transition: 0.6s;
 }
+
 
 /*for active themes*/
