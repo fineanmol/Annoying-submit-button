@@ -13,7 +13,7 @@ function App() {
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
 
-  const [themeState, setThemeState] = React.useState("purple");
+  const [themeState, setThemeState] = React.useState(localStorage.getItem("theme") || "purple");
   const [Email, setEmail] = React.useState(null);
   const [Password, setPassword] = React.useState(null);
   const [emojiState, setEmojiState] = React.useState();
@@ -118,11 +118,9 @@ function App() {
           </div>
           <div>
 
-            {form.password.length <= 6 ? (
-              <p className={`${Password ? "warning-message" : "none"}`}>
-
+            {form.password.length <= 6 && <p className={`${Password ? "warning-message" : "none"}`}>
                 Password should be at least 6 characters long
-              </p>):''
+              </p>
             }
           </div>
           <div
