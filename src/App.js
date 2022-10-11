@@ -31,7 +31,7 @@ function App() {
   const annoyingSubmitButton = () => {
     setShowToast(false);
 
-    if (form.password.length <= 6 || !validateEmail(form.email)) {
+    if (form.password.length < 6 || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
@@ -62,10 +62,10 @@ function App() {
             <div className="link-container">
                {/* smiley-icon emojis can check from here https://emoji-css.afeld.me/ */}
             <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
+                form.password.length < 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
               }`} style={ { height: 20 } }></span> </span>
               <span className="link-title2 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
+                form.password.length < 6 || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
               }`} style={ { height: 20 } }></span> </span>
 
             </div>
@@ -105,7 +105,7 @@ function App() {
             </label>
             <input
               className={`input ${
-                form.password.length <= 6 ? "wrong-input" : "correct-input"
+                form.password.length < 6 ? "wrong-input" : "correct-input"
               } ${themeState}-theme ${!Password ? "empty" : ""}`}
               type="password"
               name="password"
@@ -118,7 +118,7 @@ function App() {
           </div>
           <div>
 
-            {form.password.length <= 6 ? (
+            {form.password.length < 6 ? (
               <p className={`${Password ? "warning-message" : "none"}`}>
 
                 Password should be at least 6 characters long
