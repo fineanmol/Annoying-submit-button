@@ -13,7 +13,9 @@ function App() {
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
 
+
   const [themeState, setThemeState] = React.useState(localStorage.getItem("theme") || "purple");
+
   const [Email, setEmail] = React.useState(null);
   const [Password, setPassword] = React.useState(null);
   const [emojiState, setEmojiState] = React.useState();
@@ -60,13 +62,14 @@ function App() {
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-               {/* smiley-icon emojis can check from here https://emoji-css.afeld.me/ */}
+   
             <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
                 form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
               }`} style={ { height: 20 } }></span> </span>
               <span className="link-title2 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
                 form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
               }`} style={ { height: 20 } }></span> </span>
+
 
             </div>
           </span>
