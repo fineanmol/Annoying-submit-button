@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
 
 function App() {
+    const minPasswordLength = 6
+
   const [form, setForm] = React.useState({
     email: "",
     password: "",
@@ -32,7 +34,7 @@ function App() {
   const annoyingSubmitButton = () => {
     setShowToast(false);
 
-    if (form.password.length <= 6 || !validateEmail(form.email)) {
+    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
@@ -53,7 +55,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem("theme",themeState)
   }, [themeState])
-  
+
   return (
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
@@ -61,12 +63,12 @@ function App() {
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
-   
+
             <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
+                form.password.length < minPasswordLength || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
               }`} style={ { height: 20 } }></span> </span>
               <span className="link-title2 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length <= 6 || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
+                form.password.length < minPasswordLength || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
               }`} style={ { height: 20 } }></span> </span>
 
 
@@ -107,7 +109,7 @@ function App() {
             </label>
             <input
               className={`input ${
-                form.password.length <= 6 ? "wrong-input" : "correct-input"
+                form.password.length < minPasswordLength ? "wrong-input" : "correct-input"
               } ${themeState}-theme ${!Password ? "empty" : ""}`}
               type="password"
               name="password"
@@ -120,7 +122,7 @@ function App() {
           </div>
           <div>
 
-            {form.password.length <= 6 && <p className={`${Password ? "warning-message" : "none"}`}>
+            {form.password.length < minPasswordLength && <p className={`${Password ? "warning-message" : "none"}`}>
                 Password should be at least 6 characters long
               </p>
             }
@@ -129,7 +131,7 @@ function App() {
             style={{
               transform: `translateX(${
                 toggleClass &&
-                !(form.password.length >= 6 && validateEmail(form.email))
+                !(form.password.length >= minPasswordLength && validateEmail(form.email))
                   ? "25vh"
                   : "0"
               }`,
@@ -139,7 +141,7 @@ function App() {
             <button
               tabIndex={-1}
               className={`submit-button ${
-                form.password.length >= 6 && validateEmail(form.email)
+                form.password.length >= minPasswordLength && validateEmail(form.email)
                   ? "button-success"
                   : ""
               }`}
