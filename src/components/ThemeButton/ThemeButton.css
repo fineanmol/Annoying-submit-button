@@ -4,7 +4,7 @@
   gap: 10px;
   width: 120px;
   height: 30px;
-  position: fixed;
+  position: absolute;
   right: 0px;
   margin: 2rem 2rem;
   border-radius: 20px;
@@ -21,7 +21,7 @@
 }
 
 .purple {
-  background-color: rgb(196, 123, 214);
+  background: rebeccapurple;
   border-color: rgb(1, 0, 0);
   transition: 0.5s ease-in-out;
 }

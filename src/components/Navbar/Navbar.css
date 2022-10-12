@@ -1,0 +1,71 @@
+
+main {
+    margin: 16px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    color: white;
+    font-family: Helvetica;
+    font-weight: 300;
+   
+}
+.btn{
+  margin: 8px;
+  background-color: none;
+  /* text-decoration: none; */
+    color: #fff;
+    letter-spacing: 0.5px;
+    padding: 4px 4px ;
+    border: white;
+    font-size: 1.5rem;  
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+  
+}
+.btn a {
+  text-decoration: none;
+  color:#fff;
+  border: white;
+  border-width: 4px;
+}
+
+.navbar__title {
+    margin-right: auto;
+    font-size: 24px;
+    padding: 12px 16px;
+}
+.dark-navbar {
+    background-color: rgb(0, 0, 0);
+    color: rgb(204, 198, 198);
+    transition: 0.5s ease-in-out;
+  }
+  
+  
+  .purple-navbar {
+    background: rebeccapurple;
+    color: rgb(204, 198, 198);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .pink-navbar {
+    background-color: rgb(182, 77, 112);
+    color: rgb(204, 198, 198);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .skin-navbar {
+    background-color: rgb(185, 81, 90);
+    color: rgb(204, 198, 198);
+    transition: 0.5s ease-in-out;
+  }
+  
+  
+  .bright-navbar {
+    color: rgb(45, 43, 43);
+    background: rgb(145, 143, 143);
+    transition: 0.5s ease-in-out;
+  }

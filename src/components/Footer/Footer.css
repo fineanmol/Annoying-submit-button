@@ -251,13 +251,7 @@ footer {
 
 
 .purple-footer {
-  background-color: rgb(97, 80, 117);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
-}
-
-.dark-footer {
-  background-color: rgb(0, 0, 0);
+  background: rebeccapurple;
   color: rgb(204, 198, 198);
   transition: 0.5s ease-in-out;
 }

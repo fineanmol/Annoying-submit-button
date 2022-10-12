@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [form, setForm] = React.useState({
@@ -55,6 +56,7 @@ function App() {
   
   return (
     <>
+    <Navbar theme={themeState}/>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
         <a href="#" className="link">
@@ -130,7 +132,7 @@ function App() {
               transform: `translateX(${
                 toggleClass &&
                 !(form.password.length >= 6 && validateEmail(form.email))
-                  ? "25vh"
+                  ? "235px"
                   : "0"
               }`,
               transition: "transform 190ms ease-in-out",
