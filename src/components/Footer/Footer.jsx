@@ -30,7 +30,6 @@ const Footer = ({theme}) => {
                 <i className="fa fa-twitter"></i>
               </a>
             </li>
-            <li>
              <li>
               <a href="https://github.com/in/fineanmol">
                 <i className="fa fa-github"></i>
