@@ -59,8 +59,9 @@ function App() {
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-        {/* eslint-disable-next-line */}
-        <a href="#" className="link">
+
+        <div className="link">
+
           <span className="mask">
             <div className="link-container">
    
@@ -74,7 +75,7 @@ function App() {
 
             </div>
           </span>
-        </a>
+        </div>
 
         <form
           autoComplete="false"
@@ -82,19 +83,20 @@ function App() {
           method="POST"
         >
           <div className="input-block">
-            <label className={`label ${themeState}-theme`}>
+            <label for="email" className={`label ${themeState}-theme`}>
               Email <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${themeState}-theme ${!Email ? "empty" : ""} ${
                 !validateEmail(form.email) ? "wrong-input" : "correct-input"
               }`}
+              id="email"
               type="email"
               name="email"
               value={form.email}
               onChange={(e) => handleEmail(e)}
               placeholder="coffeewithanmol@gmail.com"
-              tabIndex={-1}
+              tabIndex={1}
               required
             />
           </div>
@@ -104,19 +106,20 @@ function App() {
 
           </div>
           <div className="input-block">
-            <label className={`label ${themeState}-theme`}>
+            <label for="password" className={`label ${themeState}-theme`}>
               Password <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${
                 form.password.length <= 6 ? "wrong-input" : "correct-input"
               } ${themeState}-theme ${!Password ? "empty" : ""}`}
+              id="password"
               type="password"
               name="password"
               value={form.password}
               onChange={(e) => handlePassword(e)}
               minLength="6"
-              tabIndex={-1}
+              tabIndex={2}
               required
             />
           </div>
@@ -139,7 +142,7 @@ function App() {
             }}
           >
             <button
-              tabIndex={-1}
+              tabIndex={3}
               className={`submit-button ${
                 form.password.length >= 6 && validateEmail(form.email)
                   ? "button-success"
