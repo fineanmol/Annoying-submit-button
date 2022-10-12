@@ -58,7 +58,7 @@ function App() {
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-        <a href="#" className="link">
+        <div className="link">
           <span className="mask">
             <div className="link-container">
    
@@ -72,7 +72,7 @@ function App() {
 
             </div>
           </span>
-        </a>
+        </div>
 
         <form
           autoComplete="false"
