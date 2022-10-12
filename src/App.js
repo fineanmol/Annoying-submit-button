@@ -53,15 +53,15 @@ function App() {
   useEffect(() => {
     localStorage.setItem("theme",themeState)
   }, [themeState])
-  
+
   return (
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-        <a href="#" className="link">
+        <a href="/#" className="link">
           <span className="mask">
             <div className="link-container">
-   
+
             <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
                 form.password.length < 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
               }`} style={ { height: 20 } }></span> </span>
