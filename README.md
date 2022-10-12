@@ -56,6 +56,37 @@ Give a ⭐️ if you like this project and want to support it!
 
 ---
 
+## 🛠️ Installation Steps
+
+Star and Fork the Repo 🌟 and this will keep us motivated.
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/fineanmol/Annoying-submit-button
+```
+
+2. Change the working directory
+
+```bash
+cd Annoying-submit-button
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Run the app
+
+```bash
+npm start
+```
+
+
+---
+
 ## 🤝 Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
