@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
@@ -58,7 +59,9 @@ function App() {
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
+
         <div className="link">
+
           <span className="mask">
             <div className="link-container">
    
