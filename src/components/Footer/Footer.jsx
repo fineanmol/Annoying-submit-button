@@ -15,6 +15,11 @@ const Footer = ({theme}) => {
                 <i className="fa fa-facebook"></i>
               </a>
             </li>
+             <li>
+              <a href="https://www.linkedin.com/in/fineanmol/">
+                <i className="fa fa-linkedin-square"></i>
+              </a>
+            </li>
             <li>
               <a href="https://www.instagram.com/fineanmol">
                 <i className="fa fa-instagram"></i>
@@ -25,20 +30,17 @@ const Footer = ({theme}) => {
                 <i className="fa fa-twitter"></i>
               </a>
             </li>
-            <li>
-              <a href="https://www.instagram.com/fineanmol">
-                <i className="fa fa-youtube"></i>
+             <li>
+              <a href="https://github.com/in/fineanmol">
+                <i className="fa fa-github"></i>
               </a>
             </li>
-            <li>
-              <a href="https://www.linkedin.com/in/fineanmol/">
-                <i className="fa fa-linkedin-square"></i>
-              </a>
-            </li>
+           
           </ul>
         </div>
         <p id="footer-text">
-          This Project is participating in <b><a href="https://hacktoberfest.com/" id="hf-theme">Hacktoberfest</a></b>. Copyright
+          This Project is participating in <b><a href="https://hacktoberfest.com/" id="hf-theme">Hacktoberfest</a></b> .
+           <br/>Copyright
           &copy; {`${year}`}.
         </p>
       </div>
