@@ -92,7 +92,7 @@ function App() {
               value={form.email}
               onChange={(e) => handleEmail(e)}
               placeholder="coffeewithanmol@gmail.com"
-              tabIndex={-1}
+              tabIndex={1}
               required
             />
           </div>
@@ -114,7 +114,7 @@ function App() {
               value={form.password}
               onChange={(e) => handlePassword(e)}
               minLength="6"
-              tabIndex={-1}
+              tabIndex={2}
               required
             />
           </div>
@@ -137,7 +137,7 @@ function App() {
             }}
           >
             <button
-              tabIndex={-1}
+              tabIndex={3}
               className={`submit-button ${
                 form.password.length >= 6 && validateEmail(form.email)
                   ? "button-success"
