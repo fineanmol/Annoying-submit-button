@@ -59,6 +59,7 @@ function App() {
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
+        {/* eslint-disable-next-line */}
         <a href="#" className="link">
           <span className="mask">
             <div className="link-container">
