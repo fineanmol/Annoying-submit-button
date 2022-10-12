@@ -80,13 +80,14 @@ function App() {
           method="POST"
         >
           <div className="input-block">
-            <label className={`label ${themeState}-theme`}>
+            <label for="email" className={`label ${themeState}-theme`}>
               Email <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${themeState}-theme ${!Email ? "empty" : ""} ${
                 !validateEmail(form.email) ? "wrong-input" : "correct-input"
               }`}
+              id="email"
               type="email"
               name="email"
               value={form.email}
@@ -102,13 +103,14 @@ function App() {
 
           </div>
           <div className="input-block">
-            <label className={`label ${themeState}-theme`}>
+            <label for="password" className={`label ${themeState}-theme`}>
               Password <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${
                 form.password.length <= 6 ? "wrong-input" : "correct-input"
               } ${themeState}-theme ${!Password ? "empty" : ""}`}
+              id="password"
               type="password"
               name="password"
               value={form.password}
