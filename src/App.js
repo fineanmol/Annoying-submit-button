@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
 
 function App() {
+    const minPasswordLength = 6
+
   const [form, setForm] = React.useState({
     email: "",
     password: "",
@@ -32,7 +35,7 @@ function App() {
   const annoyingSubmitButton = () => {
     setShowToast(false);
 
-    if (form.password.length < 6 || !validateEmail(form.email)) {
+    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
@@ -58,21 +61,23 @@ function App() {
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-        <a href="/#" className="link">
+
+        <div className="link">
+
           <span className="mask">
             <div className="link-container">
 
             <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length < 6 || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
+                form.password.length < minPasswordLength || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
               }`} style={ { height: 20 } }></span> </span>
               <span className="link-title2 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length < 6 || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
+                form.password.length < minPasswordLength || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
               }`} style={ { height: 20 } }></span> </span>
 
 
             </div>
           </span>
-        </a>
+        </div>
 
         <form
           autoComplete="false"
@@ -80,19 +85,20 @@ function App() {
           method="POST"
         >
           <div className="input-block">
-            <label className={`label ${themeState}-theme`}>
+            <label for="email" className={`label ${themeState}-theme`}>
               Email <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${themeState}-theme ${!Email ? "empty" : ""} ${
                 !validateEmail(form.email) ? "wrong-input" : "correct-input"
               }`}
+              id="email"
               type="email"
               name="email"
               value={form.email}
               onChange={(e) => handleEmail(e)}
               placeholder="coffeewithanmol@gmail.com"
-              tabIndex={-1}
+              tabIndex={1}
               required
             />
           </div>
@@ -102,25 +108,26 @@ function App() {
 
           </div>
           <div className="input-block">
-            <label className={`label ${themeState}-theme`}>
+            <label for="password" className={`label ${themeState}-theme`}>
               Password <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${
-                form.password.length < 6 ? "wrong-input" : "correct-input"
+                form.password.length < minPasswordLength ? "wrong-input" : "correct-input"
               } ${themeState}-theme ${!Password ? "empty" : ""}`}
+              id="password"
               type="password"
               name="password"
               value={form.password}
               onChange={(e) => handlePassword(e)}
               minLength="6"
-              tabIndex={-1}
+              tabIndex={2}
               required
             />
           </div>
           <div>
 
-            {form.password.length < 6 && <p className={`${Password ? "warning-message" : "none"}`}>
+            {form.password.length < minPasswordLength && <p className={`${Password ? "warning-message" : "none"}`}>
                 Password should be at least 6 characters long
               </p>
             }
@@ -129,7 +136,7 @@ function App() {
             style={{
               transform: `translateX(${
                 toggleClass &&
-                !(form.password.length >= 6 && validateEmail(form.email))
+                !(form.password.length >= minPasswordLength && validateEmail(form.email))
                   ? "25vh"
                   : "0"
               }`,
@@ -137,9 +144,9 @@ function App() {
             }}
           >
             <button
-              tabIndex={-1}
+              tabIndex={3}
               className={`submit-button ${
-                form.password.length >= 6 && validateEmail(form.email)
+                form.password.length >= minPasswordLength && validateEmail(form.email)
                   ? "button-success"
                   : ""
               }`}
