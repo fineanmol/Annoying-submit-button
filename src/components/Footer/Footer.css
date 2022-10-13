@@ -131,8 +131,10 @@ footer {
 .socials li:nth-child(1) a:hover {
   background-color: #4267b2;
 }
-
 .socials li:nth-child(2) a:hover {
+  background-color: #1da1f2;
+}
+.socials li:nth-child(3) a:hover {
   background-image: linear-gradient(
     45deg,
     #feda75,
@@ -143,16 +145,12 @@ footer {
   );
 }
 
-.socials li:nth-child(3) a:hover {
-  background-color: #1da1f2;
-}
-
 .socials li:nth-child(4) a:hover {
-  background-color: #ff0000;
+  background-color: #46C1F6;
 }
 
 .socials li:nth-child(5) a:hover {
-  background-color: #0077b5;
+  background-color: #333;
 }
 
 .socials a:hover i {
