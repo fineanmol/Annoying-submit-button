@@ -2,17 +2,19 @@ import React from "react";
 import "./ThemeButton.css";
 
 const ThemeButton = ({ setThemeState, themeState }) => {
+  const themeNamesArr = ["purple", "pink", "skin", "dark"];
   return (
-    <div className="theme-container" title="Change Theme">
-      <div onClick={() => {
-        setThemeState(() => themeState === "bright" ? "dark" : "bright");
-      }} className={`theme-button-container ${themeState}`}>
-      <p className="theme" style={{color:`${themeState === "bright" ? "black":"white"}`}}>{`${themeState === "bright" ? "Dark":"Bright"} Theme`}</p>
-        <button
-          className={`button-blob ${themeState === "bright" ? "dark-blob" : "bright-blob"
-            }`}
-
-        ></button>
+    <div>
+      <div className="theme-button-container">
+        {themeNamesArr.map((el) => (
+          <div
+            key={el}
+            className={`theme-btn ${el} ${themeState}-d`}
+            onClick={() => setThemeState(el)}
+          >
+            <div className="tick"></div>
+          </div>
+        ))}
       </div>
     </div>
   );

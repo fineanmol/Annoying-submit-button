@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
 
 * {
   box-sizing: border-box;
@@ -6,7 +6,7 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
-  font-family: "Titillium Web";
+  font-family: "Poppins", sans-serif;
 }
 
 html,
@@ -21,12 +21,22 @@ body {
   margin-bottom: 1em;
 }
 
+.form-annoying {
+  margin: 5px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.115);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
 
 .form-section {
   min-height: 77.8vh;
   display: grid;
   place-content: center;
-  transition: .5s color ease-in-out;
+  transition: 0.5s color ease-in-out;
 }
 
 .input-block {
@@ -39,8 +49,9 @@ body {
 .label {
   letter-spacing: 0.25px;
   font-weight: 500;
-  font-size: 1.35rem;
+  font-size: 1.8rem;
   margin-bottom: 0.35em;
+  background-color: transparent !important;
 }
 
 .requiredLabel {
@@ -54,12 +65,21 @@ body {
   outline: none;
   border: 1px solid rgb(130, 130, 130);
   border-radius: 0.25em;
+  background-color: transparent !important;
 }
 
 .warning-message {
   color: #ff0000;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.3rem;
+}
+
+.none {
+  display: none;
+}
+
+.empty {
+  border: 2px solid rgb(74, 136, 206) !important;
 }
 
 .wrong-input {
@@ -96,7 +116,7 @@ body {
   font-weight: 500;
   border-radius: 4px;
 
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .button-success {
@@ -124,28 +144,57 @@ body {
   transition: opacity 0.5s 0.5s;
 }
 
-.dark-theme{
-  background-color: rgb(22, 20, 20);
-  color:rgb(204, 198, 198);
-  transition: .5s ease-in-out;
+.dark-theme {
+  background-color: rgb(36, 36, 36);
+  color: rgb(235, 235, 235);
+  transition: 0.5s ease-in-out;
 }
-.bright-theme{
+
+.purple-theme {
+  background-color: #f0d9ff;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.pink-theme {
+  background-color: #fde5f1;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.skin-theme {
+  background-color: #ffe9e9;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.skin-theme .title {
+  color: rgb(153, 70, 70);
+}
+
+.purple-theme .title {
+  color: rgb(120, 70, 153);
+}
+
+.pink-theme .title {
+  color: rgb(167, 61, 135);
+}
+
+.bright-theme {
   background-color: #fff;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
   color: #000;
 }
-.dark-theme-toast{
+.dark-theme-toast {
   background-color: rgb(0, 0, 0);
 }
 
-
-.link{
+.link {
   display: flex;
   justify-content: center;
   overflow: hidden;
   color: white;
   font-weight: 700;
-  margin-left: -58px;
   height: 30px;
   align-items: center;
   text-decoration: none;
@@ -168,7 +217,7 @@ body {
   display: block;
 
   /*  Set same font-size and line height  */
-  font-size: 22px;
+  font-size: 20px;
   line-height: 20px;
   color: yellow;
   transition: transform 0.4s ease;
@@ -183,7 +232,17 @@ body {
   transform: rotate(20deg);
 }
 
-
+.hover {
+  color: #0000;
+  background: linear-gradient(90deg, #e0d60c 50%, rgb(222, 14, 14) 0)
+    var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
+}
+.hover:hover {
+  --_p: 0%;
+}
 
 /* Hover Action*/
 

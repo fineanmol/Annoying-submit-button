@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
 
 function App() {
+  const minPasswordLength = 6;
+
   const [form, setForm] = React.useState({
     email: "",
     password: "",
@@ -12,16 +14,32 @@ function App() {
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
-  const [themeState, setThemeState] = React.useState("dark");
 
-  const handleForm = (e) => {
+  const [themeState, setThemeState] = React.useState(
+    localStorage.getItem("theme") || "purple"
+  );
+
+  const [Email, setEmail] = React.useState(null);
+  const [Password, setPassword] = React.useState(null);
+  const [emojiState, setEmojiState] = React.useState();
+  console.log(setEmojiState);
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+    setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
+  };
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
   };
 
   const annoyingSubmitButton = () => {
     setShowToast(false);
 
-    if (!validatePassword(form.password) || !validateEmail(form.email)) {
+    if (
+      form.password.length < minPasswordLength ||
+      !validateEmail(form.email)
+    ) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
@@ -33,110 +51,127 @@ function App() {
   const validateEmail = (email) => {
     return String(email)
       .toLowerCase()
+      .trim() //Trim to ignore spaces after user email input
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
   };
 
-  const validatePassword = (password) => {
-    return String(password).match(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
-    );
-  };
+  // To remember user's selected theme.
+  useEffect(() => {
+    localStorage.setItem("theme", themeState);
+  }, [themeState]);
 
   return (
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-        <a href="#" className="link">
+        <div className="link">
           <span className="mask">
             <div className="link-container">
               <span className="link-title1 title">
-                Annoying Submit Button 😡🙃
+                <span className="hover">Annoying Submit Button</span>{" "}
+                <span
+                  className={`${emojiState} ${
+                    form.password.length < minPasswordLength ||
+                    !validateEmail(form.email)
+                      ? "em em-rage"
+                      : "em em-smile"
+                  }`}
+                  style={{ height: 20 }}
+                ></span>{" "}
               </span>
               <span className="link-title2 title">
-                Annoying Submit Button 😡🙃
+                <span className="hover">Annoying Submit Button</span>{" "}
+                <span
+                  className={`${emojiState} ${
+                    form.password.length < minPasswordLength ||
+                    !validateEmail(form.email)
+                      ? "em em-rage"
+                      : "em em-face_with_hand_over_mouth"
+                  }`}
+                  style={{ height: 20 }}
+                ></span>{" "}
               </span>
             </div>
           </span>
-        </a>
+        </div>
 
         <form
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
+          className="form-annoying"
         >
           <div className="input-block">
-            <label className={`label ${themeState}-theme`}>
+            <label for="email" className={`label ${themeState}-theme`}>
               Email <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${themeState}-theme ${
+              className={`input ${themeState}-theme ${!Email ? "empty" : ""} ${
                 !validateEmail(form.email) ? "wrong-input" : "correct-input"
               }`}
+              id="email"
               type="email"
               name="email"
               value={form.email}
-              onChange={handleForm}
+              onChange={(e) => handleEmail(e)}
               placeholder="coffeewithanmol@gmail.com"
-              tabIndex={-1}
+              tabIndex={1}
               required
             />
           </div>
           <div>
-            {!validateEmail(form.email) ? (
+            {!validateEmail(form.email) && (
               <p className="warning-message">Enter a valid email ID</p>
-            ) : (
-              ""
             )}
           </div>
           <div className="input-block">
-            <label className={`label ${themeState}-theme`}>
+            <label for="password" className={`label ${themeState}-theme`}>
               Password <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${
-                !validatePassword(form.password)
+                form.password.length < minPasswordLength
                   ? "wrong-input"
                   : "correct-input"
-              } ${themeState}-theme`}
+              } ${themeState}-theme ${!Password ? "empty" : ""}`}
+              id="password"
               type="password"
               name="password"
               value={form.password}
-              onChange={handleForm}
+              onChange={(e) => handlePassword(e)}
               minLength="6"
-              tabIndex={-1}
+              tabIndex={2}
               required
             />
           </div>
           <div>
-            {!validatePassword(form.password) ? (
-              <p className="warning-message">
-                Password should be at least 8 characters long and should
-                contain: <br />
-                at least one uppercase letter, one lowercase letter and one
-                number.
+            {form.password.length < minPasswordLength && (
+              <p className={`${Password ? "warning-message" : "none"}`}>
+                Password should be at least 6 characters long
               </p>
-            ) : (
-              ""
             )}
           </div>
           <div
             style={{
               transform: `translateX(${
                 toggleClass &&
-                !(form.password.length > 6 && validateEmail(form.email))
-                  ? "25vh"
+                !(
+                  form.password.length >= minPasswordLength &&
+                  validateEmail(form.email)
+                )
+                  ? "65%"
                   : "0"
               }`,
               transition: "transform 190ms ease-in-out",
             }}
-            // className={`submit-button-wrapper ${toggleClass ? 'float-end' : 'float-start'}`}
           >
             <button
-              tabIndex={-1}
+              tabIndex={3}
               className={`submit-button ${
-                form.password.length > 6 && validateEmail(form.email)
+                form.password.length >= minPasswordLength &&
+                validateEmail(form.email)
                   ? "button-success"
                   : ""
               }`}
@@ -150,7 +185,7 @@ function App() {
               showToast ? "fadeIn" : "fadeOut"
             } ${themeState}-theme-toast`}
           >
-            You can not submit until you fix all the validation errors...
+            You cannot submit until you fix all the validation errors...
           </div>
         </form>
       </section>
