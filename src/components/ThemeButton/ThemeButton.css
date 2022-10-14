@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 .theme-button-container {
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  width: 120px;
-  height: 30px;
   position: fixed;
   right: 0px;
   margin: 2rem 2rem;
@@ -88,4 +87,51 @@
   transition: 0.6s;
 }
 
+
+.drop-down-container{
+  display: flex;
+  gap: 10px;
+  position: fixed;
+  right: 0px;
+  margin: 2rem 2rem;
+  border-radius: 20px;
+}
+
+.drop-down-btn{
+  display: none;
+}
+
 /*for active themes*/
+
+
+@media screen and (max-width:786px){
+  .drop-down-container{
+   margin:4rem 7px 5px 5px;
+   gap:6px;
+  }
+  .theme-button-container {
+    margin: 5px;
+  }
+
+  .drop-down-btn{
+  height:29px;
+  width: 29px;
+  font-size:20px;
+  border-radius: 50%;
+  outline: none;
+  background-color: rgb(129, 129, 129);
+  color:white;
+  border:none;
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
+  }
+  .theme-btn {
+    height: 15px;
+    width: 15px;
+  }
+  .theme-btn{
+    margin: 6px;
+  }
+}
+
