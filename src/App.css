@@ -6,7 +6,7 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html,
@@ -19,6 +19,17 @@ body {
   text-align: center;
   font-size: 2.75rem;
   margin-bottom: 1em;
+}
+
+.form-annoying {
+  margin: 5px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.115);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .form-section {
@@ -38,8 +49,9 @@ body {
 .label {
   letter-spacing: 0.25px;
   font-weight: 500;
-  font-size: 1.35rem;
+  font-size: 1.8rem;
   margin-bottom: 0.35em;
+  background-color: transparent !important;
 }
 
 .requiredLabel {
@@ -53,12 +65,13 @@ body {
   outline: none;
   border: 1px solid rgb(130, 130, 130);
   border-radius: 0.25em;
+  background-color: transparent !important;
 }
 
 .warning-message {
   color: #ff0000;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 .none {
@@ -221,18 +234,15 @@ body {
 
 .hover {
   color: #0000;
-  background: 
-    linear-gradient(90deg,#e0d60c 50%,rgb(222, 14, 14) 0) 
-    var(--_p,100%)/200% no-repeat;
+  background: linear-gradient(90deg, #e0d60c 50%, rgb(222, 14, 14) 0)
+    var(--_p, 100%) / 200% no-repeat;
   -webkit-background-clip: text;
-          background-clip: text;
-  transition: .4s;
+  background-clip: text;
+  transition: 0.4s;
 }
 .hover:hover {
   --_p: 0%;
 }
-
-
 
 /* Hover Action*/
 

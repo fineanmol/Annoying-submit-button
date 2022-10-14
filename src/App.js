@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
 
 function App() {
-    const minPasswordLength = 6
+  const minPasswordLength = 6;
 
   const [form, setForm] = React.useState({
     email: "",
@@ -15,8 +15,9 @@ function App() {
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
 
-
-  const [themeState, setThemeState] = React.useState(localStorage.getItem("theme") || "purple");
+  const [themeState, setThemeState] = React.useState(
+    localStorage.getItem("theme") || "purple"
+  );
 
   const [Email, setEmail] = React.useState(null);
   const [Password, setPassword] = React.useState(null);
@@ -35,7 +36,10 @@ function App() {
   const annoyingSubmitButton = () => {
     setShowToast(false);
 
-    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
+    if (
+      form.password.length < minPasswordLength ||
+      !validateEmail(form.email)
+    ) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
@@ -46,7 +50,8 @@ function App() {
 
   const validateEmail = (email) => {
     return String(email)
-      .toLowerCase().trim() //Trim to ignore spaces after user email input
+      .toLowerCase()
+      .trim() //Trim to ignore spaces after user email input
       .match(
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
@@ -54,27 +59,40 @@ function App() {
 
   // To remember user's selected theme.
   useEffect(() => {
-    localStorage.setItem("theme",themeState)
-  }, [themeState])
+    localStorage.setItem("theme", themeState);
+  }, [themeState]);
 
   return (
     <>
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-
         <div className="link">
-
           <span className="mask">
             <div className="link-container">
-
-            <span className="link-title1 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length < minPasswordLength || !validateEmail(form.email) ? "em em-rage" : "em em-smile"
-              }`} style={ { height: 20 } }></span> </span>
-              <span className="link-title2 title"><span className="hover">Annoying Submit Button</span> <span className={`${emojiState} ${
-                form.password.length < minPasswordLength || !validateEmail(form.email) ? "em em-rage" : "em em-face_with_hand_over_mouth"
-              }`} style={ { height: 20 } }></span> </span>
-
-
+              <span className="link-title1 title">
+                <span className="hover">Annoying Submit Button</span>{" "}
+                <span
+                  className={`${emojiState} ${
+                    form.password.length < minPasswordLength ||
+                    !validateEmail(form.email)
+                      ? "em em-rage"
+                      : "em em-smile"
+                  }`}
+                  style={{ height: 20 }}
+                ></span>{" "}
+              </span>
+              <span className="link-title2 title">
+                <span className="hover">Annoying Submit Button</span>{" "}
+                <span
+                  className={`${emojiState} ${
+                    form.password.length < minPasswordLength ||
+                    !validateEmail(form.email)
+                      ? "em em-rage"
+                      : "em em-face_with_hand_over_mouth"
+                  }`}
+                  style={{ height: 20 }}
+                ></span>{" "}
+              </span>
             </div>
           </span>
         </div>
@@ -83,6 +101,7 @@ function App() {
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
+          className="form-annoying"
         >
           <div className="input-block">
             <label for="email" className={`label ${themeState}-theme`}>
@@ -103,9 +122,9 @@ function App() {
             />
           </div>
           <div>
-
-            {!validateEmail(form.email) && <p className="warning-message">Enter a valid email ID</p> }
-
+            {!validateEmail(form.email) && (
+              <p className="warning-message">Enter a valid email ID</p>
+            )}
           </div>
           <div className="input-block">
             <label for="password" className={`label ${themeState}-theme`}>
@@ -113,7 +132,9 @@ function App() {
             </label>
             <input
               className={`input ${
-                form.password.length < minPasswordLength ? "wrong-input" : "correct-input"
+                form.password.length < minPasswordLength
+                  ? "wrong-input"
+                  : "correct-input"
               } ${themeState}-theme ${!Password ? "empty" : ""}`}
               id="password"
               type="password"
@@ -126,18 +147,21 @@ function App() {
             />
           </div>
           <div>
-
-            {form.password.length < minPasswordLength && <p className={`${Password ? "warning-message" : "none"}`}>
+            {form.password.length < minPasswordLength && (
+              <p className={`${Password ? "warning-message" : "none"}`}>
                 Password should be at least 6 characters long
               </p>
-            }
+            )}
           </div>
           <div
             style={{
               transform: `translateX(${
                 toggleClass &&
-                !(form.password.length >= minPasswordLength && validateEmail(form.email))
-                  ? "25vh"
+                !(
+                  form.password.length >= minPasswordLength &&
+                  validateEmail(form.email)
+                )
+                  ? "65%"
                   : "0"
               }`,
               transition: "transform 190ms ease-in-out",
@@ -146,7 +170,8 @@ function App() {
             <button
               tabIndex={3}
               className={`submit-button ${
-                form.password.length >= minPasswordLength && validateEmail(form.email)
+                form.password.length >= minPasswordLength &&
+                validateEmail(form.email)
                   ? "button-success"
                   : ""
               }`}
