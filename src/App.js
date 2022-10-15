@@ -27,6 +27,7 @@ function App() {
     });
   };
 
+  // eslint-disable-next-line no-unused-vars
   const [emojiState, setEmojiState] = React.useState();
   const annoyingSubmitButton = () => {
     setShowToast(false);
