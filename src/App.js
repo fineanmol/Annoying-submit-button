@@ -21,7 +21,6 @@ function App() {
   const [Email, setEmail] = React.useState(null);
   const [Password, setPassword] = React.useState(null);
   const [emojiState, setEmojiState] = React.useState();
-  console.log(setEmojiState);
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setForm((formProps) => ({ ...formProps, [e.target.name]: e.target.value }));
