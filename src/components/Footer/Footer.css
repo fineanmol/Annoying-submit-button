@@ -278,3 +278,9 @@ footer {
   background: rgb(145, 143, 143);
   transition: 0.5s ease-in-out;
 }
+
+.green-footer{
+  background-color: rgb(73, 224, 59);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
