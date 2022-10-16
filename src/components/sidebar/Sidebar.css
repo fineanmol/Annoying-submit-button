@@ -8,6 +8,7 @@
   right: -250px;
   transition: 0.5s ease;
   width: 250px;
+  z-index: 3;
 }
 
 .sidebar-open {
