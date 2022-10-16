@@ -24,7 +24,6 @@ footer {
 
 .glitch::before,
 .glitch::after {
-
   content: "Hacktoberfest 2022";
 
   display: block;
@@ -146,7 +145,7 @@ footer {
 }
 
 .socials li:nth-child(4) a:hover {
-  background-color: #46C1F6;
+  background-color: #46c1f6;
 }
 
 .socials li:nth-child(5) a:hover {
@@ -158,7 +157,6 @@ footer {
 }
 
 #hf-theme {
-
   font-size: 2rem;
   background-color: red;
   background-image: linear-gradient(45deg, #f2dbaf, #8fc0bd, #2b1d3e);
@@ -247,7 +245,6 @@ footer {
   transition: 0.5s ease-in-out;
 }
 
-
 .purple-footer {
   background-color: rgb(97, 80, 117);
   color: rgb(204, 198, 198);
@@ -272,6 +269,29 @@ footer {
   transition: 0.5s ease-in-out;
 }
 
+.lemon-footer {
+  background-color: rgb(113, 126, 38);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
+.orange-footer {
+  background-color: rgb(201, 56, 30);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
+.teal-footer {
+  background-color: rgb(43, 74, 110);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
+.coral-footer {
+  background-color: rgb(139, 33, 51);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
 
 .bright-footer {
   color: rgb(45, 43, 43);

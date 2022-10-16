@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+.sidebar {
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  right: -250px;
+  transition: 0.5s ease;
+  width: 250px;
+  z-index: 3;
+}
+
+.sidebar-open {
+  right: 0px;
+}
+
+.heading {
+  font-size: 20px;
+  font-family: jost;
+  font-weight: 400;
+  margin-top: 100px;
+}
+
+.themes-menu {
+  margin: auto;
+  width: 130px;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: lightcoral;
+  cursor: pointer;
+}
+
+.theme-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  right: 0px;
+  margin: 2rem 2rem;
+  border-radius: 20px;
+}
+
+.theme-btn {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.purple {
+  background-color: rgb(196, 123, 214);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.pink {
+  background-color: rgb(255, 138, 210);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+.skin {
+  background-color: rgb(235, 144, 159);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.lemon {
+  background-color: rgb(197, 241, 114);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.orange {
+  background-color: rgb(248, 136, 71);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.teal {
+  background-color: rgb(83, 197, 182);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.coral {
+  background-color: rgb(255, 78, 137);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.theme-container * {
+  cursor: pointer;
+}
+
+.theme {
+  transform: translate(-40px, -2px);
+}
+.bright {
+  background-color: #fff;
+  border-color: rgb(1, 0, 0);
+}
+.dark {
+  background-color: rgb(141, 141, 141);
+  transition: 0.5s ease-in-out;
+}
+
+/*for active themes*/
+
+@media screen and (max-width: 786px) {
+  .drop-down-container {
+    margin: 4rem 7px 5px 5px;
+    gap: 6px;
+  }
+  .theme-button-container {
+    margin: 5px;
+  }
+
+  .drop-down-btn {
+    height: 29px;
+    width: 29px;
+    font-size: 20px;
+    border-radius: 50%;
+    outline: none;
+    background-color: rgb(129, 129, 129);
+    color: white;
+    border: none;
+    margin: 0px;
+    align-items: center;
+    justify-content: center;
+  }
+  .theme-btn {
+    height: 15px;
+    width: 15px;
+  }
+  .theme-btn {
+    margin: 6px;
+  }
+}
+
+.activeTheme {
+  transition: 0.2s ease;
+  height: 30px;
+  width: 30px;
+  top: 35px;
+  border-radius: 50%;
+  border: 2px solid rgb(166, 166, 255);
+}
+
+.uns {
+  width: 150px;
+  margin: 50px auto;
+  color: gray;
+  font-family: jost;
+  font-size: 15px;
+}
