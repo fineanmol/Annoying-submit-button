@@ -1,33 +1,20 @@
-import React, { useEffect, useState } from "react";
-import useMediaQuery from "../../custom-hooks/useMediaQuery";
-import "./ThemeButton.css";
+import React, { useState } from "react";
+import Sidebar from "../sidebar/Sidebar";
+import ToggleButton from "../sidebar/ToggleButton";
 
 const ThemeButton = ({ setThemeState, themeState }) => {
-  const themeNamesArr = ["purple", "pink", "skin", "dark"];
-  const [display, setDisplay] = useState(true);
-  const matches = useMediaQuery("(max-width:786px)");
-  useEffect(() => {
-    setDisplay(!matches);
-  }, [matches])
 
+  const [Toggle, setToggle] = useState({
+    sidebar: "-250px",
+    toggle: false
+  })
 
   return (
     <div>
-      <div className="theme-button-container">
-        <button className="drop-down-btn" onClick={() => setDisplay(!display)} style={{ display: matches ? "flex" : "none" }}>=</button>
-        <div className="drop-down-container" style={{ display: display ? "flex" : "none", flexDirection: matches ? "column" : "row" }}>
-
-          {themeNamesArr.map((el) => (
-            <div
-              key={el}
-              className={`theme-btn ${el} ${themeState}-d`}
-              onClick={() => setThemeState(el)}
-            >
-              <div className="tick"></div>
-            </div>
-          ))}
-        </div>
-      </div>
+      {
+        Toggle?<><Sidebar themeState={themeState} setThemeState={setThemeState} Toggle={Toggle}/></>:<></>
+      }
+      <ToggleButton themeState={themeState} Toggle = {Toggle} setToggle={setToggle}/>
     </div>
   );
 };

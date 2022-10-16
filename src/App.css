@@ -6,7 +6,7 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html,
@@ -132,8 +132,8 @@ body {
 }
 
 .dark-theme {
-  background-color: rgb(36, 36, 36);
-  color: rgb(235, 235, 235);
+  background-color: rgb(37, 37, 37);
+  color: rgb(255, 255, 255);
   transition: 0.5s ease-in-out;
 }
 
@@ -151,6 +151,30 @@ body {
 
 .skin-theme {
   background-color: #ffe9e9;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.lemon-theme {
+  background-color: #f1ffe6;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.orange-theme {
+  background-color: #fff7e8;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.teal-theme {
+  background-color: #e9eefc;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.coral-theme {
+  background-color: #ffe6ea;
   color: rgb(68, 52, 70);
   transition: 0.5s ease-in-out;
 }
@@ -221,18 +245,15 @@ body {
 
 .hover {
   color: #0000;
-  background: 
-    linear-gradient(90deg,#e0d60c 50%,rgb(222, 14, 14) 0) 
-    var(--_p,100%)/200% no-repeat;
+  background: linear-gradient(90deg, #e0d60c 50%, rgb(222, 14, 14) 0)
+    var(--_p, 100%) / 200% no-repeat;
   -webkit-background-clip: text;
-          background-clip: text;
-  transition: .4s;
+  background-clip: text;
+  transition: 0.4s;
 }
 .hover:hover {
   --_p: 0%;
 }
-
-
 
 /* Hover Action*/
 
