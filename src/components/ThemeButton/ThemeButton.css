@@ -17,6 +17,12 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.theme-btn:hover
+{
+  transform: scale(1.5);
 }
 
 .purple {
