@@ -153,11 +153,12 @@ function App() {
             style={{
               transform: `translateX(${
                 toggleClass &&
+
                 !(
                   form.password.length >= minPasswordLength &&
                   validateEmail(form.email)
                 )
-                  ? "35vh"
+                  ? "33vh"
                   : "0"
               }`,
               transition: "transform 190ms ease-in-out",
