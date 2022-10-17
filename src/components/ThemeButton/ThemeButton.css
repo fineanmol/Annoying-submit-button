@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 .theme-button-container {
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  width: 120px;
-  height: 30px;
   position: fixed;
   right: 0px;
   margin: 2rem 2rem;
@@ -18,6 +17,12 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 0.5s all ease-in-out;
+}
+
+.theme-btn:hover
+{
+  transform: scale(1.5);
 }
 
 .purple {
@@ -36,6 +41,16 @@
   border-color: rgb(1, 0, 0);
   transition: 0.5s ease-in-out;
 }
+.blue {
+  background-color: #1370a3;
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+.yellow {
+  background-color: #d29117;
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
 
 .dark-a {
   box-shadow: 0px 0px 2px 1px rgb(236, 236, 236);
@@ -48,7 +63,12 @@
 .pink-c {
   box-shadow: 0px 0px 2px 1px rgb(90, 28, 85);
 }
-
+.yellow-g{
+  box-shadow: 0px 0px 2px 1px rgb(103, 61, 30);
+}
+.blue-f{
+  box-shadow: 0px 0px 2px 1px rgb(132, 221, 122);
+}
 .purple-d {
   box-shadow: 0px 0px 2px 1px rgb(110, 40, 110);
 }
@@ -88,4 +108,51 @@
   transition: 0.6s;
 }
 
+
+.drop-down-container{
+  display: flex;
+  gap: 10px;
+  position: fixed;
+  right: 0px;
+  margin: 2rem 2rem;
+  border-radius: 20px;
+}
+
+.drop-down-btn{
+  display: none;
+}
+
 /*for active themes*/
+
+
+@media screen and (max-width:786px){
+  .drop-down-container{
+   margin:4rem 7px 5px 5px;
+   gap:6px;
+  }
+  .theme-button-container {
+    margin: 5px;
+  }
+
+  .drop-down-btn{
+  height:29px;
+  width: 29px;
+  font-size:20px;
+  border-radius: 50%;
+  outline: none;
+  background-color: rgb(129, 129, 129);
+  color:white;
+  border:none;
+  margin: 0px;
+  align-items: center;
+  justify-content: center;
+  }
+  .theme-btn {
+    height: 15px;
+    width: 15px;
+  }
+  .theme-btn{
+    margin: 6px;
+  }
+}
+
