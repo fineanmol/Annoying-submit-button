@@ -21,6 +21,7 @@ const ThemeButton = ({ setThemeState, themeState }) => {
             <div
               key={el}
               className={`theme-btn ${el} ${themeState}-d`}
+              title={`${el}`}
               onClick={() => setThemeState(el)}
             >
               <div className="tick"></div>
