@@ -1,62 +1,60 @@
+/* eslint-disable jsx-a11y/tabindex-no-positive */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from "react";
-import "./App.css";
-import Footer from "./components/Footer";
-import ThemeButton from "./components/ThemeButton";
+import React, { useEffect, useState } from 'react'
+import './App.css'
+import Footer from './components/Footer'
+import ThemeButton from './components/ThemeButton'
 
 function App() {
-  const minPasswordLength = 6;
+  const minPasswordLength = 6
 
   const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: '',
+  })
 
-  const [toggleClass, setToggleClass] = React.useState(false);
-  const [showToast, setShowToast] = React.useState(false);
+  const [toggleClass, setToggleClass] = useState(false)
+  const [showToast, setShowToast] = useState(false)
 
   const [themeState, setThemeState] = React.useState(
-    localStorage.getItem("theme") || "purple"
-  );
+    localStorage.getItem('theme') || 'purple',
+  )
 
   // updated into one handle
   const handleForm = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
+
+  const validateEmail = (email) => String(email)
+    .toLowerCase()
+    .trim() // Trim to ignore spaces after user email input
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    )
 
   // eslint-disable-next-line no-unused-vars
-  const [emojiState, setEmojiState] = React.useState();
+  const [emojiState, setEmojiState] = React.useState()
   const annoyingSubmitButton = () => {
-    setShowToast(false);
+    setShowToast(false)
 
     if (
-      form.password.length < minPasswordLength ||
-      !validateEmail(form.email)
+      form.password.length < minPasswordLength
+      || !validateEmail(form.email)
     ) {
-      setToggleClass((prevState) => !prevState);
-      setShowToast(true);
+      setToggleClass((prevState) => !prevState)
+      setShowToast(true)
       setTimeout(() => {
-        setShowToast(false);
-      }, 1000);
+        setShowToast(false)
+      }, 1000)
     }
-  };
-
-  const validateEmail = (email) => {
-    return String(email)
-      .toLowerCase()
-      .trim() //Trim to ignore spaces after user email input
-      .match(
-        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      );
-  };
-
+  }
   // To remember user's selected theme.
   useEffect(() => {
-    localStorage.setItem("theme", themeState);
-  }, [themeState]);
+    localStorage.setItem('theme', themeState)
+  }, [themeState])
 
   return (
     <>
@@ -66,28 +64,32 @@ function App() {
           <span className="mask">
             <div className="link-container">
               <span className="link-title1 title">
-                <span className="hover">Annoying Submit Button</span>{" "}
+                <span className="hover">Annoying Submit Button</span>
+                {' '}
                 <span
                   className={`${emojiState} ${
-                    form.password.length < minPasswordLength ||
-                    !validateEmail(form.email)
-                      ? "em em-rage"
-                      : "em em-smile"
+                    form.password.length < minPasswordLength
+                    || !validateEmail(form.email)
+                      ? 'em em-rage'
+                      : 'em em-smile'
                   }`}
                   style={{ height: 20 }}
-                ></span>{" "}
+                />
+                {' '}
               </span>
               <span className="link-title2 title">
-                <span className="hover">Annoying Submit Button</span>{" "}
+                <span className="hover">Annoying Submit Button</span>
+                {' '}
                 <span
                   className={`${emojiState} ${
-                    form.password.length < minPasswordLength ||
-                    !validateEmail(form.email)
-                      ? "em em-rage"
-                      : "em em-face_with_hand_over_mouth"
+                    form.password.length < minPasswordLength
+                    || !validateEmail(form.email)
+                      ? 'em em-rage'
+                      : 'em em-face_with_hand_over_mouth'
                   }`}
                   style={{ height: 20 }}
-                ></span>{" "}
+                />
+                {' '}
               </span>
             </div>
           </span>
@@ -101,13 +103,15 @@ function App() {
         >
           <div className="input-block">
             <label htmlFor="email" className={`label ${themeState}-theme`}>
-              Email <span className="requiredLabel">*</span>
+              Email
+              {' '}
+              <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${themeState}-theme ${
-                !form.email ? "empty" : ""
+                !form.email ? 'empty' : ''
               } ${
-                !validateEmail(form.email) ? "wrong-input" : "correct-input"
+                !validateEmail(form.email) ? 'wrong-input' : 'correct-input'
               }`}
               id="email"
               type="email"
@@ -125,14 +129,16 @@ function App() {
           </div>
           <div className="input-block">
             <label htmlFor="password" className={`label ${themeState}-theme`}>
-              Password <span className="requiredLabel">*</span>
+              Password
+              {' '}
+              <span className="requiredLabel">*</span>
             </label>
             <input
               className={`input ${
                 form.password.length < minPasswordLength
-                  ? "wrong-input"
-                  : "correct-input"
-              } ${themeState}-theme ${!form.password ? "empty" : ""}`}
+                  ? 'wrong-input'
+                  : 'correct-input'
+              } ${themeState}-theme ${!form.password ? 'empty' : ''}`}
               id="password"
               type="password"
               name="password"
@@ -144,7 +150,7 @@ function App() {
           </div>
           <div>
             {form.password.length < minPasswordLength && (
-              <p className={`${form.password ? "warning-message" : "none"}`}>
+              <p className={`${form.password ? 'warning-message' : 'none'}`}>
                 Password should be at least 6 characters long
               </p>
             )}
@@ -152,25 +158,26 @@ function App() {
           <div
             style={{
               transform: `translateX(${
-                toggleClass &&
+                toggleClass
 
-                !(
-                  form.password.length >= minPasswordLength &&
-                  validateEmail(form.email)
+                && !(
+                  form.password.length >= minPasswordLength
+                  && validateEmail(form.email)
                 )
-                  ? "33vh"
-                  : "0"
+                  ? '33vh'
+                  : '0'
               }`,
-              transition: "transform 190ms ease-in-out",
+              transition: 'transform 190ms ease-in-out',
             }}
           >
             <button
+              type="submit"
               tabIndex={3}
               className={`submit-button ${
-                form.password.length >= minPasswordLength &&
-                validateEmail(form.email)
-                  ? "button-success"
-                  : ""
+                form.password.length >= minPasswordLength
+                && validateEmail(form.email)
+                  ? 'button-success'
+                  : ''
               }`}
               onMouseEnter={annoyingSubmitButton}
             >
@@ -179,7 +186,7 @@ function App() {
           </div>
           <div
             className={`toast ${
-              showToast ? "fadeIn" : "fadeOut"
+              showToast ? 'fadeIn' : 'fadeOut'
             } ${themeState}-theme-toast`}
           >
             You cannot submit until you fix all the validation errors...
@@ -188,7 +195,7 @@ function App() {
       </section>
       <Footer theme={themeState} />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
