@@ -258,3 +258,21 @@ body {
 .link:hover .icon:nth-child(2) {
   transform: translate(0px);
 }
+
+/* password toggle styling */
+i {
+  position: absolute;
+  top: 25%;
+  right: 3%;
+  font-size: 20px;
+}
+i:hover {
+  color: #2879FF;
+  cursor: pointer;
+}
+
+.password-input{
+  position: relative;
+  display: flex;
+  margin-bottom: 14px;
+}

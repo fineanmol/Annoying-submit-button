@@ -3,6 +3,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
+const eye = <FontAwesomeIcon icon={faEye} />;
 
 function App() {
   const minPasswordLength = 6;
@@ -14,6 +17,7 @@ function App() {
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
 
   const [themeState, setThemeState] = React.useState(
     localStorage.getItem("theme") || "purple"
@@ -42,6 +46,12 @@ function App() {
         setShowToast(false);
       }, 1000);
     }
+  };
+  // toggle password handler
+  const togglePassword = () => {
+    // When the handler is invoked
+    // inverse the boolean state of passwordShown
+    setShowPassword(!showPassword);
   };
 
   const validateEmail = (email) => {
@@ -127,20 +137,23 @@ function App() {
             <label htmlFor="password" className={`label ${themeState}-theme`}>
               Password <span className="requiredLabel">*</span>
             </label>
-            <input
-              className={`input ${
-                form.password.length < minPasswordLength
-                  ? "wrong-input"
-                  : "correct-input"
-              } ${themeState}-theme ${!form.password ? "empty" : ""}`}
-              id="password"
-              type="password"
-              name="password"
-              defaultValue={form.password}
-              minLength="6"
-              tabIndex={2}
-              required
-            />
+            <div className="password-input">
+              <input
+                className={`input ${
+                  form.password.length < minPasswordLength
+                    ? "wrong-input"
+                    : "correct-input"
+                } ${themeState}-theme ${!form.password ? "empty" : ""}`}
+                id="password"
+                type={showPassword ? "text" : "password"}
+                name="password"
+                defaultValue={form.password}
+                minLength="6"
+                tabIndex={2}
+                required
+              />
+              <i onClick={togglePassword}>{eye}</i>
+            </div>
           </div>
           <div>
             {form.password.length < minPasswordLength && (
@@ -153,7 +166,6 @@ function App() {
             style={{
               transform: `translateX(${
                 toggleClass &&
-
                 !(
                   form.password.length >= minPasswordLength &&
                   validateEmail(form.email)
