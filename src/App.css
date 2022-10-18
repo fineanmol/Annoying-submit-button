@@ -156,7 +156,7 @@ body {
 }
 
 .skin-theme {
-  background-color: #f6c8b7;
+  background-color: #ffdddd;
   color: rgb(68, 52, 70);
   transition: 0.5s ease-in-out;
 }
@@ -216,7 +216,7 @@ body {
   /*  Set same font-size and line height  */
   font-size: 20px;
   line-height: 20px;
-  color: rgb(48, 81, 214);
+  color: rgb(101, 199, 63);
   transition: transform 0.4s ease;
 }
 
@@ -232,7 +232,7 @@ body {
 .hover {
   color: #0000;
   background: 
-    linear-gradient(90deg,#e0d60c 50%,rgb(222, 14, 14) 0) 
+    linear-gradient(90deg, rgb(101, 199, 63) 50%,rgb(222, 14, 14) 0) 
     var(--_p,100%)/200% no-repeat;
   -webkit-background-clip: text;
           background-clip: text;
