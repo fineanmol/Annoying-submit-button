@@ -3,6 +3,12 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import ThemeButton from "./components/ThemeButton";
+import IconButton from "@material-ui/core/IconButton";
+import Visibility from "@material-ui/icons/Visibility";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import InputLabel from "@material-ui/core/InputLabel";
+import Input from "@material-ui/core/Input";
 
 function App() {
   const minPasswordLength = 6;
@@ -10,7 +16,20 @@ function App() {
   const [form, setForm] = useState({
     email: "",
     password: "",
+    showPassword: false,
   });
+
+  const handleClickShowPassword = () => {
+    setForm({ ...form, showPassword: !form.showPassword });
+  };
+  
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+  
+  const handlePasswordChange = (prop) => (event) => {
+    setForm({ ...form, [prop]: event.target.value });
+  };
 
   const [toggleClass, setToggleClass] = React.useState(false);
   const [showToast, setShowToast] = React.useState(false);
@@ -125,21 +144,34 @@ function App() {
           </div>
           <div className="input-block">
             <label htmlFor="password" className={`label ${themeState}-theme`}>
-              Password <span className="requiredLabel">*</span>
-            </label>
-            <input
+              Password <span className="requiredLabel">*{
+                <InputAdornment position = "end">
+                  <IconButton
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  >
+                    {form.showPassword ? <Visibility /> : <VisibilityOff />}
+                  </IconButton>
+                </InputAdornment>
+              }
+              </span>
+              </label>
+              <input
               className={`input ${
                 form.password.length < minPasswordLength
                   ? "wrong-input"
                   : "correct-input"
               } ${themeState}-theme ${!form.password ? "empty" : ""}`}
               id="password"
-              type="password"
+              type={form.showPassword ? "text" : "password"}
               name="password"
               defaultValue={form.password}
               minLength="6"
               tabIndex={2}
               required
+              onChange={handlePasswordChange("password")}
+		          value={form.password}
+              
             />
           </div>
           <div>
@@ -148,6 +180,7 @@ function App() {
                 Password should be at least 6 characters long
               </p>
             )}
+          
           </div>
           <div
             style={{
