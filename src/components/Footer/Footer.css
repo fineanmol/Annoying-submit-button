@@ -142,6 +142,7 @@ footer {
     #d62976,
     #962fbf,
     #4f5bd5
+    #00B200
   );
 }
 
@@ -247,9 +248,14 @@ footer {
   transition: 0.5s ease-in-out;
 }
 
-
 .purple-footer {
   background-color: rgb(97, 80, 117);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
+.green-footer {
+  background-color: rgb(15, 126, 43);
   color: rgb(204, 198, 198);
   transition: 0.5s ease-in-out;
 }
