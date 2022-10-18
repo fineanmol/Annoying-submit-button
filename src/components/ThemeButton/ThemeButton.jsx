@@ -3,7 +3,7 @@ import useMediaQuery from "../../custom-hooks/useMediaQuery";
 import "./ThemeButton.css";
 
 const ThemeButton = ({ setThemeState, themeState }) => {
-  const themeNamesArr = ["purple", "pink", "skin", "dark"];
+  const themeNamesArr = ["purple", "pink", "skin", "blue","yellow" ,"dark"];
   const [display, setDisplay] = useState(true);
   const matches = useMediaQuery("(max-width:786px)");
   useEffect(() => {
@@ -21,6 +21,7 @@ const ThemeButton = ({ setThemeState, themeState }) => {
             <div
               key={el}
               className={`theme-btn ${el} ${themeState}-d`}
+              title={`${el}`}
               onClick={() => setThemeState(el)}
             >
               <div className="tick"></div>

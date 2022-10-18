@@ -1,19 +1,18 @@
-# Annoying Submit Button in a Form using ReactJS
+<div align="center">
+   <h1> Annoying Submit Button in a Form using ReactJS </h1>
 
-</div>
-<div align="center" >
-<img src="https://media.giphy.com/media/j4A1puoG0sUxOB5rB5/giphy.gif" width=200 />
-<p>
+   <img src="https://media.giphy.com/media/j4A1puoG0sUxOB5rB5/giphy.gif" width=200 />
+  <p>
 
-<a href="https://github.com/fineanmol/Annoying-submit-button/graphs/Stars" alt="Stars">
+   <a href="https://github.com/fineanmol/Annoying-submit-button/graphs/Stars" alt="Stars">
         <img src="https://img.shields.io/github/stars/fineanmol/Annoying-submit-button" /></a>
         
-<a href="https://github.com/fineanmol/Annoying-submit-button/graphs/issues" alt="Contributors">
+   <a href="https://github.com/fineanmol/Annoying-submit-button/graphs/issues" alt="Contributors">
         <img src="https://img.shields.io/github/issues/fineanmol/Annoying-submit-button" /></a>
-<a href="https://github.com/fineanmol/Annoying-submit-button/graphs/contributors" alt="Contributors">
+   <a href="https://github.com/fineanmol/Annoying-submit-button/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/fineanmol/Annoying-submit-button" /></a>
 
-<a href="https://github.com/fineanmol/Annoying-submit-button/forks">
+   <a href="https://github.com/fineanmol/Annoying-submit-button/forks">
       <img alt="Issues" src="https://img.shields.io/github/forks/fineanmol/Annoying-submit-button" />
     </a> 
     <a href="https://github.com/fineanmol/Annoying-submit-button/license">
@@ -23,7 +22,7 @@
       <img alt="GitHub pull requests" src="https://img.shields.io/badge/version-0.1.0-blue?color=0088ff" />
     </a>
 
-</p>
+   </p>
 </div>
 
 
@@ -63,27 +62,27 @@ Star and Fork the Repo 🌟 and this will keep us motivated.
 
 1. Clone the repository
 
-```bash
+<pre>
 git clone https://github.com/fineanmol/Annoying-submit-button
-```
+</pre>
 
 2. Change the working directory
 
-```bash
+<pre>
 cd Annoying-submit-button
-```
+</pre>
 
 3. Install dependencies
 
-```bash
+<pre>
 npm install
-```
+</pre>
 
 4. Run the app
 
-```bash
+<pre>
 npm start
-```
+</pre>
 
 
 ---

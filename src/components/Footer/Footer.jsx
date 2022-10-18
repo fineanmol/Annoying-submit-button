@@ -31,7 +31,7 @@ const Footer = ({theme}) => {
               </a>
             </li>
              <li>
-              <a href="https://github.com/in/fineanmol">
+              <a href="https://github.com/fineanmol">
                 <i className="fa fa-github"></i>
               </a>
             </li>

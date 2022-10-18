@@ -277,6 +277,16 @@ footer {
   color: rgb(204, 198, 198);
   transition: 0.5s ease-in-out;
 }
+.blue-footer{
+  color: rgb(45, 43, 43);
+  background-color: #1370a3;
+  transition: 0.5s ease-in-out;
+}
+.yellow-footer{
+  color: rgb(29, 28, 28);
+  background-color: #d29117;
+  transition: 0.5s ease-in-out;
+}
 
 .bright-footer {
   color: rgb(45, 43, 43);
