@@ -20,9 +20,8 @@
   transition: 0.5s all ease-in-out;
 }
 
-.theme-btn:hover
-{
-  transform: scale(1.3);
+.theme-btn:hover {
+  transform: scale(1.5);
 }
 
 .purple {
@@ -42,16 +41,19 @@
   border-color: rgb(1, 0, 0);
   transition: 0.5s ease-in-out;
 }
+
 .skin {
   background-color: rgb(235, 144, 159);
   border-color: rgb(1, 0, 0);
   transition: 0.5s ease-in-out;
 }
+
 .blue {
   background-color: #1370a3;
   border-color: rgb(1, 0, 0);
   transition: 0.5s ease-in-out;
 }
+
 .yellow {
   background-color: #d29117;
   border-color: rgb(1, 0, 0);
