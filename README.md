@@ -112,6 +112,7 @@ This project is under the [MIT](./LICENSE) license.
 
 - Hat tip to anyone whose code was used
 - Inspiration
+- I wish to show my appreciation
 - etc
 ---
 ## :pray: Thanks
