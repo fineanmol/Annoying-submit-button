@@ -13,6 +13,7 @@ html,
 body {
   font-size: 10px;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .heading {
@@ -24,6 +25,7 @@ body {
 .form-section {
   height: 75vh;
   overflow-x: hidden;
+  overflow-y: hidden;
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
