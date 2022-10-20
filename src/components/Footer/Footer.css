@@ -141,6 +141,7 @@ footer {
     #d62976,
     #962fbf,
     #4f5bd5
+    #00B200
   );
 }
 
@@ -159,7 +160,7 @@ footer {
 #hf-theme {
   font-size: 2rem;
   background-color: red;
-  background-image: linear-gradient(45deg, #f2dbaf, #8fc0bd, #2b1d3e);
+  background-image: linear-gradient(184deg, #d9bb81, #fde5f1, #2b1e3c);
   background-size: 100%;
   background-repeat: repeat;
   background-clip: text;
@@ -251,6 +252,12 @@ footer {
   transition: 0.5s ease-in-out;
 }
 
+.green-footer {
+  background-color: rgb(15, 126, 43);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
 .dark-footer {
   background-color: rgb(0, 0, 0);
   color: rgb(204, 198, 198);
@@ -269,27 +276,6 @@ footer {
   transition: 0.5s ease-in-out;
 }
 
-.lemon-footer {
-  background-color: rgb(113, 126, 38);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
-}
-
-.orange-footer {
-  background-color: rgb(201, 56, 30);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
-}
-
-.teal-footer {
-  background-color: rgb(43, 74, 110);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
-}
-
-.coral-footer {
-  background-color: rgb(139, 33, 51);
-  color: rgb(204, 198, 198);
   transition: 0.5s ease-in-out;
 }
 

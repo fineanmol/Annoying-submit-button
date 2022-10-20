@@ -132,13 +132,19 @@ body {
 }
 
 .dark-theme {
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(125, 119, 119);
   color: rgb(235, 235, 235);
   transition: 0.5s ease-in-out;
 }
 
 .purple-theme {
   background-color: #f0d9ff;
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.green-theme {
+  background-color: rgb(123, 214, 165);
   color: rgb(68, 52, 70);
   transition: 0.5s ease-in-out;
 }
@@ -150,7 +156,7 @@ body {
 }
 
 .skin-theme {
-  background-color: #ffe9e9;
+  background-color: #ffdddd;
   color: rgb(68, 52, 70);
   transition: 0.5s ease-in-out;
 }
@@ -161,6 +167,10 @@ body {
 
 .purple-theme .title {
   color: rgb(120, 70, 153);
+}
+
+.green-theme .title {
+  color: rgb(10, 79, 14);
 }
 
 .pink-theme .title {
@@ -230,7 +240,7 @@ body {
   /*  Set same font-size and line height  */
   font-size: 20px;
   line-height: 20px;
-  color: yellow;
+  color: rgb(101, 199, 63);
   transition: transform 0.4s ease;
 }
 
@@ -245,8 +255,9 @@ body {
 
 .hover {
   color: #0000;
-  background: linear-gradient(90deg, #e0d60c 50%, rgb(222, 14, 14) 0)
-    var(--_p, 100%) / 200% no-repeat;
+  background: 
+    linear-gradient(90deg, rgb(101, 199, 63) 50%,rgb(222, 14, 14) 0) 
+    var(--_p,100%)/200% no-repeat;
   -webkit-background-clip: text;
   background-clip: text;
   transition: 0.4s;
