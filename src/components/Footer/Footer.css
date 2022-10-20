@@ -2,29 +2,39 @@
 
 footer {
   width: 100vw;
-  padding: 30px;
+  padding: 6.5vh 2vh 1vh 2vh;
+  position: absolute;
+  bottom: 0;
+  max-height: 25vh;
+  min-height: 220px;
+  overflow-y: hidden;
 }
 
 .footer-content {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .glitch {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 5px;
-  font-size: 30px;
+  font-size: 5.2vw;
   text-decoration: none;
   color: #fff;
   transform: translate(0%, 0%);
   margin: 0;
 }
 
+@media screen and (min-width: 700px) {
+  .glitch {
+    font-size: 36px;
+  }
+}
+
 .glitch::before,
 .glitch::after {
-
   content: "Hacktoberfest 2022";
 
   display: block;
@@ -78,7 +88,7 @@ footer {
 .footer-content p {
   max-width: 500px;
   margin: 0px auto;
-  line-height: 28px;
+  line-height: 25px;
   font-size: 14px;
   color: #ffffff;
 }
@@ -88,7 +98,7 @@ footer {
   display: flex !important;
   align-items: center;
   justify-content: center;
-  margin: 2.5rem 0 2rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 .socials li {
@@ -141,13 +151,12 @@ footer {
     #fa7e1e,
     #d62976,
     #962fbf,
-    #4f5bd5
-    #00B200
+    #4f5bd5 #00b200
   );
 }
 
 .socials li:nth-child(4) a:hover {
-  background-color: #46C1F6;
+  background-color: #46c1f6;
 }
 
 .socials li:nth-child(5) a:hover {
@@ -159,7 +168,6 @@ footer {
 }
 
 #hf-theme {
-
   font-size: 2rem;
   background-color: red;
   background-image: linear-gradient(184deg, #d9bb81, #fde5f1, #2b1e3c);
@@ -277,12 +285,12 @@ footer {
   color: rgb(204, 198, 198);
   transition: 0.5s ease-in-out;
 }
-.blue-footer{
+.blue-footer {
   color: rgb(45, 43, 43);
   background-color: #1370a3;
   transition: 0.5s ease-in-out;
 }
-.yellow-footer{
+.yellow-footer {
   color: rgb(29, 28, 28);
   background-color: #d29117;
   transition: 0.5s ease-in-out;

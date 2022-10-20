@@ -6,7 +6,7 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html,
@@ -20,6 +20,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
 }
 
 .heading {
@@ -29,8 +30,13 @@ body {
 }
 
 .form-section {
+  height: 77.8vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
   flex: 1;
   min-height: 77.8vh;
+
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
@@ -239,18 +245,15 @@ body {
 
 .hover {
   color: #0000;
-  background: 
-    linear-gradient(90deg, rgb(101, 199, 63) 50%,rgb(222, 14, 14) 0) 
-    var(--_p,100%)/200% no-repeat;
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(222, 14, 14) 0)
+    var(--_p, 100%) / 200% no-repeat;
   -webkit-background-clip: text;
-          background-clip: text;
-  transition: .4s;
+  background-clip: text;
+  transition: 0.4s;
 }
 .hover:hover {
   --_p: 0%;
 }
-
-
 
 /* Hover Action*/
 
