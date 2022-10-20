@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
 * {
   box-sizing: border-box;
@@ -22,7 +22,8 @@ body {
 }
 
 .form-section {
-  min-height: 77.8vh;
+  height: 75vh;
+  overflow-x: hidden;
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
@@ -231,18 +232,15 @@ body {
 
 .hover {
   color: #0000;
-  background: 
-    linear-gradient(90deg, rgb(101, 199, 63) 50%,rgb(222, 14, 14) 0) 
-    var(--_p,100%)/200% no-repeat;
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(222, 14, 14) 0)
+    var(--_p, 100%) / 200% no-repeat;
   -webkit-background-clip: text;
-          background-clip: text;
-  transition: .4s;
+  background-clip: text;
+  transition: 0.4s;
 }
 .hover:hover {
   --_p: 0%;
 }
-
-
 
 /* Hover Action*/
 
