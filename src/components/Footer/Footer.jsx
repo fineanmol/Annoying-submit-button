@@ -1,7 +1,7 @@
-import React, {useMemo} from "react"
-import "./Footer.css"
+import React, { useMemo } from 'react'
+import './Footer.css'
 
-function Footer({theme}) {
+function Footer({ theme }) {
   const year = useMemo(() => {
     const dateObj = new Date()
     return dateObj.getFullYear()
@@ -45,15 +45,18 @@ function Footer({theme}) {
           </ul>
         </div>
         <p id="footer-text">
-          This Project is participating in{" "}
+          This Project is participating in
+          {' '}
           <b>
             <a href="https://hacktoberfest.com/" id="hf-theme">
               Hacktoberfest
             </a>
-          </b>{" "}
+          </b>
+          {' '}
           <br />
           Copyright &copy;
-          {`${year}`}.
+          {`${year}`}
+          .
         </p>
       </div>
     </footer>
