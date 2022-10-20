@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 footer {
   width: 100vw;
@@ -18,7 +18,7 @@ footer {
 }
 
 .glitch {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   letter-spacing: 5px;
   font-size: 5.2vw;
   text-decoration: none;
@@ -35,7 +35,7 @@ footer {
 
 .glitch::before,
 .glitch::after {
-  content: 'Hacktoberfest 2022';
+  content: "Hacktoberfest 2022";
 
   display: block;
   position: absolute;
