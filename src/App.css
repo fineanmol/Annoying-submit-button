@@ -13,6 +13,7 @@ html,
 body {
   font-size: 10px;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #root {
@@ -274,4 +275,11 @@ body {
 
 .link:hover .icon:nth-child(2) {
   transform: translate(0px);
+}
+
+@media (min-width: 500px) and (max-width: 1600px) {
+.form-section{
+  min-height:72.8vh;
+
+  }
 }
