@@ -6,7 +6,7 @@ footer {
   position: absolute;
   bottom: 0;
   max-height: 25vh;
-  min-height: 240px;
+  min-height: 220px;
   overflow-y: hidden;
 }
 
