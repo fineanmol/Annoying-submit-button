@@ -13,6 +13,7 @@ html,
 body {
   font-size: 10px;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .heading {
@@ -267,4 +268,11 @@ body {
 
 .link:hover .icon:nth-child(2) {
   transform: translate(0px);
+}
+
+@media (max-width: 500px) {
+  html,body {
+    overflow-y: scroll !important;
+    height:100%;
+  }
 }
