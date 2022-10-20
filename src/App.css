@@ -23,7 +23,7 @@ body {
 }
 
 .form-section {
-  min-height:72.8vh;
+  min-height: 77.8vh;
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
@@ -270,12 +270,9 @@ body {
   transform: translate(0px);
 }
 
-@media (max-width: 500px) {
-  html,body {
-    overflow-y: scroll !important;
-    height:100%;
-  }
-  .form-section{
-    min-height: 77.8vh;
+@media (min-width: 500px) and (max-width: 1600px) {
+.form-section{
+  min-height:72.8vh;
+
   }
 }
