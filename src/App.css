@@ -30,13 +30,9 @@ body {
 }
 
 .form-section {
-  height: 77.8vh;
   overflow-x: hidden;
   overflow-y: hidden;
-
   flex: 1;
-  min-height: 77.8vh;
-
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
