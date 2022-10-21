@@ -286,3 +286,17 @@ body {
 
   }
 }
+
+@media screen and (max-height: 430px) {
+  .submit-button {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+  }
+}
+
+@media screen and (max-height: 380px) {
+  .submit-button{
+    margin-top: 0.25rem;
+    padding: 0.25em 0.5em;
+  }
+}
