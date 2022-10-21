@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint linebreak-style: ["error", "windows"] */
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Footer from './components/Footer'

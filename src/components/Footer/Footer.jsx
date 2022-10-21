@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React, { useMemo } from 'react'
 import './Footer.css'
 
