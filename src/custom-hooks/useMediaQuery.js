@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import { useState, useEffect } from 'react'
 
 const useMediaQuery = (query) => {

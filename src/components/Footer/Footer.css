@@ -4,7 +4,7 @@ footer {
   width: 100vw;
   padding: 6.5vh 2vh 1vh 2vh;
   position: absolute;
-  bottom: 0;
+  bottom: -2rem;
   max-height: 25vh;
   min-height: 220px;
   overflow-y: hidden;

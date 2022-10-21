@@ -1,3 +1,5 @@
+/* eslint linebreak-style: ["error", "windows"] */
+
 import React, { useEffect, useState } from 'react'
 import useMediaQuery from '../../custom-hooks/useMediaQuery'
 import './ThemeButton.css'
