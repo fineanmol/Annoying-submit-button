@@ -36,9 +36,9 @@ body {
 
   flex: 1;
   min-height: 77.8vh;
-
+  padding-top: 110px;
   display: grid;
-  place-content: center;
+  place-content: start center;
   transition: 0.5s color ease-in-out;
 }
 
