@@ -286,3 +286,9 @@ body {
 
   }
 }
+
+@media (max-width: 1370px) and (min-width: 1279px) {
+    #root{
+      display: block;
+    }
+}
