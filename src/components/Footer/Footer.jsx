@@ -48,7 +48,7 @@ function Footer({ theme }) {
           This Project is participating in
           {' '}
           <b>
-            <a href="https://hacktoberfest.com/" id="hf-theme">
+            <a href="https://hacktoberfest.com/" id="hf-theme" target="_blank">
               Hacktoberfest
             </a>
           </b>
