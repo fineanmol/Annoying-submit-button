@@ -48,7 +48,9 @@ body {
 .label {
   letter-spacing: 0.25px;
   font-weight: 500;
-  font-size: 1.35rem;
+  /* font-size: 1.35rem; */
+  font-size: 1.7rem;
+  font-weight: bold;
   margin-bottom: 0.35em;
 }
 
@@ -87,7 +89,7 @@ body {
 .warning-message {
   color: #ff0000;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .none {
@@ -128,8 +130,8 @@ body {
   letter-spacing: 0.5px;
   padding: 0.85em 2.2em;
   border: none;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.7rem;
+  font-weight: bold;
   border-radius: 4px;
 
   cursor: pointer;
@@ -220,8 +222,8 @@ body {
   justify-content: center;
   overflow: hidden;
   color: white;
-  font-weight: 700;
-  height: 30px;
+  font-weight: 900;
+  height: 80px;
   align-items: center;
   text-decoration: none;
 }
@@ -243,7 +245,8 @@ body {
   display: block;
 
   /*  Set same font-size and line height  */
-  font-size: 20px;
+  font-size:20px;
+  font-weight: 900;
   line-height: 20px;
   color: rgb(101, 199, 63);
   transition: transform 0.4s ease;
@@ -251,11 +254,13 @@ body {
 
 .link-title1 {
   transform-origin: right center;
+  
 }
 
 .link-title2 {
   transform-origin: left center;
   transform: rotate(20deg);
+ 
 }
 
 .hover {
