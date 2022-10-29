@@ -11,6 +11,7 @@ footer {
   flex-direction: column;
 }
 
+
 .glitch {
   font-family: "Montserrat", sans-serif;
   letter-spacing: 5px;
@@ -26,6 +27,7 @@ footer {
     font-size: 36px;
   }
 }
+
 
 .glitch::before,
 .glitch::after {

@@ -6,9 +6,11 @@ import React, { useEffect, useState } from 'react'
 import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
+import useWindowDimensions from './custom-hooks/useWindowDimensions'
 
 function App() {
   const minPasswordLength = 6
+  const { height } = useWindowDimensions()
 
   const [form, setForm] = useState({
     email: '',
@@ -195,7 +197,7 @@ function App() {
           </div>
         </form>
       </section>
-      <Footer theme={themeState} />
+      {height < 680 ? null : <Footer theme={themeState} />}
     </>
   )
 }
