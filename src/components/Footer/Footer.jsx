@@ -18,27 +18,27 @@ function Footer({ theme }) {
         <div className="footer-menu">
           <ul className="socials">
             <li>
-              <a href="https://www.facebook.com/fineanmol">
+              <a href="https://www.facebook.com/fineanmol" target="_blank">
                 <i className="fa fa-facebook" />
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/fineanmol/">
+              <a href="https://www.linkedin.com/in/fineanmol/" target="_blank">
                 <i className="fa fa-linkedin-square" />
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/fineanmol">
+              <a href="https://www.instagram.com/fineanmol" target="_blank">
                 <i className="fa fa-instagram" />
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/fineanmol">
+              <a href="https://twitter.com/fineanmol" target="_blank">
                 <i className="fa fa-twitter" />
               </a>
             </li>
             <li>
-              <a href="https://github.com/fineanmol">
+              <a href="https://github.com/fineanmol" target="_blank">
                 <i className="fa fa-github" />
               </a>
             </li>
