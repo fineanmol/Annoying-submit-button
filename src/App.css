@@ -6,7 +6,7 @@
   margin: 0;
   list-style: none;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 html,
@@ -16,6 +16,13 @@ body {
   overflow-y: hidden;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
 .heading {
   text-align: center;
   font-size: 2.75rem;
@@ -23,7 +30,9 @@ body {
 }
 
 .form-section {
-  min-height: 77.8vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex: 1;
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
@@ -232,18 +241,15 @@ body {
 
 .hover {
   color: #0000;
-  background: 
-    linear-gradient(90deg, rgb(101, 199, 63) 50%,rgb(222, 14, 14) 0) 
-    var(--_p,100%)/200% no-repeat;
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(222, 14, 14) 0)
+    var(--_p, 100%) / 200% no-repeat;
   -webkit-background-clip: text;
-          background-clip: text;
-  transition: .4s;
+  background-clip: text;
+  transition: 0.4s;
 }
 .hover:hover {
   --_p: 0%;
 }
-
-
 
 /* Hover Action*/
 
@@ -268,4 +274,11 @@ body {
 
 .link:hover .icon:nth-child(2) {
   transform: translate(0px);
+}
+
+@media (min-width: 500px) and (max-width: 1600px) {
+.form-section{
+  min-height:72.8vh;
+
+  }
 }

@@ -10,7 +10,11 @@ function Footer({ theme }) {
   return (
     <footer className={`${theme}-footer`}>
       <div className="footer-content">
-        <a href="https://hacktoberfest.com/"><h1 className="glitch" id="hacktoberfest-text">Hacktoberfest 2022</h1></a>
+        <a href="https://hacktoberfest.com/">
+          <h1 className="glitch" id="hacktoberfest-text">
+            Hacktoberfest 2022
+          </h1>
+        </a>
         <div className="footer-menu">
           <ul className="socials">
             <li>
@@ -38,18 +42,19 @@ function Footer({ theme }) {
                 <i className="fa fa-github" />
               </a>
             </li>
-
           </ul>
         </div>
         <p id="footer-text">
           This Project is participating in
           {' '}
-          <b><a href="https://hacktoberfest.com/" id="hf-theme">Hacktoberfest</a></b>
+          <b>
+            <a href="https://hacktoberfest.com/" id="hf-theme">
+              Hacktoberfest
+            </a>
+          </b>
           {' '}
-          .
           <br />
-          Copyright
-          &copy;
+          Copyright &copy;
           {`${year}`}
           .
         </p>
