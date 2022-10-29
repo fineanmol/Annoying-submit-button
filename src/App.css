@@ -65,6 +65,25 @@ body {
   border-radius: 0.25em;
 }
 
+.toggle-btn{
+  position: relative;
+  right: 40px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 30px;
+  vertical-align: middle;
+}
+.toggle-btn:hover{
+  background-color: #a89b9b98;
+  border-radius: 50%;
+}
+.toggle-btn span{
+  font-size: 12px;
+}
+
 .warning-message {
   color: #ff0000;
   font-weight: 500;
