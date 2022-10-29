@@ -1,12 +1,16 @@
+/* eslint-disable react/jsx-indent-props */
 /* eslint-disable jsx-a11y/tabindex-no-positive */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
+import useWindowDimensions from './custom-hooks/useWindowDimensions'
 
 function App() {
   const minPasswordLength = 6
+  const { height } = useWindowDimensions()
 
   const [form, setForm] = useState({
     email: '',
@@ -16,7 +20,10 @@ function App() {
   const [toggleClass, setToggleClass] = useState(false)
   const [showToast, setShowToast] = useState(false)
 
-  const [themeState, setThemeState] = React.useState(
+
+  const [themeState, setThemeState] = useState(
+
+  const [isPasswordShown, setPasswordShown] = useState(false)
     localStorage.getItem('theme') || 'purple',
   )
 
@@ -67,11 +74,10 @@ function App() {
                 <span className="hover">Annoying Submit Button</span>
                 {' '}
                 <span
-                  className={`${emojiState} ${
-                    form.password.length < minPasswordLength
+                  className={`${emojiState} ${form.password.length < minPasswordLength
                     || !validateEmail(form.email)
-                      ? 'em em-rage'
-                      : 'em em-smile'
+                    ? 'em em-rage'
+                    : 'em em-smile'
                   }`}
                   style={{ height: 20 }}
                 />
@@ -81,11 +87,10 @@ function App() {
                 <span className="hover">Annoying Submit Button</span>
                 {' '}
                 <span
-                  className={`${emojiState} ${
-                    form.password.length < minPasswordLength
+                  className={`${emojiState} ${form.password.length < minPasswordLength
                     || !validateEmail(form.email)
-                      ? 'em em-rage'
-                      : 'em em-face_with_hand_over_mouth'
+                    ? 'em em-rage'
+                    : 'em em-face_with_hand_over_mouth'
                   }`}
                   style={{ height: 20 }}
                 />
@@ -108,10 +113,8 @@ function App() {
               <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${themeState}-theme ${
-                !form.email ? 'empty' : ''
-              } ${
-                !validateEmail(form.email) ? 'wrong-input' : 'correct-input'
+              className={`input ${themeState}-theme ${!form.email ? 'empty' : ''
+              } ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
               }`}
               id="email"
               type="email"
@@ -133,20 +136,24 @@ function App() {
               {' '}
               <span className="requiredLabel">*</span>
             </label>
-            <input
-              className={`input ${
-                form.password.length < minPasswordLength
+            <span className="input-password-group">
+              <input
+                className={`input ${form.password.length < minPasswordLength
                   ? 'wrong-input'
                   : 'correct-input'
-              } ${themeState}-theme ${!form.password ? 'empty' : ''}`}
-              id="password"
-              type="password"
-              name="password"
-              defaultValue={form.password}
-              minLength="6"
-              tabIndex={2}
-              required
-            />
+                } ${themeState}-theme ${!form.password ? 'empty' : ''}`}
+                id="password"
+                type={isPasswordShown ? 'text' : 'password'}
+                name="password"
+                defaultValue={form.password}
+                minLength="6"
+                tabIndex={2}
+                required
+              />
+
+              <button className="toggle-btn" type="button" onClick={() => setPasswordShown(!isPasswordShown)}>{isPasswordShown ? <span className="fa fa-eye">{' '}</span> : <span className="fa fa-eye-slash">{' '}</span>}</button>
+
+            </span>
           </div>
           <div>
             {form.password.length < minPasswordLength && (
@@ -157,15 +164,14 @@ function App() {
           </div>
           <div
             style={{
-              transform: `translateX(${
-                toggleClass
+              transform: `translateX(${toggleClass
 
                 && !(
                   form.password.length >= minPasswordLength
                   && validateEmail(form.email)
                 )
-                  ? '33vh'
-                  : '0'
+                ? '33vh'
+                : '0'
               }`,
               transition: 'transform 190ms ease-in-out',
             }}
@@ -173,11 +179,10 @@ function App() {
             <button
               type="submit"
               tabIndex={3}
-              className={`submit-button ${
-                form.password.length >= minPasswordLength
+              className={`submit-button ${form.password.length >= minPasswordLength
                 && validateEmail(form.email)
-                  ? 'button-success'
-                  : ''
+                ? 'button-success'
+                : ''
               }`}
               onMouseEnter={annoyingSubmitButton}
             >
@@ -185,15 +190,14 @@ function App() {
             </button>
           </div>
           <div
-            className={`toast ${
-              showToast ? 'fadeIn' : 'fadeOut'
+            className={`toast ${showToast ? 'fadeIn' : 'fadeOut'
             } ${themeState}-theme-toast`}
           >
             You cannot submit until you fix all the validation errors...
           </div>
         </form>
       </section>
-      <Footer theme={themeState} />
+      {height < 680 ? null : <Footer theme={themeState} />}
     </>
   )
 }
