@@ -302,6 +302,13 @@ body {
   }
 }
 
+
+@media (max-width: 1370px) and (min-width: 1279px) {
+    #root{
+      display: block;
+    }
+}
+
 @media screen and (max-height: 430px) {
   .submit-button {
     margin-top: 0.5em;
@@ -315,3 +322,4 @@ body {
     padding: 0.25em 0.5em;
   }
 }
+
