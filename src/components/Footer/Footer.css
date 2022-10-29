@@ -139,14 +139,7 @@ footer {
   background-color: #1da1f2;
 }
 .socials li:nth-child(3) a:hover {
-  background-image: linear-gradient(
-    45deg,
-    #feda75,
-    #fa7e1e,
-    #d62976,
-    #962fbf,
-    #4f5bd5 #00b200
-  );
+  background-image: linear-gradient(#962fbf, #feda75);
 }
 
 .socials li:nth-child(4) a:hover {
