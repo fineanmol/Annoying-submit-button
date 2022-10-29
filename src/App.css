@@ -30,13 +30,9 @@ body {
 }
 
 .form-section {
-  height: 77.8vh;
   overflow-x: hidden;
   overflow-y: hidden;
-
   flex: 1;
-  min-height: 77.8vh;
-
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
@@ -67,6 +63,25 @@ body {
   outline: none;
   border: 1px solid rgb(130, 130, 130);
   border-radius: 0.25em;
+}
+
+.toggle-btn{
+  position: relative;
+  right: 40px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  width: 30px;
+  vertical-align: middle;
+}
+.toggle-btn:hover{
+  background-color: #a89b9b98;
+  border-radius: 50%;
+}
+.toggle-btn span{
+  font-size: 12px;
 }
 
 .warning-message {
@@ -287,8 +302,24 @@ body {
   }
 }
 
+
 @media (max-width: 1370px) and (min-width: 1279px) {
     #root{
       display: block;
     }
 }
+
+@media screen and (max-height: 430px) {
+  .submit-button {
+    margin-top: 0.5em;
+    padding: 0.5em 1em;
+  }
+}
+
+@media screen and (max-height: 380px) {
+  .submit-button{
+    margin-top: 0.25rem;
+    padding: 0.25em 0.5em;
+  }
+}
+
