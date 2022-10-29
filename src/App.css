@@ -16,13 +16,6 @@ body {
   overflow-y: hidden;
 }
 
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
-}
-
 .heading {
   text-align: center;
   font-size: 2.75rem;
@@ -32,7 +25,6 @@ body {
 .form-section {
   overflow-x: hidden;
   overflow-y: hidden;
-  flex: 1;
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;

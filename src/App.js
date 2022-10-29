@@ -1,7 +1,3 @@
-/* eslint-disable react/jsx-indent-props */
-/* eslint-disable jsx-a11y/tabindex-no-positive */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Footer from './components/Footer'
@@ -19,11 +15,8 @@ function App() {
 
   const [toggleClass, setToggleClass] = useState(false)
   const [showToast, setShowToast] = useState(false)
-
-
-  const [themeState, setThemeState] = useState(
-
   const [isPasswordShown, setPasswordShown] = useState(false)
+  const [themeState, setThemeState] = useState(
     localStorage.getItem('theme') || 'purple',
   )
 

@@ -2,7 +2,7 @@
 
 footer {
   width: 100vw;
-  padding: 6.5vh 2vh 1vh 2vh;
+  padding: 1.5vh 2vh 1vh 2vh;
   position: absolute;
   bottom: 0;
   max-height: 20vh;
@@ -10,25 +10,29 @@ footer {
   overflow-y: hidden;
 }
 
+
 .footer-content {
   display: flex;
-  justify-content: space-between;
-  padding-left: 40px;
-  padding-right: 40px;
-
-}
-
-.left{
-  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-
+  text-align: center;
 }
 
-left h1{
-  font-size: 3px;
-
+.footer-content h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
 }
 
+.footer-content p {
+  max-width: 500px;
+  margin: 5px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
 
 .glitch {
   font-family: "Montserrat", sans-serif;
@@ -98,13 +102,13 @@ left h1{
     infinite;
 }
 
-.footer-content p {
+/* .footer-content p {
   max-width: 500px;
   margin: 0px auto;
   line-height: 25px;
   font-size: 24px;
   color: #ffffff;
-}
+} */
 
 .socials {
   list-style: none;
@@ -123,14 +127,11 @@ left h1{
   color: #fff;
   border: 1.5px solid white;
   text-decoration: none;
-  /* Center content */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* Add padding */
   padding: 5px;
-  /* Add rounded borders */
   border-radius: 50%;
 }
 
@@ -138,7 +139,6 @@ left h1{
   font-size: 1.3rem;
   width: 20px;
   height: 20px;
-  /* Center content */
   display: flex;
   flex-direction: column;
   justify-content: center;

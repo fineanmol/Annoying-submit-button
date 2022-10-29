@@ -10,44 +10,41 @@ function Footer({ theme }) {
   return (
     <footer className={`${theme}-footer`}>
       <div className="footer-content">
-       <div className='left'>
-      <a href="https://hacktoberfest.com/">
-      <h1 className="glitch">
-        Hacktoberfest 2022
-      </h1>
-    </a>
-    <div className="footer-menu">
-      <ul className="socials">
-        <li>
-          <a href="https://www.facebook.com/fineanmol">
-            <i className="fa fa-facebook" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/fineanmol/">
-            <i className="fa fa-linkedin-square" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.instagram.com/fineanmol">
-            <i className="fa fa-instagram" />
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/fineanmol">
-            <i className="fa fa-twitter" />
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/fineanmol">
-            <i className="fa fa-github" />
-          </a>
-        </li>
-      </ul>
-    </div>
-       </div>
-      
-        <div id="footer-text">
+        <a href="https://hacktoberfest.com/">
+          <h1 className="glitch" id="hacktoberfest-text">
+            Hacktoberfest 2022
+          </h1>
+        </a>
+        <div className="footer-menu">
+          <ul className="socials">
+            <li>
+              <a href="https://www.facebook.com/fineanmol">
+                <i className="fa fa-facebook" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/fineanmol/">
+                <i className="fa fa-linkedin-square" />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/fineanmol">
+                <i className="fa fa-instagram" />
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com/fineanmol">
+                <i className="fa fa-twitter" />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/fineanmol">
+                <i className="fa fa-github" />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <p id="footer-text">
           This Project is participating in
           {' '}
           <b>
@@ -60,7 +57,7 @@ function Footer({ theme }) {
           Copyright &copy;
           {`${year}`}
           .
-        </div>
+        </p>
       </div>
     </footer>
   )
