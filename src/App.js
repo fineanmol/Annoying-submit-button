@@ -113,7 +113,7 @@ function App() {
               type="email"
               name="email"
               defaultValue={form.email}
-              placeholder="coffeewithanmol@gmail.com"
+              placeholder="Email"
               tabIndex={1}
               required
             />
