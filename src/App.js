@@ -57,7 +57,7 @@ function App() {
   }, [themeState])
 
   return (
-    <>
+    <div className="wrapper">
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
         <div className="link">
@@ -191,7 +191,7 @@ function App() {
         </form>
       </section>
       {height < 680 ? null : <Footer theme={themeState} />}
-    </>
+    </div>
   )
 }
 
