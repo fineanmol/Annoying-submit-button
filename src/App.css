@@ -28,6 +28,8 @@ body {
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
+  height: 100vh;
+  width: 100vw;
 }
 
 .input-block {
