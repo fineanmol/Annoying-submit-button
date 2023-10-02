@@ -51,6 +51,19 @@ function App() {
       }, 1000)
     }
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
+      setToggleClass((prevState) => !prevState)
+      setShowToast(true)
+      setTimeout(() => {
+        setShowToast(false)
+      }, 1000)
+    } else {
+      // call the API here o whatever action you need to do
+    }
+  }
   // To remember user's selected theme.
   useEffect(() => {
     localStorage.setItem('theme', themeState)
@@ -98,6 +111,7 @@ function App() {
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
           onChange={handleForm}
+          onSubmit={handleSubmit}
         >
           <div className="input-block">
             <label htmlFor="email" className={`label ${themeState}-theme`}>
