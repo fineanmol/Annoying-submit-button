@@ -3,7 +3,9 @@ import useMediaQuery from '../../custom-hooks/useMediaQuery'
 import './ThemeButton.css'
 
 function ThemeButton({ setThemeState, themeState }) {
-  const themeNamesArr = ['purple', 'pink', 'skin', 'blue', 'yellow', 'dark', 'green']
+  // const themeNamesArr = ['purple', 'pink', 'skin', 'blue', 'yellow', 'dark', 'green']
+
+  const themeNamesArr = ['bright', 'Cfae4b9', 'C77cfd9', 'C5e8dbb', 'C376388', 'dark', 'Cadd4af']
   const [display, setDisplay] = useState(true)
   const matches = useMediaQuery('(max-width:786px)')
   useEffect(() => {

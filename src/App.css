@@ -59,10 +59,9 @@ body {
 
 .input {
   padding: 1.35em 1em;
-  width: 350px;
+  width: 325px;
+  border: none;
   outline: none;
-  border: 1px solid rgb(130, 130, 130);
-  border-radius: 0.25em;
 }
 
 .toggle-btn{
@@ -95,16 +94,16 @@ body {
 }
 
 .empty {
-  border: 2px solid rgb(74, 136, 206) !important;
+  border-bottom: 2px solid #2879ff !important
 }
 
 .wrong-input {
-  border: 2px solid #ff0000;
+  border-bottom: 2px solid #ff0000;
   color: #ff0000;
 }
 
 .correct-input {
-  border: 2px solid #03bb56;
+  border-bottom: 2px solid #03bb56;
   color: #03bb56;
 }
 
@@ -164,11 +163,11 @@ body {
 }
 
 .dark-theme {
-  background-color: rgb(125, 119, 119);
+  background-color: rgb(141,141,141);
   color: rgb(235, 235, 235);
   transition: 0.5s ease-in-out;
 }
-
+/* 
 .purple-theme {
   background-color: #f0d9ff;
   color: rgb(68, 52, 70);
@@ -218,7 +217,40 @@ body {
 
 .pink-theme .title {
   color: rgb(167, 61, 135);
+} */
+
+
+.Cfae4b9-theme {
+  background-color: #fae4b9;
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
 }
+
+.C77cfd9-theme {
+  background-color: #77cfd9;
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.C5e8dbb-theme {
+  background-color: #5e8dbb;
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.C376388-theme {
+  background-color: #376388;
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+
+.Cadd4af-theme {
+  background-color: #add4af;
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
 
 .bright-theme {
   background-color: #fff;
@@ -228,6 +260,7 @@ body {
 .dark-theme-toast {
   background-color: rgb(0, 0, 0);
 }
+
 
 .link {
   display: flex;

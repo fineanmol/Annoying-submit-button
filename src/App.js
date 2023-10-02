@@ -55,7 +55,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem('theme', themeState)
   }, [themeState])
-
   return (
     <div className="wrapper">
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
