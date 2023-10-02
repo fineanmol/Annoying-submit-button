@@ -1,14 +1,14 @@
 import React, { useMemo } from 'react'
 import './Footer.css'
 
-function Footer({ theme }) {
+function Footer() {
   const year = useMemo(() => {
     const dateObj = new Date()
     return dateObj.getFullYear()
   }, [])
 
   return (
-    <footer className={`${theme}-footer`}>
+    <footer className="footer">
       <div className="footer-content">
         <a href="https://hacktoberfest.com/">
           <h1 className="glitch" id="hacktoberfest-text">
@@ -58,6 +58,12 @@ function Footer({ theme }) {
           {`${year}`}
           .
         </p>
+      </div>
+      <div className="waves">
+        <div className="wave" id="wave1"> </div>
+        <div className="wave" id="wave2"> </div>
+        <div className="wave" id="wave3"> </div>
+        <div className="wave" id="wave4"> </div>
       </div>
     </footer>
   )

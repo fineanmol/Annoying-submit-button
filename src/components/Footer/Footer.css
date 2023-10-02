@@ -1,11 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 
-footer {
-  width: 100vw;
-  padding: 1.5vh 2vh 1vh 2vh;
-  max-height: 20vh;
-  min-height: 20px;
-  overflow-y: hidden;
+footer{
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
@@ -21,6 +25,7 @@ footer {
   font-size: 2.1rem;
   font-weight: 500;
   text-transform: capitalize;
+  font-family: "Roboto", sans-serif;
   line-height: 3rem;
 }
 
@@ -29,11 +34,12 @@ footer {
   margin: 5px auto;
   line-height: 28px;
   font-size: 14px;
+  font-family: "Roboto", sans-serif;
   color: #cacdd2;
 }
 
 .glitch {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
  
   color: #fff;
@@ -177,13 +183,12 @@ footer {
   background-image: linear-gradient(184deg, #d9bb81, #fde5f1, #2b1e3c);
   background-size: 100%;
   background-repeat: repeat;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
-
   -moz-text-fill-color: transparent;
   -ms-background-clip: text;
   -o-background-clip: text;
+  -webkit-background-clip: text;
   background-clip: text;
 }
 
@@ -218,54 +223,61 @@ footer {
     margin-bottom: 20px;
   }
 }
-.dark-footer {
-  background-color: rgb(0, 0, 0);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
+
+
+/* Waves  */
+.wave {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 62px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
 }
 
-.purple-footer {
-  background-color: rgb(97, 80, 117);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
 }
 
-.green-footer {
-  background-color: rgb(15, 126, 43);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
 }
 
-.dark-footer {
-  background-color: rgb(0, 0, 0);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
 }
 
-.pink-footer {
-  background-color: rgb(182, 77, 112);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
 }
 
-.skin-footer {
-  background-color: rgb(185, 81, 90);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
-}
-.blue-footer {
-  color: rgb(45, 43, 43);
-  background-color: #1370a3;
-  transition: 0.5s ease-in-out;
-}
-.yellow-footer {
-  color: rgb(29, 28, 28);
-  background-color: #d29117;
-  transition: 0.5s ease-in-out;
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
 }
 
-.bright-footer {
-  color: rgb(45, 43, 43);
-  background: rgb(145, 143, 143);
-  transition: 0.5s ease-in-out;
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
 }
