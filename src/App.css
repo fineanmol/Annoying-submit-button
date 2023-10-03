@@ -331,6 +331,49 @@ body {
   }
 }
 
+/* Style for the password rules tooltip */
+.password-rules-tooltip {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  text-align: left;
+  font-weight: bold;
+  font-family: Arial, sans-serif; 
+  font-size: 14px;
+  z-index: 1;
+  visibility: hidden; 
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: none;
+}
+.password-rules-tooltip li{
+  font-weight: 500;
+}
+
+.password-rules-tooltip::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.password-rules-tooltip.displayed {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+
 @media screen and (max-height: 380px) {
   .submit-button{
     margin-top: 0.25rem;

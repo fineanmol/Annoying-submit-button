@@ -16,6 +16,7 @@ function App() {
   const [toggleClass, setToggleClass] = useState(false)
   const [showToast, setShowToast] = useState(false)
   const [isPasswordShown, setPasswordShown] = useState(false)
+  const [isPasswordFocused, setPasswordFocused] = useState(false)
   const [themeState, setThemeState] = useState(
     localStorage.getItem('theme') || 'purple',
   )
@@ -27,7 +28,30 @@ function App() {
       [e.target.name]: e.target.value,
     })
   }
-
+  const isPasswordValid = (password) => {
+    // Check if the password length is at least 6
+    if (password.length < minPasswordLength) {
+      return false
+    }
+    // Check if the password contains at least one lowercase letter
+    if (!/[a-z]/.test(password)) {
+      return false
+    }
+    // Check if the password contains at least one uppercase letter
+    if (!/[A-Z]/.test(password)) {
+      return false
+    }
+    // Check if the password contains at least one special character
+    if (!/[!@#$%^&*()_+{}:;<>,.?~\\-]/.test(password)) {
+      return false
+    }
+    // Check if the password contains at least one numeric character
+    if (!/\d/.test(password)) {
+      return false
+    }
+    // All validation criteria passed
+    return true
+  }
   const validateEmail = (email) => String(email)
     .toLowerCase()
     .trim() // Trim to ignore spaces after user email input
@@ -41,7 +65,7 @@ function App() {
     setShowToast(false)
 
     if (
-      form.password.length < minPasswordLength
+      !isPasswordValid(form.password)
       || !validateEmail(form.email)
     ) {
       setToggleClass((prevState) => !prevState)
@@ -67,7 +91,7 @@ function App() {
                 <span className="hover">Annoying Submit Button</span>
                 {' '}
                 <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
+                  className={`${emojiState} ${!isPasswordValid(form.password)
                     || !validateEmail(form.email)
                     ? 'em em-rage'
                     : 'em em-smile'
@@ -80,7 +104,7 @@ function App() {
                 <span className="hover">Annoying Submit Button</span>
                 {' '}
                 <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
+                  className={`${emojiState} ${!isPasswordValid(form.password)
                     || !validateEmail(form.email)
                     ? 'em em-rage'
                     : 'em em-face_with_hand_over_mouth'
@@ -131,7 +155,7 @@ function App() {
             </label>
             <span className="input-password-group">
               <input
-                className={`input ${form.password.length < minPasswordLength
+                className={`input ${!isPasswordValid(form.password)
                   ? 'wrong-input'
                   : 'correct-input'
                 } ${themeState}-theme ${!form.password ? 'empty' : ''}`}
@@ -142,6 +166,8 @@ function App() {
                 minLength="6"
                 tabIndex={2}
                 required
+                onFocus={() => setPasswordFocused(true)}
+                onBlur={() => setPasswordFocused(false)}
               />
 
               <button className="toggle-btn" type="button" onClick={() => setPasswordShown(!isPasswordShown)}>{isPasswordShown ? <span className="fa fa-eye">{' '}</span> : <span className="fa fa-eye-slash">{' '}</span>}</button>
@@ -154,13 +180,25 @@ function App() {
                 Password should be at least 6 characters long
               </p>
             )}
+            {isPasswordFocused && (
+              <div className={`password-rules-tooltip ${isPasswordFocused ? 'displayed' : ''}`}>
+                <p>Password should include</p>
+                <ul>
+                  <li>At least 6 characters</li>
+                  <li>At least 1 lowercase alphabet</li>
+                  <li>At least 1 uppercase alphabet</li>
+                  <li>At least 1 special character</li>
+                  <li>At least 1 numeric character</li>
+                </ul>
+              </div>
+            )}
           </div>
           <div
             style={{
               transform: `translateX(${toggleClass
 
                 && !(
-                  form.password.length >= minPasswordLength
+                  isPasswordValid(form.password)
                   && validateEmail(form.email)
                 )
                 ? '33vh'
@@ -172,7 +210,7 @@ function App() {
             <button
               type="submit"
               tabIndex={3}
-              className={`submit-button ${form.password.length >= minPasswordLength
+              className={`submit-button ${isPasswordValid(form.password)
                 && validateEmail(form.email)
                 ? 'button-success'
                 : ''
