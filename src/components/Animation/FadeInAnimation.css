@@ -1,0 +1,23 @@
+/* Define the initial state of the fading element */
+.fade-enter {
+    opacity: 0;
+}
+
+/* Define the final state of the fading element */
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms;
+    /* Match the timeout value from the component */
+}
+
+/* Define the exiting state of the fading element */
+.fade-exit {
+    opacity: 1;
+}
+
+/* Define the final state of the fading element when it exits */
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 1000ms;
+    /* Match the timeout value from the component */
+}

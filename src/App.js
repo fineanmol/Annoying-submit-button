@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 import Footer from './components/Footer'
+import Animation from './components/Animation/FadeInAnimation'
 import ThemeButton from './components/ThemeButton'
 import useWindowDimensions from './custom-hooks/useWindowDimensions'
 
@@ -92,7 +93,7 @@ function App() {
             </div>
           </span>
         </div>
-
+<Animation></Animation>
         <form
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
