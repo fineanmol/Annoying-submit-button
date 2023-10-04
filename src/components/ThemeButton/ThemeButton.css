@@ -49,13 +49,13 @@
 }
 
 .blue {
-  background-color: #1370a3;
+  background-color: #3a799b;
   border-color: rgb(1, 0, 0);
   transition: 0.5s ease-in-out;
 }
 
 .yellow {
-  background-color: #d29117;
+  background-color: #b88e40;
   border-color: rgb(1, 0, 0);
   transition: 0.5s ease-in-out;
 }
