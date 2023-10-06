@@ -123,7 +123,6 @@ footer {
 .socials a {
   text-decoration: none;
   color: #fff;
-  border: 1.5px solid white;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -146,25 +145,66 @@ footer {
 /* Invert colors when hover mouse */
 .socials a:hover {
   transition: all ease 0.3s;
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
-.socials li:nth-child(1) a:hover {
-  background-color: #4267b2;
+.fa-facebook {
+  background-color: #1C1CAF;
+  border-radius: 50%;
+  padding: 14px 15px;
+  color: white;
 }
-.socials li:nth-child(2) a:hover {
-  background-color: #1da1f2;
+.fa-facebook:hover{
+  background-color:#1d1d7f;
+  transition:0.2s;
 }
-.socials li:nth-child(3) a:hover {
-  background-image: linear-gradient(#962fbf, #feda75);
+.fa-twitter {
+  background-color: #00acee;
+  border-radius: 50%;
+  padding: 14px 15px;
+  color: white;
+}
+.fa-twitter:hover {
+  background-color: #00aff5;
+  transition:0.2s;
+}
+/* Picked from https://stackoverflow.com/questions/37751375/instagram-new-logo-css-background */
+.fa-instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  border-radius: 50%;
+  padding: 14px 15px;
+  color: white;
+}
+.fa-instagram:hover {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #b87024 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #c47f34 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#db2ea4 100%);
+  background: linear-gradient(45deg, #e28f35 0%,#e6683c 25%,#cd263f 50%,#cf286b 75%,#c92294 100%);
+  transition: 0.2s;
 }
 
-.socials li:nth-child(4) a:hover {
-  background-color: #46c1f6;
+.fa-github {
+  background-color: #050404;
+  border-radius: 50%;
+  padding: 14px 15px;
+  color:white;
 }
-
-.socials li:nth-child(5) a:hover {
-  background-color: #333;
+.fa-github:hover{
+  background-color:#231c1d;
+  transition:0.2s;
+}
+.fa-linkedin-square {
+  background-color: #3345cc;
+  border-radius: 50%;
+  padding: 15px 16px;
+  color:white;
+}
+.fa-linkedin-square:hover{
+  background-color:#3949c0;
+  transition:0.2s;
 }
 
 .socials a:hover i {
