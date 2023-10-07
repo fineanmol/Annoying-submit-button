@@ -1,11 +1,11 @@
-import React, { useMemo } from 'react'
-import './Footer.css'
+import React, { useMemo } from "react";
+import "./Footer.css";
 
 function Footer({ theme }) {
   const year = useMemo(() => {
-    const dateObj = new Date()
-    return dateObj.getFullYear()
-  }, [])
+    const dateObj = new Date();
+    return dateObj.getFullYear();
+  }, []);
 
   return (
     <footer className={`${theme}-footer`}>
@@ -34,7 +34,7 @@ function Footer({ theme }) {
             </li>
             <li>
               <a href="https://twitter.com/fineanmol" target="_blank">
-                <i className="fa fa-twitter" />
+                <i className="fa-brands fa-x-twitter" />
               </a>
             </li>
             <li>
@@ -45,22 +45,19 @@ function Footer({ theme }) {
           </ul>
         </div>
         <p id="footer-text">
-          This Project is participating in
-          {' '}
+          This Project is participating in{" "}
           <b>
             <a href="https://hacktoberfest.com/" id="hf-theme" target="_blank">
               Hacktoberfest
             </a>
-          </b>
-          {' '}
+          </b>{" "}
           <br />
           Copyright &copy;
-          {`${year}`}
-          .
+          {`${year}`}.
         </p>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

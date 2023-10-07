@@ -50,7 +50,7 @@ footer {
 
 .glitch::before,
 .glitch::after {
-  content: "Hacktoberfest 2022";
+  content: "Hacktoberfest 2023";
 
   display: block;
   position: absolute;
