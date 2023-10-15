@@ -3,7 +3,7 @@
 footer {
   width: 100vw;
   padding: 1.5vh 2vh 1vh 2vh;
-  max-height: 20vh;
+  max-height: 22vh;
   min-height: 20px;
   overflow-y: hidden;
 }
@@ -15,6 +15,7 @@ footer {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  height: 150px;
 }
 
 .footer-content h3 {
@@ -31,6 +32,7 @@ footer {
   font-size: 14px;
   color: #cacdd2;
 }
+
 
 .glitch {
   font-family: "Montserrat", sans-serif;
