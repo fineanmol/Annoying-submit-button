@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
 footer {
-  width: 100vw;
+  width: 100%;
   padding: 1.5vh 2vh 1vh 2vh;
-  max-height: 20vh;
-  min-height: 20px;
-  overflow-y: hidden;
+  max-height: 21vh;
+  min-height: 21px;
+  overflow: hidden;
+  background-color: var(--footer-background-color, rgb(0, 0, 0));
+  color: var(--footer-text-color, rgb(204, 198, 198));
 }
-
 
 .footer-content {
   display: flex;
@@ -22,6 +23,7 @@ footer {
   font-weight: 500;
   text-transform: capitalize;
   line-height: 3rem;
+  color: var(--footer-heading-color, #fff);
 }
 
 .footer-content p {
@@ -29,17 +31,9 @@ footer {
   margin: 5px auto;
   line-height: 28px;
   font-size: 14px;
-  color: #cacdd2;
+  color: var(--footer-paragraph-color, #cacdd2);
 }
 
-.glitch {
-  font-family: "Montserrat", sans-serif;
-  text-decoration: none;
- 
-  color: #fff;
-  transform: translate(0%, 0%);
-  margin: 0;
-}
 
 @media screen and (min-width: 700px) {
   .glitch {
@@ -48,17 +42,29 @@ footer {
 }
 
 
+.glitch {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  position: relative; 
+  color: #fff;
+  transform: translate(0%, 0%);
+  margin: 0;
+}
+
 .glitch::before,
 .glitch::after {
-  content: "Hacktoberfest 2022";
-
+  content: "Hacktoberfest 2023";
   display: block;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.8;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  mask-image: linear-gradient(to right, transparent 0%, transparent 50%, black 50%, black 100%);
+  mask-size: 200%; 
+  mask-position: 100%; 
 }
 
 .glitch::before {
@@ -69,6 +75,11 @@ footer {
 .glitch::after {
   color: #f0f;
   z-index: -2;
+}
+
+.glitch:hover::before,
+.glitch:hover::after {
+  opacity: 0.8;
 }
 
 @keyframes glitch {
@@ -96,21 +107,12 @@ footer {
   animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
 }
 .glitch:hover::after {
-  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
-    infinite;
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
 }
-
-/* .footer-content p {
-  max-width: 500px;
-  margin: 0px auto;
-  line-height: 25px;
-  font-size: 24px;
-  color: #ffffff;
-} */
 
 .socials {
   list-style: none;
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 1rem 0 1rem 0;
@@ -180,11 +182,11 @@ footer {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
-
-  -moz-text-fill-color: transparent;
+  -moz-text-fill_color: transparent;
   -ms-background-clip: text;
   -o-background-clip: text;
   background-clip: text;
+  transition: margin-top 0.3s ease-in-out; 
 }
 
 @keyframes gradientAnimation {
@@ -195,22 +197,8 @@ footer {
     background-position: 100% 100%;
   }
 }
-
-@keyframes gradientAnimation {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 100% 100%;
-  }
-}
-
-
-
 
 /* aligning the text to center */
-
-
 @media (max-width: 500px) {
   .footer-menu ul {
     display: flex;
@@ -218,12 +206,8 @@ footer {
     margin-bottom: 20px;
   }
 }
-.dark-footer {
-  background-color: rgb(0, 0, 0);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
-}
 
+/* Additional styles based on your previous comments */
 .purple-footer {
   background-color: rgb(97, 80, 117);
   color: rgb(204, 198, 198);
@@ -232,12 +216,6 @@ footer {
 
 .green-footer {
   background-color: rgb(15, 126, 43);
-  color: rgb(204, 198, 198);
-  transition: 0.5s ease-in-out;
-}
-
-.dark-footer {
-  background-color: rgb(0, 0, 0);
   color: rgb(204, 198, 198);
   transition: 0.5s ease-in-out;
 }
@@ -253,11 +231,13 @@ footer {
   color: rgb(204, 198, 198);
   transition: 0.5s ease-in-out;
 }
+
 .blue-footer {
   color: rgb(45, 43, 43);
   background-color: #1370a3;
   transition: 0.5s ease-in-out;
 }
+
 .yellow-footer {
   color: rgb(29, 28, 28);
   background-color: #d29117;
