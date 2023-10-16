@@ -1,15 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 
-footer {
+/* Footer Styles */
+.footer {
   width: 100vw;
   padding: 1.5vh 2vh 1vh 2vh;
   max-height: 20vh;
   min-height: 20px;
   overflow-y: hidden;
-}
-
-
-.footer-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,14 +14,15 @@ footer {
   text-align: center;
 }
 
-.footer-content h3 {
+.footer h3 {
   font-size: 2.1rem;
   font-weight: 500;
   text-transform: capitalize;
   line-height: 3rem;
+  margin: 0;
 }
 
-.footer-content p {
+.footer p {
   max-width: 500px;
   margin: 5px auto;
   line-height: 28px;
@@ -32,14 +30,14 @@ footer {
   color: #cacdd2;
 }
 
-.glitch {
+.footer .glitch {
   font-family: "Montserrat", sans-serif;
   text-decoration: none;
- 
   color: #fff;
   transform: translate(0%, 0%);
   margin: 0;
 }
+
 
 @media screen and (min-width: 700px) {
   .glitch {
