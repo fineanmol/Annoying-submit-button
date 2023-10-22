@@ -7,6 +7,7 @@
   list-style: none;
   text-decoration: none;
   font-family: "Poppins", sans-serif;
+  /* background-image: url('https://st5.depositphotos.com/35914836/63547/i/450/depositphotos_635479512-stock-photo-brown-wooden-wall-texture-background.jpg'); */
 }
 
 html,
@@ -193,12 +194,12 @@ body {
 
 .blue-theme {
   color: rgb(45, 43, 43);
-  background-color: #1370a3;
+  background-color: #a0c5d8;
   transition: 0.5s ease-in-out;
 }
 .yellow-theme {
   color: rgb(29, 28, 28);
-  background-color: #d29117;
+  background-color: #f2d49b;
   transition: 0.5s ease-in-out;
 }
 
