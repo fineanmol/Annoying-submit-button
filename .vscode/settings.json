@@ -1,5 +1,4 @@
 {
-    "marquee.widgets.npm-stats.packageNames": [
-        "annoying-submit-button"
-    ]
+  "marquee.widgets.npm-stats.packageNames": ["annoying-submit-button"],
+  "liveServer.settings.port": 5501
 }
