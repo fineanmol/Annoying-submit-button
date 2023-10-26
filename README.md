@@ -25,15 +25,15 @@
    </p>
 </div>
 
-
-You won't be able to submit the form until you enter correct length of password and a valid email ID.  Enjoy playing with it. :)
+You won't be able to submit the form until you enter correct length of password and a valid email ID. Enjoy playing with it. :)
 #Hacktoberfest
 
 ## Project Preview
+
 ![Preview video of project](./content/preview.gif)
 
-
 ## :bulb: Live Project Link
+
 [Click here to play with **Annoying Submit Button**](https://annoyingsubmitbutton.netlify.app/)
 
 ---
@@ -46,7 +46,6 @@ You won't be able to submit the form until you enter correct length of password 
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/fineanmol)
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/fineanmol)
 
-
 ---
 
 ## :people_hugging: Show your support
@@ -54,7 +53,6 @@ You won't be able to submit the form until you enter correct length of password 
 Give a ⭐️ if you like this project and want to support it!
 
 ---
-
 
 ## 🛠️ Installation Steps
 
@@ -84,7 +82,6 @@ npm install
 npm start
 </pre>
 
-
 ---
 
 ## 🤝 Contributing
@@ -100,8 +97,8 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-Feel free to check the [issues page](../../issues/).
----
+## Feel free to check the [issues page](../../issues/).
+
 ## 📝 License
 
 This project is under the [MIT](./LICENSE) license.
@@ -114,7 +111,9 @@ This project is under the [MIT](./LICENSE) license.
 - Inspiration
 - I wish to show my appreciation
 - etc
+
 ---
+
 ## :pray: Thanks
 
 Thanks to everyone who has contributed towards this project
@@ -126,7 +125,3 @@ Thanks to everyone who has contributed towards this project
 </div>
 
 ---
-
-
-
-
