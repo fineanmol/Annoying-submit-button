@@ -12,7 +12,7 @@ function Footer({ theme }) {
       <div className="footer-content">
         <a href="https://hacktoberfest.com/">
           <h1 className="glitch" id="hacktoberfest-text">
-            Hacktoberfest 2022
+            Hacktoberfest 2023
           </h1>
         </a>
         <div className="footer-menu">
