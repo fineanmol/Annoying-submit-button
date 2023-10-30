@@ -34,4 +34,9 @@
     
 - Create a new pull request from your forked repository by clicking New-Pull-Request.
 
+#### Name: Pranav [(GitHub link)](https://github.com/ItachiUchiha456)
+
+- Place: Mumbai, India
+- Bio:coder
+- GitHub: [ItachiUchiha456] (https://github.com/ItachiUchiha456)
 
