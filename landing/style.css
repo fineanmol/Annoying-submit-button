@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+}
+section{
+    width:100%;
+    height:100%;
+    position: relative;
+    background: url(wallpaper2.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px 0px;
+    background: transparent;
+    
+
+}
+.largebox{
+    background-image: url(wallpaper2.jpg);
+    padding: 20px 100px;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+    
+    
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 50px;
+    position: relative;
+    
+    
+}
+.logo{
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(253, 79, 11);
+
+}
+.nav ul{
+   
+    display: flex;
+    /* margin: 10px; */
+    float: right;
+    
+    
+}
+.nav ul li{
+    list-style: none;
+    margin: 10px 20px;
+    padding: 7px;
+    font-size: 20px;
+    border: 0px solid rgb(2, 2, 2);
+    border-radius: 30px;
+    color: rgb(245, 43, 43);
+    background-color:#fff051;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.nav ul li:hover{
+    transform: scale(1.1);
+}
+.content{
+    margin:30px 60px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0px 60px;
+    margin: 80px 0px 0px 0px;
+
+}
+.content h1{
+    font-size: 50px;
+    color:#29d500 ;
+   
+}
+.content p{
+    margin: 35px 0px;
+    color:rgb(243, 152, 15);
+    font-size: 20px;
+    font-family:  sans-serif;
+
+}
+.box{
+    display: flex;
+    flex-direction: row;
+}
+.box img{
+    height:300px ;
+    margin: 70px 0px 0px 50px;
+}
+
+.info a{
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 10px;
+    background-color: rgb(28, 9, 133);
+    margin: 10px 10px;
+    font-weight: 600;
+   
+
+
+}
+.info a:hover{
+    background: blue;
+}
+.pic{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+   
+}
+.pic img{
+    width: 70px ;
+    margin: 20px ;
+    
+}
+.pic img:hover{
+    transform: translateY(-15px);
+}
+
+.imgbox:hover{
+    transform: scale(1.2);
+}
