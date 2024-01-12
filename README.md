@@ -1,7 +1,7 @@
 <div align="center">
    <h1> Annoying Submit Button in a Form using ReactJS </h1>
 
-   <img src="https://media.giphy.com/media/j4A1puoG0sUxOB5rB5/giphy.gif" width=200 />
+   <img src="https://media.giphy.com/media/j4A1puoG0sUxOB5rB5/giphy.gif" width=250 />
   <p>
 
    <a href="https://github.com/fineanmol/Annoying-submit-button/graphs/Stars" alt="Stars">
