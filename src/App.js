@@ -3,52 +3,40 @@ import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
 import useWindowDimensions from './custom-hooks/useWindowDimensions'
+// ...
 
-function App() {
-  const minPasswordLength = 6
-  const { height } = useWindowDimensions()
+const App = () => {
+  // ... (existing code)
 
-  const [form, setForm] = useState({
-    email: '',
-    password: '',
-  })
-
-  const [toggleClass, setToggleClass] = useState(false)
-  const [showToast, setShowToast] = useState(false)
-  const [isPasswordShown, setPasswordShown] = useState(false)
-  const [themeState, setThemeState] = useState(
-    localStorage.getItem('theme') || 'purple',
-  )
-
-  // updated into one handle
-  const handleForm = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    })
-  }
-
-  const validateEmail = (email) => String(email)
-    .toLowerCase()
-    .trim() // Trim to ignore spaces after user email input
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-    )
-
-  // eslint-disable-next-line no-unused-vars
-  const [emojiState, setEmojiState] = React.useState()
-  const annoyingSubmitButton = () => {
-    setShowToast(false)
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setShowToast(false);
 
     if (
-      form.password.length < minPasswordLength
-      || !validateEmail(form.email)
+      form.password.length < minPasswordLength ||
+      !validateEmail(form.email)
     ) {
-      setToggleClass((prevState) => !prevState)
-      setShowToast(true)
+      setToggleClass((prevState) => !prevState);
+      setShowToast(true);
       setTimeout(() => {
-        setShowToast(false)
-      }, 1000)
+        setShowToast(false);
+      }, 1000);
+    } else {
+      // Form is valid, submit the form to the server or take necessary action.
+      try {
+        const response = await fetch('https://formspree.io/f/xqkjbjzw', {
+          method: 'POST',
+          body: JSON.stringify(form),
+        });
+
+        if (response.ok) {
+          // Handle a successful submission, e.g., redirect the user.
+        } else {
+          // Handle errors from the server.
+        }
+      } catch (error) {
+        // Handle network or other errors.
+      }
     }
   }
 
@@ -206,7 +194,7 @@ function App() {
       </section>
       {height < 680 ? null : <Footer theme={themeState} />}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

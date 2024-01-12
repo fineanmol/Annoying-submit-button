@@ -167,6 +167,10 @@ body {
   transition: 0.5s ease-in-out;
 }
 
+.dark-theme input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .purple-theme {
   background-color: #f0d9ff;
   color: rgb(68, 52, 70);
