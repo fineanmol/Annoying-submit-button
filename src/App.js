@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
-import useWindowDimensions from './custom-hooks/useWindowDimensions'
 // ...
 
 const App = () => {
