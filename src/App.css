@@ -267,26 +267,31 @@ body {
 }
 
 .link-title1 {
+  color: black;
   transform-origin: right center;
+  font-family: 'Ubuntu', sans-serif;
   
 }
 
 .link-title2 {
+  color: black;
   transform-origin: left center;
   transform: rotate(20deg);
  
 }
 
 .hover {
-  color: #0000;
-  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(222, 14, 14) 0)
-    var(--_p, 100%) / 200% no-repeat;
+  background: linear-gradient(90deg, black 50%, white 50%);
   -webkit-background-clip: text;
   background-clip: text;
-  transition: 0.4s;
+  color: transparent;
+  transition: background-position 0.5s ease-in-out;
+  background-size: 200% 100%;
+  background-position: 100%; /* Start with black */
 }
+
 .hover:hover {
-  --_p: 0%;
+  background-position: 0%; /* On hover, transition to white */
 }
 
 /* Hover Action*/
