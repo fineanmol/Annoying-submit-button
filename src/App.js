@@ -10,7 +10,8 @@ function App() {
   const [isPasswordShown, setPasswordShown] = useState(false)
   const [toggleClass, setToggleClass] = useState(false)
   const [showToast, setShowToast] = useState(false)
-  const [emojiState, setEmojiState] = useState('') 
+  /* eslint no-unused-vars: "error" */
+  const [emojiState, setEmojiState] = useState('')
   const { height } = useWindowDimensions()
 
   const validatePassword = (password) => {
@@ -36,6 +37,7 @@ function App() {
     }
   }
 
+  /* eslint-disable no-unused-vars */
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     setShowToast(false)
@@ -67,6 +69,7 @@ function App() {
       }
     }
   }
+  /* eslint-enable no-unused-vars */
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -86,6 +89,13 @@ function App() {
     localStorage.setItem('theme', themeState)
   }, [themeState])
 
+  useEffect(() => {
+    if (!validatePassword(form.password) || !validateEmail(form.email)) {
+      setEmojiState('em em-rage')
+    } else {
+      setEmojiState('em em-smile')
+    }
+  }, [form])
   return (
     <div className="wrapper">
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
@@ -98,9 +108,9 @@ function App() {
                 <span
                   className={`${emojiState} ${!validatePassword(form.password)
                       || !validateEmail(form.email)
-                      ? 'em em-rage'
-                      : 'em em-smile'
-                    }`}
+                    ? 'em em-rage'
+                    : 'em em-smile'
+                  }`}
                   style={{ height: 20 }}
                 />
               </span>
@@ -109,9 +119,9 @@ function App() {
                 <span
                   className={`${emojiState} ${!validatePassword(form.password)
                       || !validateEmail(form.email)
-                      ? 'em em-rage'
-                      : 'em em-face_with_hand_over_mouth'
-                    }`}
+                    ? 'em em-rage'
+                    : 'em em-face_with_hand_over_mouth'
+                  }`}
                   style={{ height: 20 }}
                 />
               </span>
@@ -134,8 +144,8 @@ function App() {
             </label>
             <input
               className={`input ${themeState}-theme ${!form.email ? 'empty' : ''
-                } ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
-                }`}
+              } ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
+              }`}
               id="email"
               type="email"
               name="email"
@@ -159,9 +169,9 @@ function App() {
             <span className="input-password-group">
               <input
                 className={`input ${validatePassword(form.password)
-                    ? 'correct-input'
-                    : 'wrong-input'
-                  } ${themeState}-theme ${!form.password ? 'empty' : ''}`}
+                  ? 'correct-input'
+                  : 'wrong-input'
+                } ${themeState}-theme ${!form.password ? 'empty' : ''}`}
                 id="password"
                 type={isPasswordShown ? 'text' : 'password'}
                 name="password"
@@ -198,9 +208,9 @@ function App() {
                     validatePassword(form.password)
                     && validateEmail(form.email)
                   )
-                  ? '33vh'
-                  : '0'
-                })`,
+                ? '33vh'
+                : '0'
+              })`,
               transition: 'transform 190ms ease-in-out',
             }}
           >
@@ -209,9 +219,9 @@ function App() {
               tabIndex={3}
               className={`submit-button ${validatePassword(form.password)
                   && validateEmail(form.email)
-                  ? 'button-success'
-                  : ''
-                }`}
+                ? 'button-success'
+                : ''
+              }`}
               onMouseEnter={annoyingSubmitButton}
             >
               Submit
