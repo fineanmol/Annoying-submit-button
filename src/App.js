@@ -3,9 +3,8 @@ import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
 import useWindowDimensions from './custom-hooks/useWindowDimensions'
-// ...
 
-const App = () => {
+function App() {
   const minPasswordLength = 6
   const { height } = useWindowDimensions()
 
@@ -67,9 +66,12 @@ const App = () => {
               <span className="link-title1 title">
                 <span className={`${form.password.length < minPasswordLength
                     || !validateEmail(form.email)
-                    ? ''
-                    : 'hover'
-                  }`}>Annoying Submit Button</span>
+                  ? ''
+                  : 'hover'
+                }`}
+                >
+                  Annoying Submit Button
+                </span>
                 {' '}
                 <span
                   className={`${emojiState} ${form.password.length < minPasswordLength
@@ -84,9 +86,12 @@ const App = () => {
               <span className="link-title2 title">
                 <span className={`${form.password.length < minPasswordLength
                     || !validateEmail(form.email)
-                    ? ''
-                    : 'hover'
-                  }`}>Annoying Submit Button</span>
+                  ? ''
+                  : 'hover'
+                }`}
+                >
+                  Annoying Submit Button
+                </span>
                 {' '}
                 <span
                   className={`${emojiState} ${form.password.length < minPasswordLength
@@ -204,4 +209,4 @@ const App = () => {
   )
 }
 
-export default App;
+export default App
