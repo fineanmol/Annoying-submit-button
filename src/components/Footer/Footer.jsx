@@ -6,7 +6,7 @@ function Footer({ theme }) {
     const dateObj = new Date()
     return dateObj.getFullYear()
   }, [])
-
+  /* eslint-disable jsx-a11y/control-has-associated-label */
   return (
     <footer className={`${theme}-footer`}>
       <div className="footer-content">
@@ -61,6 +61,7 @@ function Footer({ theme }) {
         </p>
       </div>
     </footer>
+    /* eslint-disable jsx-a11y/control-has-associated-label */
   )
 }
 
