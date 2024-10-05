@@ -162,7 +162,7 @@ body {
 }
 
 .dark-theme {
-  background-color: rgb(125, 119, 119);
+  background-color: rgb(34 34 34);
   color: rgb(235, 235, 235);
   transition: 0.5s ease-in-out;
 }
@@ -178,7 +178,7 @@ body {
 }
 
 .green-theme {
-  background-color: rgb(123, 214, 165);
+  background-color: rgb(171 240 203);
   color: rgb(68, 52, 70);
   transition: 0.5s ease-in-out;
 }
@@ -197,13 +197,70 @@ body {
 
 .blue-theme {
   color: rgb(45, 43, 43);
-  background-color: #1370a3;
+  background-color: #bfe8ff;
   transition: 0.5s ease-in-out;
 }
+
 .yellow-theme {
   color: rgb(29, 28, 28);
-  background-color: #d29117;
+  background-color: #ffdea1;
   transition: 0.5s ease-in-out;
+}
+
+.purple-theme .hover {
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(120, 70, 153) 0)
+    var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
+}
+
+.green-theme .hover {
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(10, 79, 14) 0)
+    var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
+}
+
+.pink-theme .hover {
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(167, 61, 135) 0)
+    var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
+}
+
+.skin-theme .hover {
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(153, 70, 70) 0)
+    var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
+}
+
+.dark-theme .hover {
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(245, 245, 245) 0)
+    var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
+}
+
+.blue-theme .hover {
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(30, 73, 125) 0)
+    var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
+}
+
+.yellow-theme .hover {
+  background: linear-gradient(90deg, rgb(101, 199, 63) 50%, rgb(200, 130, 0) 0)
+    var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 0.4s;
 }
 
 .skin-theme .title {
@@ -214,6 +271,10 @@ body {
   color: rgb(120, 70, 153);
 }
 
+.blue-theme .title {
+  color: rgb(30, 73, 125);
+}
+
 .green-theme .title {
   color: rgb(10, 79, 14);
 }
@@ -222,11 +283,14 @@ body {
   color: rgb(167, 61, 135);
 }
 
-.bright-theme {
-  background-color: #fff;
-  transition: 0.5s ease-in-out;
-  color: #000;
+.dark-theme .title {
+  color: rgb(245, 245, 245);
 }
+
+.yellow-theme .title {
+  color: rgb(200, 130, 0);
+}
+
 .dark-theme-toast {
   background-color: rgb(0, 0, 0);
 }
