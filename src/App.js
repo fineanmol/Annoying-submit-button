@@ -3,53 +3,52 @@ import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
 import useWindowDimensions from './custom-hooks/useWindowDimensions'
-// ...
 
-const App = () => {
-  // ... (existing code)
+function App() {
+  const minPasswordLength = 6
+  const { height } = useWindowDimensions()
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setShowToast(false);
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  })
 
-    if (
-      form.password.length < minPasswordLength ||
-      !validateEmail(form.email)
-    ) {
-      setToggleClass((prevState) => !prevState);
-      setShowToast(true);
-      setTimeout(() => {
-        setShowToast(false);
-      }, 1000);
-    } else {
-      // Form is valid, submit the form to the server or take necessary action.
-      try {
-        const response = await fetch('https://formspree.io/f/xqkjbjzw', {
-          method: 'POST',
-          body: JSON.stringify(form),
-        });
+  const [toggleClass, setToggleClass] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+  const [isPasswordShown, setPasswordShown] = useState(false)
+  const [themeState, setThemeState] = useState(
+    localStorage.getItem('theme') || 'purple',
+  )
 
-        if (response.ok) {
-          // Handle a successful submission, e.g., redirect the user.
-        } else {
-          // Handle errors from the server.
-        }
-      } catch (error) {
-        // Handle network or other errors.
-      }
-    }
+  // updated into one handle
+  const handleForm = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
+  const validateEmail = (email) => String(email)
+    .toLowerCase()
+    .trim() // Trim to ignore spaces after user email input
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+    )
+
+  // eslint-disable-next-line no-unused-vars
+  const [emojiState, setEmojiState] = React.useState()
+  const annoyingSubmitButton = () => {
+    setShowToast(false)
+
+    if (
+      form.password.length < minPasswordLength
+      || !validateEmail(form.email)
+    ) {
       setToggleClass((prevState) => !prevState)
       setShowToast(true)
       setTimeout(() => {
         setShowToast(false)
       }, 1000)
-    } else {
-      // call the API here o whatever action you need to do
     }
   }
   // To remember user's selected theme.
@@ -65,7 +64,14 @@ const App = () => {
           <span className="mask">
             <div className="link-container">
               <span className="link-title1 title">
-                <span className="hover">Annoying Submit Button</span>
+                <span className={`${form.password.length < minPasswordLength
+                    || !validateEmail(form.email)
+                  ? ''
+                  : 'hover'
+                }`}
+                >
+                  Annoying Submit Button
+                </span>
                 {' '}
                 <span
                   className={`${emojiState} ${form.password.length < minPasswordLength
@@ -78,7 +84,14 @@ const App = () => {
                 {' '}
               </span>
               <span className="link-title2 title">
-                <span className="hover">Annoying Submit Button</span>
+                <span className={`${form.password.length < minPasswordLength
+                    || !validateEmail(form.email)
+                  ? ''
+                  : 'hover'
+                }`}
+                >
+                  Annoying Submit Button
+                </span>
                 {' '}
                 <span
                   className={`${emojiState} ${form.password.length < minPasswordLength
@@ -99,7 +112,6 @@ const App = () => {
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
           onChange={handleForm}
-          onSubmit={handleSubmit}
         >
           <div className="input-block">
             <label htmlFor="email" className={`label ${themeState}-theme`}>
@@ -194,7 +206,7 @@ const App = () => {
       </section>
       {height < 680 ? null : <Footer theme={themeState} />}
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
