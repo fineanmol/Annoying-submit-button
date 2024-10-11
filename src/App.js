@@ -1,12 +1,56 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
-import Footer from './components/Footer'
-import ThemeButton from './components/ThemeButton'
-import useWindowDimensions from './custom-hooks/useWindowDimensions'
-// ...
+import React, { useEffect, useState } from 'react';
+import './App.css';
+import Footer from './components/Footer';
+import ThemeButton from './components/ThemeButton';
+import useWindowDimensions from './custom-hooks/useWindowDimensions';
 
 const App = () => {
-  // ... (existing code)
+  const [form, setForm] = useState({ email: '', password: '' });
+  const [showToast, setShowToast] = useState(false);
+  const [toggleClass, setToggleClass] = useState(false);
+  const [isPasswordShown, setPasswordShown] = useState(false);
+  const [passwordStrength, setPasswordStrength] = useState('');
+  const [themeState, setThemeState] = useState(localStorage.getItem('theme') || 'light');
+  const { height } = useWindowDimensions();
+  const minPasswordLength = 6;
+
+  // Function to validate email
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  // Function to check password strength
+  const validatePasswordStrength = (password) => {
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+
+    if (password.length < minPasswordLength) {
+      return 'Password should be at least 6 characters long';
+    } else if (!hasUpperCase) {
+      return 'Password should contain at least one uppercase letter';
+    } else if (!hasLowerCase) {
+      return 'Password should contain at least one lowercase letter';
+    } else if (!hasNumbers) {
+      return 'Password should contain at least one number';
+    } else if (!hasSpecialChar) {
+      return 'Password should contain at least one special character';
+    } else {
+      return 'Strong password';
+    }
+  };
+
+  // Update the form state and validate password strength
+  const handleForm = (e) => {
+    const { name, value } = e.target;
+    setForm((prevState) => ({ ...prevState, [name]: value }));
+    if (name === 'password') {
+      const strength = validatePasswordStrength(value);
+      setPasswordStrength(strength);
+    }
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -38,79 +82,38 @@ const App = () => {
         // Handle network or other errors.
       }
     }
-  }
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
-      setToggleClass((prevState) => !prevState)
-      setShowToast(true)
-      setTimeout(() => {
-        setShowToast(false)
-      }, 1000)
-    } else {
-      // call the API here o whatever action you need to do
-    }
-  }
-  // To remember user's selected theme.
+  // Theme change effect
   useEffect(() => {
-    localStorage.setItem('theme', themeState)
-  }, [themeState])
+    localStorage.setItem('theme', themeState);
+  }, [themeState]);
+
+  // Submit button annoying animation
+  const annoyingSubmitButton = () => {
+    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
+      setToggleClass((prevState) => !prevState);
+    }
+  };
 
   return (
     <div className="wrapper">
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
-        <div className="link">
-          <span className="mask">
-            <div className="link-container">
-              <span className="link-title1 title">
-                <span className="hover">Annoying Submit Button</span>
-                {' '}
-                <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
-                    || !validateEmail(form.email)
-                    ? 'em em-rage'
-                    : 'em em-smile'
-                  }`}
-                  style={{ height: 20 }}
-                />
-                {' '}
-              </span>
-              <span className="link-title2 title">
-                <span className="hover">Annoying Submit Button</span>
-                {' '}
-                <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
-                    || !validateEmail(form.email)
-                    ? 'em em-rage'
-                    : 'em em-face_with_hand_over_mouth'
-                  }`}
-                  style={{ height: 20 }}
-                />
-                {' '}
-              </span>
-            </div>
-          </span>
-        </div>
-
         <form
           autoComplete="false"
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
           onChange={handleForm}
-          onSubmit={handleSubmit}
+          onSubmit={handleFormSubmit}
         >
+          {/* Email Field */}
           <div className="input-block">
             <label htmlFor="email" className={`label ${themeState}-theme`}>
-              Email
-              {' '}
-              <span className="requiredLabel">*</span>
+              Email <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${themeState}-theme ${!form.email ? 'empty' : ''
-              } ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
-              }`}
+              className={`input ${themeState}-theme ${!form.email ? 'empty' : ''} ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'}`}
               id="email"
               type="email"
               name="email"
@@ -121,22 +124,17 @@ const App = () => {
             />
           </div>
           <div>
-            {!validateEmail(form.email) && (
-              <p className="warning-message">Enter a valid email ID</p>
-            )}
+            {!validateEmail(form.email) && <p className="warning-message">Enter a valid email ID</p>}
           </div>
+
+          {/* Password Field */}
           <div className="input-block">
             <label htmlFor="password" className={`label ${themeState}-theme`}>
-              Password
-              {' '}
-              <span className="requiredLabel">*</span>
+              Password <span className="requiredLabel">*</span>
             </label>
             <span className="input-password-group">
               <input
-                className={`input ${form.password.length < minPasswordLength
-                  ? 'wrong-input'
-                  : 'correct-input'
-                } ${themeState}-theme ${!form.password ? 'empty' : ''}`}
+                className={`input ${form.password.length < minPasswordLength ? 'wrong-input' : 'correct-input'} ${themeState}-theme ${!form.password ? 'empty' : ''}`}
                 id="password"
                 type={isPasswordShown ? 'text' : 'password'}
                 name="password"
@@ -145,25 +143,22 @@ const App = () => {
                 tabIndex={2}
                 required
               />
-
-              <button className="toggle-btn" type="button" onClick={() => setPasswordShown(!isPasswordShown)}>{isPasswordShown ? <span className="fa fa-eye">{' '}</span> : <span className="fa fa-eye-slash">{' '}</span>}</button>
-
+              <button className="toggle-btn" type="button" onClick={() => setPasswordShown(!isPasswordShown)}>
+                {isPasswordShown ? <span className="fa fa-eye"></span> : <span className="fa fa-eye-slash"></span>}
+              </button>
             </span>
           </div>
           <div>
-            {form.password.length < minPasswordLength && (
-              <p className={`${form.password ? 'warning-message' : 'none'}`}>
-                Password should be at least 6 characters long
-              </p>
-            )}
+            {form.password && <p className="warning-message">{passwordStrength}</p>}
           </div>
+
+          {/* Submit Button */}
           <div
             style={{
-              transform: `translateX(${toggleClass
-
-                && !(
-                  form.password.length >= minPasswordLength
-                  && validateEmail(form.email)
+              transform: `translateX(${toggleClass &&
+                !(
+                  form.password.length >= minPasswordLength &&
+                  validateEmail(form.email)
                 )
                 ? '33vh'
                 : '0'
@@ -174,20 +169,13 @@ const App = () => {
             <button
               type="submit"
               tabIndex={3}
-              className={`submit-button ${form.password.length >= minPasswordLength
-                && validateEmail(form.email)
-                ? 'button-success'
-                : ''
-              }`}
+              className={`submit-button ${form.password.length >= minPasswordLength && validateEmail(form.email) ? 'button-success' : ''}`}
               onMouseEnter={annoyingSubmitButton}
             >
               Submit
             </button>
           </div>
-          <div
-            className={`toast ${showToast ? 'fadeIn' : 'fadeOut'
-            } ${themeState}-theme-toast`}
-          >
+          <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'} ${themeState}-theme-toast`}>
             You cannot submit until you fix all the validation errors...
           </div>
         </form>
