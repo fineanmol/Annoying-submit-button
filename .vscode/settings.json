@@ -1,5 +1,8 @@
 {
     "marquee.widgets.npm-stats.packageNames": [
         "annoying-submit-button"
+    ],
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
     ]
 }

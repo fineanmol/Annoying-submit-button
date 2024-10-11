@@ -14,13 +14,11 @@ const App = () => {
   const { height } = useWindowDimensions();
   const minPasswordLength = 6;
 
-  // Function to validate email
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
-  // Function to check password strength
   const validatePasswordStrength = (password) => {
     const hasUpperCase = /[A-Z]/.test(password);
     const hasLowerCase = /[a-z]/.test(password);
@@ -42,7 +40,6 @@ const App = () => {
     }
   };
 
-  // Update the form state and validate password strength
   const handleForm = (e) => {
     const { name, value } = e.target;
     setForm((prevState) => ({ ...prevState, [name]: value }));
@@ -56,40 +53,37 @@ const App = () => {
     e.preventDefault();
     setShowToast(false);
 
-    if (
-      form.password.length < minPasswordLength ||
-      !validateEmail(form.email)
-    ) {
+    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
       }, 1000);
     } else {
-      // Form is valid, submit the form to the server or take necessary action.
       try {
         const response = await fetch('https://formspree.io/f/xqkjbjzw', {
           method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify(form),
         });
 
         if (response.ok) {
-          // Handle a successful submission, e.g., redirect the user.
+          // Handle successful form submission
         } else {
-          // Handle errors from the server.
+          // Handle form submission errors
         }
       } catch (error) {
-        // Handle network or other errors.
+        console.error('Form submission failed:', error);
       }
     }
   };
 
-  // Theme change effect
   useEffect(() => {
     localStorage.setItem('theme', themeState);
   }, [themeState]);
 
-  // Submit button annoying animation
   const annoyingSubmitButton = () => {
     if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState);
@@ -101,13 +95,11 @@ const App = () => {
       <ThemeButton setThemeState={setThemeState} themeState={themeState} />
       <section className={`form-section ${themeState}-theme`}>
         <form
-          autoComplete="false"
-          action="https://formspree.io/f/xqkjbjzw"
+          autoComplete="off"
           method="POST"
           onChange={handleForm}
           onSubmit={handleFormSubmit}
         >
-          {/* Email Field */}
           <div className="input-block">
             <label htmlFor="email" className={`label ${themeState}-theme`}>
               Email <span className="requiredLabel">*</span>
@@ -117,17 +109,14 @@ const App = () => {
               id="email"
               type="email"
               name="email"
-              defaultValue={form.email}
+              value={form.email}
               placeholder="Email"
               tabIndex={1}
               required
             />
           </div>
-          <div>
-            {!validateEmail(form.email) && <p className="warning-message">Enter a valid email ID</p>}
-          </div>
+          {!validateEmail(form.email) && <p className="warning-message">Enter a valid email ID</p>}
 
-          {/* Password Field */}
           <div className="input-block">
             <label htmlFor="password" className={`label ${themeState}-theme`}>
               Password <span className="requiredLabel">*</span>
@@ -138,7 +127,7 @@ const App = () => {
                 id="password"
                 type={isPasswordShown ? 'text' : 'password'}
                 name="password"
-                defaultValue={form.password}
+                value={form.password}
                 minLength="6"
                 tabIndex={2}
                 required
@@ -148,20 +137,12 @@ const App = () => {
               </button>
             </span>
           </div>
-          <div>
-            {form.password && <p className="warning-message">{passwordStrength}</p>}
-          </div>
+          {form.password && <p className="warning-message">{passwordStrength}</p>}
 
-          {/* Submit Button */}
           <div
             style={{
               transform: `translateX(${toggleClass &&
-                !(
-                  form.password.length >= minPasswordLength &&
-                  validateEmail(form.email)
-                )
-                ? '33vh'
-                : '0'
+                !(form.password.length >= minPasswordLength && validateEmail(form.email)) ? '33vh' : '0'
               }`,
               transition: 'transform 190ms ease-in-out',
             }}
