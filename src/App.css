@@ -139,7 +139,6 @@ body {
 .button-success {
   color: white;
   background-color: #03bb56;
-  box-shadow: 0 0 15px white;
 }
 
 .toast {
