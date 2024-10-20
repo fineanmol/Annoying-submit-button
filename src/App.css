@@ -141,6 +141,12 @@ body {
   background-color: #03bb56;
 }
 
+.button-success:hover {
+  box-shadow: 0 0 15px white;
+  color: black;
+  background-color: white;
+}
+
 .toast {
   position: absolute;
   margin-top: 20px;
