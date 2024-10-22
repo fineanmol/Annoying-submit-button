@@ -79,7 +79,7 @@ function App() {
         <div className="link">
           <span className="mask">
             <div className="link-container">
-              <span className="link-title1 title">
+              <span className="link-title title">
                 <span className="hover">Annoying Submit Button</span>
                 <span
                   className={`${
@@ -87,18 +87,6 @@ function App() {
                       ? 'em em-rage'
                       : 'em em-smile'
                   }`}
-                  style={{ height: 20 }}
-                />
-              </span>
-              <span className="link-title2 title">
-                <span className="hover">Annoying Submit Button</span>
-                <span
-                  className={`${
-                    !validatePassword(form.password) || !validateEmail(form.email)
-                      ? 'em em-rage'
-                      : 'em em-face_with_hand_over_mouth'
-                  }`}
-                  style={{ height: 20 }}
                 />
               </span>
             </div>
@@ -106,7 +94,7 @@ function App() {
         </div>
 
         <form
-          autoComplete="false"
+          autoComplete="off"
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
           onChange={handleForm}
@@ -167,19 +155,7 @@ function App() {
               Password must be at least 8 characters long, contain at least 1 uppercase letter, 1 special character, and 1 number.
             </p>
           )}
-          <div
-            style={{
-              transform: `translateX(${
-                toggleClass &&
-                !(
-                  validatePassword(form.password) && validateEmail(form.email)
-                )
-                  ? '33vh'
-                  : '0'
-              })`,
-              transition: 'transform 190ms ease-in-out',
-            }}
-          >
+          <div className={`submit-container ${toggleClass ? 'shake' : ''}`}>
             <button
               type="submit"
               tabIndex={3}
@@ -204,7 +180,7 @@ function App() {
           <div className="popup-content">
             <h3>Success!</h3>
             <p>Your form has been submitted successfully.</p>
-            <button onClick={() => setShowSuccessPopup(false)}>Close</button>
+            <button type="button" onClick={() => setShowSuccessPopup(false)}>Close</button>
           </div>
         </div>
       )}
