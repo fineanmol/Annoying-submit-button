@@ -16,12 +16,12 @@ body {
   overflow-y: hidden;
 }
 
-
-.wrapper{
+.wrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
+
 .heading {
   text-align: center;
   font-size: 2.75rem;
@@ -29,12 +29,17 @@ body {
 }
 
 .form-section {
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   display: grid;
   place-content: center;
   transition: 0.5s color ease-in-out;
   flex: 1;
+  width: 100%;
+  max-width: 400px; /* Added max-width for better responsiveness */
+  background: white; /* Added background for better visibility */
+  padding: 2rem; /* Added padding for spacing */
+  border-radius: 10px; /* Rounded corners for aesthetics */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
 }
 
 .input-block {
@@ -47,7 +52,6 @@ body {
 .label {
   letter-spacing: 0.25px;
   font-weight: 500;
-  /* font-size: 1.35rem; */
   font-size: 1.7rem;
   font-weight: bold;
   margin-bottom: 0.35em;
@@ -60,13 +64,19 @@ body {
 
 .input {
   padding: 1.35em 1em;
-  width: 350px;
+  width: 100%; /* Full width for better layout */
+  max-width: 350px; /* Max width for inputs */
   outline: none;
   border: 1px solid rgb(130, 130, 130);
   border-radius: 0.25em;
+  transition: border-color 0.3s; /* Smooth transition for border color */
 }
 
-.toggle-btn{
+.input:focus {
+  border-color: #007bff; /* Highlight input border on focus */
+}
+
+.toggle-btn {
   position: relative;
   right: 40px;
   background: none;
@@ -77,11 +87,13 @@ body {
   width: 30px;
   vertical-align: middle;
 }
-.toggle-btn:hover{
+
+.toggle-btn:hover {
   background-color: #a89b9b98;
   border-radius: 50%;
 }
-.toggle-btn span{
+
+.toggle-btn span {
   font-size: 12px;
 }
 
@@ -132,8 +144,12 @@ body {
   font-size: 1.7rem;
   font-weight: bold;
   border-radius: 4px;
-
   cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Added smooth transition */
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 .button-success {
@@ -149,6 +165,8 @@ body {
   text-align: center;
   padding: 10px 20px;
   border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.5s; /* Smooth transition for toast */
 }
 
 .fadeIn {
@@ -200,6 +218,7 @@ body {
   background-color: #1370a3;
   transition: 0.5s ease-in-out;
 }
+
 .yellow-theme {
   color: rgb(29, 28, 28);
   background-color: #d29117;
@@ -227,6 +246,7 @@ body {
   transition: 0.5s ease-in-out;
   color: #000;
 }
+
 .dark-theme-toast {
   background-color: rgb(0, 0, 0);
 }
@@ -246,9 +266,7 @@ body {
   position: relative;
   padding: 0;
   height: 23px;
-
-  /*  Remove overflow to see how it works　:) */
-  overflow: hidden;
+  overflow: hidden; /* Remove overflow to see how it works　:) */
 }
 
 .link-container {
@@ -257,24 +275,20 @@ body {
 
 .title {
   display: block;
-
-  /*  Set same font-size and line height  */
-  font-size:20px;
+  font-size: 20px;
   font-weight: 900;
   line-height: 20px;
   color: rgb(101, 199, 63);
-  transition: transform 0.4s ease;
+  transition: transform 0.4s;
 }
 
 .link-title1 {
   transform-origin: right center;
-  
 }
 
 .link-title2 {
   transform-origin: left center;
   transform: rotate(20deg);
- 
 }
 
 .hover {
@@ -285,11 +299,12 @@ body {
   background-clip: text;
   transition: 0.4s;
 }
+
 .hover:hover {
   --_p: 0%;
 }
 
-/* Hover Action*/
+/* Hover Action */
 
 /* Move up two texts (20px = font-size) */
 .link:hover .link-container {
@@ -315,17 +330,15 @@ body {
 }
 
 @media (min-width: 500px) and (max-width: 1600px) {
-.form-section{
-  min-height:72.8vh;
-
+  .form-section {
+    min-height: 72.8vh;
   }
 }
 
-
 @media (max-width: 1370px) and (min-width: 1279px) {
-    #root{
-      display: block;
-    }
+  #root {
+    display: block;
+  }
 }
 
 @media screen and (max-height: 430px) {
@@ -336,9 +349,21 @@ body {
 }
 
 @media screen and (max-height: 380px) {
-  .submit-button{
+  .submit-button {
     margin-top: 0.25rem;
     padding: 0.25em 0.5em;
   }
 }
 
+/* Annoying Submit Button Shake Effect */
+.submit-container.shake {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  50% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}

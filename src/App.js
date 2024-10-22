@@ -1,61 +1,76 @@
-import React, { useEffect, useState } from 'react'
-import './App.css'
-import Footer from './components/Footer'
-import ThemeButton from './components/ThemeButton'
-import useWindowDimensions from './custom-hooks/useWindowDimensions'
-// ...
+import React, { useEffect, useState } from 'react';
+import './App.css';
+import Footer from './components/Footer';
+import ThemeButton from './components/ThemeButton';
+import useWindowDimensions from './custom-hooks/useWindowDimensions';
 
-const App = () => {
-  // ... (existing code)
+function App() {
+  const { height } = useWindowDimensions();
+  const [form, setForm] = useState({ email: '', password: '' });
+  const [themeState, setThemeState] = useState('light');
+  const [toggleClass, setToggleClass] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false); // Success pop-up state
+  const [isPasswordShown, setPasswordShown] = useState(false);
 
-  const handleFormSubmit = async (e) => {
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
+  const validateEmail = (email) => {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
+
+  const handleForm = (e) => {
+    const { name, value } = e.target;
+    setForm((prevForm) => ({
+      ...prevForm,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowToast(false);
 
-    if (
-      form.password.length < minPasswordLength ||
-      !validateEmail(form.email)
-    ) {
+    if (!validatePassword(form.password) || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState);
       setShowToast(true);
       setTimeout(() => {
         setShowToast(false);
       }, 1000);
     } else {
-      // Form is valid, submit the form to the server or take necessary action.
       try {
         const response = await fetch('https://formspree.io/f/xqkjbjzw', {
           method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
           body: JSON.stringify(form),
         });
 
         if (response.ok) {
-          // Handle a successful submission, e.g., redirect the user.
+          setForm({ email: '', password: '' });
+          setShowSuccessPopup(true); // Show success pop-up after successful submission
         } else {
-          // Handle errors from the server.
+          alert('There was a problem submitting the form.');
         }
       } catch (error) {
-        // Handle network or other errors.
+        alert('Network error, please try again later.');
       }
     }
-  }
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
-      setToggleClass((prevState) => !prevState)
-      setShowToast(true)
-      setTimeout(() => {
-        setShowToast(false)
-      }, 1000)
-    } else {
-      // call the API here o whatever action you need to do
-    }
-  }
-  // To remember user's selected theme.
   useEffect(() => {
-    localStorage.setItem('theme', themeState)
-  }, [themeState])
+    localStorage.setItem('theme', themeState);
+  }, [themeState]);
+
+  const annoyingSubmitButton = () => {
+    if (!validatePassword(form.password) || !validateEmail(form.email)) {
+      setToggleClass((prevState) => !prevState);
+    }
+  };
 
   return (
     <div className="wrapper">
@@ -64,38 +79,22 @@ const App = () => {
         <div className="link">
           <span className="mask">
             <div className="link-container">
-              <span className="link-title1 title">
+              <span className="link-title title">
                 <span className="hover">Annoying Submit Button</span>
-                {' '}
                 <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
-                    || !validateEmail(form.email)
-                    ? 'em em-rage'
-                    : 'em em-smile'
+                  className={`${
+                    !validatePassword(form.password) || !validateEmail(form.email)
+                      ? 'em em-rage'
+                      : 'em em-smile'
                   }`}
-                  style={{ height: 20 }}
                 />
-                {' '}
-              </span>
-              <span className="link-title2 title">
-                <span className="hover">Annoying Submit Button</span>
-                {' '}
-                <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
-                    || !validateEmail(form.email)
-                    ? 'em em-rage'
-                    : 'em em-face_with_hand_over_mouth'
-                  }`}
-                  style={{ height: 20 }}
-                />
-                {' '}
               </span>
             </div>
           </span>
         </div>
 
         <form
-          autoComplete="false"
+          autoComplete="off"
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
           onChange={handleForm}
@@ -103,98 +102,92 @@ const App = () => {
         >
           <div className="input-block">
             <label htmlFor="email" className={`label ${themeState}-theme`}>
-              Email
-              {' '}
-              <span className="requiredLabel">*</span>
+              Email <span className="requiredLabel">*</span>
             </label>
             <input
-              className={`input ${themeState}-theme ${!form.email ? 'empty' : ''
-              } ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'
-              }`}
+              className={`input ${themeState}-theme ${
+                !form.email ? 'empty' : ''
+              } ${!validateEmail(form.email) ? 'wrong-input' : 'correct-input'}`}
               id="email"
               type="email"
               name="email"
-              defaultValue={form.email}
+              value={form.email}
               placeholder="Email"
               tabIndex={1}
               required
             />
           </div>
-          <div>
-            {!validateEmail(form.email) && (
-              <p className="warning-message">Enter a valid email ID</p>
-            )}
-          </div>
+          {!validateEmail(form.email) && (
+            <p className="warning-message">Enter a valid email ID</p>
+          )}
           <div className="input-block">
             <label htmlFor="password" className={`label ${themeState}-theme`}>
-              Password
-              {' '}
-              <span className="requiredLabel">*</span>
+              Password <span className="requiredLabel">*</span>
             </label>
             <span className="input-password-group">
               <input
-                className={`input ${form.password.length < minPasswordLength
-                  ? 'wrong-input'
-                  : 'correct-input'
+                className={`input ${
+                  !validatePassword(form.password) ? 'wrong-input' : 'correct-input'
                 } ${themeState}-theme ${!form.password ? 'empty' : ''}`}
                 id="password"
                 type={isPasswordShown ? 'text' : 'password'}
                 name="password"
-                defaultValue={form.password}
-                minLength="6"
+                value={form.password}
+                minLength={8}
                 tabIndex={2}
                 required
               />
-
-              <button className="toggle-btn" type="button" onClick={() => setPasswordShown(!isPasswordShown)}>{isPasswordShown ? <span className="fa fa-eye">{' '}</span> : <span className="fa fa-eye-slash">{' '}</span>}</button>
-
+              <button
+                className="toggle-btn"
+                type="button"
+                onClick={() => setPasswordShown(!isPasswordShown)}
+              >
+                {isPasswordShown ? (
+                  <span className="fa fa-eye" />
+                ) : (
+                  <span className="fa fa-eye-slash" />
+                )}
+              </button>
             </span>
           </div>
-          <div>
-            {form.password.length < minPasswordLength && (
-              <p className={`${form.password ? 'warning-message' : 'none'}`}>
-                Password should be at least 6 characters long
-              </p>
-            )}
-          </div>
-          <div
-            style={{
-              transform: `translateX(${toggleClass
-
-                && !(
-                  form.password.length >= minPasswordLength
-                  && validateEmail(form.email)
-                )
-                ? '33vh'
-                : '0'
-              }`,
-              transition: 'transform 190ms ease-in-out',
-            }}
-          >
+          {!validatePassword(form.password) && (
+            <p className="warning-message">
+              Password must be at least 8 characters long, contain at least 1 uppercase letter, 1 special character, and 1 number.
+            </p>
+          )}
+          <div className={`submit-container ${toggleClass ? 'shake' : ''}`}>
             <button
               type="submit"
               tabIndex={3}
-              className={`submit-button ${form.password.length >= minPasswordLength
-                && validateEmail(form.email)
-                ? 'button-success'
-                : ''
+              className={`submit-button ${
+                validatePassword(form.password) && validateEmail(form.email)
+                  ? 'button-success'
+                  : ''
               }`}
               onMouseEnter={annoyingSubmitButton}
             >
               Submit
             </button>
           </div>
-          <div
-            className={`toast ${showToast ? 'fadeIn' : 'fadeOut'
-            } ${themeState}-theme-toast`}
-          >
+          <div className={`toast ${showToast ? 'fadeIn' : 'fadeOut'} ${themeState}-theme-toast`}>
             You cannot submit until you fix all the validation errors...
           </div>
         </form>
       </section>
+
+      {showSuccessPopup && (
+        <div className="success-popup">
+          <div className="popup-content">
+            <h3>Success!</h3>
+            <p>Your form has been submitted successfully.</p>
+            <button type="button" onClick={() => setShowSuccessPopup(false)}>Close</button>
+          </div>
+        </div>
+      )}
+
       {height < 680 ? null : <Footer theme={themeState} />}
     </div>
   );
-};
+}
 
 export default App;
