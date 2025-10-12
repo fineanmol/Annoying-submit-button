@@ -304,6 +304,11 @@ body.space-theme::before {
   color: white;
 }
 
+.space-theme.input {
+  background-color: white;
+  color: black;
+}
+
 @keyframes starTwinkle {
   0% {
     filter: brightness(0.5) contrast(1.1);
