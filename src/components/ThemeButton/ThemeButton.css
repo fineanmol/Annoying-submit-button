@@ -59,6 +59,11 @@
   border-color: rgb(1, 0, 0);
   transition: 0.5s ease-in-out;
 }
+.rainbow {
+  background-image: var(--rainbow);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
 
 .dark-a {
   box-shadow: 0px 0px 2px 1px rgb(236, 236, 236);
@@ -83,6 +88,9 @@
 }
 .purple-d {
   box-shadow: 0px 0px 2px 1px rgb(110, 40, 110);
+}
+.rainbow-d {
+  box-shadow: 0px 0px 2px 1px black;
 }
 
 .theme-container * {

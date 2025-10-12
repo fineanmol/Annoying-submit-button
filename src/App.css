@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
 
+:root {
+  --rainbow: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -204,6 +208,21 @@ body {
   color: rgb(29, 28, 28);
   background-color: #d29117;
   transition: 0.5s ease-in-out;
+}
+.rainbow-theme {
+  background-image: var(--rainbow);
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.rainbow-theme.label {
+  background: transparent;
+  color: black;
+}
+
+.rainbow-theme.input {
+  background: white;
+  color: #333;
 }
 
 .skin-theme .title {
