@@ -224,6 +224,18 @@ body {
   background: white;
   color: #333;
 }
+.hacker-theme {
+  background-color: black;
+  color: rgb(0, 255, 0);
+  transition: 0.5s ease-in-out;
+}
+.hacker-theme {
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.hacker-theme * {
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
 
 .skin-theme .title {
   color: rgb(153, 70, 70);

@@ -25,6 +25,7 @@ function ThemeButton({ setThemeState, themeState }) {
               onClick={() => setThemeState(element)}
             >
               <div className="tick" />
+              {element === 'hacker' && <span className="hacker-text">&gt;_</span>}
             </div>
           ))}
         </div>
