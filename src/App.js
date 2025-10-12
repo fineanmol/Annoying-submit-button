@@ -38,6 +38,10 @@ function App() {
   // Annoying button function
   const annoyingSubmitButton = () => {
     // Add annoying behavior here
+    if (form.password.length < minPasswordLength
+      || !validateEmail(form.email)) {
+      setToggleClass((prevState) => !prevState)
+    }
   }
 
   const handleSubmit = (e) => {
@@ -48,7 +52,7 @@ function App() {
       setShowToast(true)
       setTimeout(() => {
         setShowToast(false)
-      }, 1000)
+      }, 2000) // 2-second delay to ensure toast is visible
     } else {
       // call the API here o whatever action you need to do
     }
@@ -56,6 +60,11 @@ function App() {
   // To remember user's selected theme.
   useEffect(() => {
     localStorage.setItem('theme', themeState)
+  }, [themeState])
+
+  // Apply theme to body for space theme background
+  useEffect(() => {
+    document.body.className = themeState === 'space' ? 'space-theme' : ''
   }, [themeState])
 
   return (
@@ -115,7 +124,8 @@ function App() {
               id="email"
               type="email"
               name="email"
-              defaultValue={form.email}
+              value={form.email}
+              onChange={handleForm}
               placeholder="Email"
               tabIndex={1}
               required
@@ -141,7 +151,8 @@ function App() {
                 id="password"
                 type={isPasswordShown ? 'text' : 'password'}
                 name="password"
-                defaultValue={form.password}
+                value={form.password}
+                onChange={handleForm}
                 minLength="6"
                 tabIndex={2}
                 required
@@ -160,14 +171,13 @@ function App() {
           </div>
           <div
             style={{
-              transform: `translateX(${toggleClass
-                && !(
+              transform: `translateX(${(() => {
+                const shouldMove = toggleClass && !(
                   form.password.length >= minPasswordLength
                   && validateEmail(form.email)
                 )
-                ? '33vh'
-                : '0'
-              }`,
+                return shouldMove ? '200px' : '0'
+              })()}`,
               transition: 'transform 190ms ease-in-out',
             }}
           >
