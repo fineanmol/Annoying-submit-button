@@ -197,12 +197,13 @@ body {
 
 .blue-theme {
   color: rgb(45, 43, 43);
-  background-color: #1370a3;
+  background-color: #7bc4eb;
   transition: 0.5s ease-in-out;
 }
+
 .yellow-theme {
   color: rgb(29, 28, 28);
-  background-color: #d29117;
+  background-color: #f5d59a;
   transition: 0.5s ease-in-out;
 }
 
