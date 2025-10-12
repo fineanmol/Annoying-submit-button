@@ -3,46 +3,47 @@ import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
 import useWindowDimensions from './custom-hooks/useWindowDimensions'
-// ...
 
-const App = () => {
-  // ... (existing code)
+// Constants
+const minPasswordLength = 6
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setShowToast(false);
+// Validation function
+const validateEmail = (email) => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailRegex.test(email)
+}
 
-    if (
-      form.password.length < minPasswordLength ||
-      !validateEmail(form.email)
-    ) {
-      setToggleClass((prevState) => !prevState);
-      setShowToast(true);
-      setTimeout(() => {
-        setShowToast(false);
-      }, 1000);
-    } else {
-      // Form is valid, submit the form to the server or take necessary action.
-      try {
-        const response = await fetch('https://formspree.io/f/xqkjbjzw', {
-          method: 'POST',
-          body: JSON.stringify(form),
-        });
+function App() {
+  // State variables
+  const [form, setForm] = useState({
+    email: '',
+    password: '',
+  })
+  const [themeState, setThemeState] = useState('light')
+  const [toggleClass, setToggleClass] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+  const [isPasswordShown, setPasswordShown] = useState(false)
 
-        if (response.ok) {
-          // Handle a successful submission, e.g., redirect the user.
-        } else {
-          // Handle errors from the server.
-        }
-      } catch (error) {
-        // Handle network or other errors.
-      }
-    }
+  const { height } = useWindowDimensions()
+
+  // Form handlers
+  const handleForm = (e) => {
+    const { name, value } = e.target
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  // Annoying button function
+  const annoyingSubmitButton = () => {
+    // Add annoying behavior here
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
+    if (form.password.length < minPasswordLength
+      || !validateEmail(form.email)) {
       setToggleClass((prevState) => !prevState)
       setShowToast(true)
       setTimeout(() => {
@@ -68,7 +69,7 @@ const App = () => {
                 <span className="hover">Annoying Submit Button</span>
                 {' '}
                 <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
+                  className={`${form.password.length < minPasswordLength
                     || !validateEmail(form.email)
                     ? 'em em-rage'
                     : 'em em-smile'
@@ -81,7 +82,7 @@ const App = () => {
                 <span className="hover">Annoying Submit Button</span>
                 {' '}
                 <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
+                  className={`${form.password.length < minPasswordLength
                     || !validateEmail(form.email)
                     ? 'em em-rage'
                     : 'em em-face_with_hand_over_mouth'
@@ -160,7 +161,6 @@ const App = () => {
           <div
             style={{
               transform: `translateX(${toggleClass
-
                 && !(
                   form.password.length >= minPasswordLength
                   && validateEmail(form.email)
@@ -194,7 +194,7 @@ const App = () => {
       </section>
       {height < 680 ? null : <Footer theme={themeState} />}
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
