@@ -55,9 +55,11 @@ function Footer({ theme }) {
           </b>
           {' '}
           <br />
-          Copyright &copy;
-          {`${year}`}
-          .
+          <a href="https://github.com/fineanmol/Annoying-submit-button/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">
+            Copyright &copy;
+            {`${year}`}
+            .
+          </a>
         </p>
       </div>
     </footer>
