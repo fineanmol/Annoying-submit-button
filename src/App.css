@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
 
+:root {
+  --rainbow: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -206,6 +210,123 @@ body {
   transition: 0.5s ease-in-out;
 }
 
+.rainbow-theme {
+  background-image: var(--rainbow);
+  color: rgb(68, 52, 70);
+  transition: 0.5s ease-in-out;
+}
+
+.rainbow-theme.label {
+  background: transparent;
+  color: black;
+}
+
+.rainbow-theme.input {
+  background: white;
+  color: #333;
+}
+
+.hacker-theme {
+  background-color: black;
+  color: rgb(0, 255, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.hacker-theme {
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.hacker-theme * {
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+body.space-theme {
+  background: linear-gradient(to bottom, #0a0a2a, #000000);
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body.space-theme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(3px 3px at 5% 10%, #fff, transparent),
+    radial-gradient(2px 2px at 15% 25%, #fff, transparent),
+    radial-gradient(4px 4px at 25% 15%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 35% 35%, #fff, transparent),
+    radial-gradient(2px 2px at 45% 5%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(3px 3px at 55% 25%, #fff, transparent),
+    radial-gradient(2px 2px at 65% 45%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 75% 15%, #fff, transparent),
+    radial-gradient(2px 2px at 85% 35%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 95% 5%, #fff, transparent),
+    radial-gradient(2px 2px at 5% 50%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(2px 2px at 15% 70%, #fff, transparent),
+    radial-gradient(4px 4px at 25% 55%, rgba(255,255,255,0.9), transparent),
+    radial-gradient(2px 2px at 35% 75%, #fff, transparent),
+    radial-gradient(2px 2px at 45% 45%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(2px 2px at 55% 65%, #fff, transparent),
+    radial-gradient(2px 2px at 65% 85%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 75% 55%, #fff, transparent),
+    radial-gradient(2px 2px at 85% 75%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 95% 45%, #fff, transparent),
+    radial-gradient(2px 2px at 5% 90%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(2px 2px at 15% 95%, #fff, transparent),
+    radial-gradient(2px 2px at 25% 85%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 35% 95%, #fff, transparent),
+    radial-gradient(2px 2px at 45% 85%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(2px 2px at 55% 95%, #fff, transparent),
+    radial-gradient(2px 2px at 65% 75%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(2px 2px at 75% 95%, #fff, transparent),
+    radial-gradient(2px 2px at 85% 85%, rgba(255,255,255,0.7), transparent),
+    radial-gradient(2px 2px at 95% 75%, #fff, transparent),
+    radial-gradient(2px 2px at 10% 40%, rgba(255,255,255,0.6), transparent),
+    radial-gradient(2px 2px at 20% 60%, #fff, transparent),
+    radial-gradient(2px 2px at 30% 80%, rgba(255,255,255,0.4), transparent),
+    radial-gradient(2px 2px at 40% 20%, #fff, transparent),
+    radial-gradient(2px 2px at 50% 40%, rgba(255,255,255,0.8), transparent),
+    radial-gradient(2px 2px at 60% 60%, #fff, transparent),
+    radial-gradient(2px 2px at 70% 80%, rgba(255,255,255,0.5), transparent),
+    radial-gradient(2px 2px at 80% 20%, #fff, transparent),
+    radial-gradient(2px 2px at 90% 40%, rgba(255,255,255,0.3), transparent);
+  background-size: 100% 100%;
+  animation: starTwinkle 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.space-theme {
+  color: white;
+}
+
+.space-theme.input {
+  background-color: white;
+  color: black;
+}
+
+@keyframes starTwinkle {
+  0% {
+    filter: brightness(0.5) contrast(1.1);
+  }
+  25% {
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    filter: brightness(0.75) contrast(1.2);
+  }
+  75% {
+    filter: brightness(1.2) contrast(0.9);
+  }
+  100% {
+    filter: brightness(0.85) contrast(1);
+  }
+}
+
 .skin-theme .title {
   color: rgb(153, 70, 70);
 }
@@ -341,4 +462,3 @@ body {
     padding: 0.25em 0.5em;
   }
 }
-

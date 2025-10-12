@@ -60,6 +60,44 @@
   transition: 0.5s ease-in-out;
 }
 
+.rainbow {
+  background-image: var(--rainbow);
+  border-color: rgb(1, 0, 0);
+  transition: 0.5s ease-in-out;
+}
+
+.hacker {
+  background-color: rgb(0, 255, 0);
+  border: 3px solid rgb(0, 0, 0);
+  transition: 0.5s ease-in-out;
+  font-weight: bold;
+}
+
+.hacker-text {
+  color: black;
+}
+
+.space {
+  background-color: rgb(0, 0, 0);
+  border-color: white;
+  transition: 0.5s ease-in-out;
+  position: relative;
+}
+
+.space::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 
+    8px 5px 0 0 white,
+    -3px 5px 0 0 white;
+}
+
 .dark-a {
   box-shadow: 0px 0px 2px 1px rgb(236, 236, 236);
 }
@@ -83,6 +121,14 @@
 }
 .purple-d {
   box-shadow: 0px 0px 2px 1px rgb(110, 40, 110);
+}
+
+.space-d, .hacker-d {
+  box-shadow: 0px 0px 2px 1px white;
+}
+
+.rainbow-d {
+  box-shadow: 0px 0px 2px 1px black;
 }
 
 .theme-container * {
