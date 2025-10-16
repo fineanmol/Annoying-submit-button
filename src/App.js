@@ -3,40 +3,35 @@ import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
 import useWindowDimensions from './custom-hooks/useWindowDimensions'
-// ...
 
-const App = () => {
-  // ... (existing code)
+const minPasswordLength = 6
 
-  const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    setShowToast(false);
+const validateEmail = (email) => {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return re.test(String(email).toLowerCase())
+}
 
-    if (
-      form.password.length < minPasswordLength ||
-      !validateEmail(form.email)
-    ) {
-      setToggleClass((prevState) => !prevState);
-      setShowToast(true);
-      setTimeout(() => {
-        setShowToast(false);
-      }, 1000);
-    } else {
-      // Form is valid, submit the form to the server or take necessary action.
-      try {
-        const response = await fetch('https://formspree.io/f/xqkjbjzw', {
-          method: 'POST',
-          body: JSON.stringify(form),
-        });
+function App() {
+  const { height, width } = useWindowDimensions()
+  const [form, setForm] = useState({ email: '', password: '' })
+  const [toggleClass, setToggleClass] = useState(false)
+  const [isPasswordShown, setPasswordShown] = useState(false)
+  const [showToast, setShowToast] = useState(false)
+  const [emojiState, setEmojiState] = useState('em em-rolling_on_the_floor_laughing')
+  const [themeState, setThemeState] = useState(localStorage.getItem('theme') || 'bright')
 
-        if (response.ok) {
-          // Handle a successful submission, e.g., redirect the user.
-        } else {
-          // Handle errors from the server.
-        }
-      } catch (error) {
-        // Handle network or other errors.
-      }
+  const handleForm = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    })
+  }
+
+  // Annoying button function
+  const annoyingSubmitButton = () => {
+    if (form.password.length < minPasswordLength
+      || !validateEmail(form.email)) {
+      setToggleClass((prevState) => !prevState)
     }
   }
 
@@ -47,7 +42,7 @@ const App = () => {
       setShowToast(true)
       setTimeout(() => {
         setShowToast(false)
-      }, 1000)
+      }, 2000)
     } else {
       // call the API here o whatever action you need to do
     }
@@ -56,6 +51,11 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('theme', themeState)
   }, [themeState])
+
+  useEffect(() => {
+    if (width < 600) setEmojiState('em em-flushed')
+    else setEmojiState('em em-rolling_on_the_floor_laughing')
+  }, [width])
 
   return (
     <div className="wrapper">
@@ -68,10 +68,10 @@ const App = () => {
                 <span className="hover">Annoying Submit Button</span>
                 {' '}
                 <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
+                  className={`${form.password.length < minPasswordLength
                     || !validateEmail(form.email)
                     ? 'em em-rage'
-                    : 'em em-smile'
+                    : `${emojiState} em em-smile`
                   }`}
                   style={{ height: 20 }}
                 />
@@ -81,10 +81,10 @@ const App = () => {
                 <span className="hover">Annoying Submit Button</span>
                 {' '}
                 <span
-                  className={`${emojiState} ${form.password.length < minPasswordLength
+                  className={`${form.password.length < minPasswordLength
                     || !validateEmail(form.email)
                     ? 'em em-rage'
-                    : 'em em-face_with_hand_over_mouth'
+                    : `${emojiState} em em-face_with_hand_over_mouth`
                   }`}
                   style={{ height: 20 }}
                 />
@@ -95,7 +95,7 @@ const App = () => {
         </div>
 
         <form
-          autoComplete="false"
+          autoComplete="off"
           action="https://formspree.io/f/xqkjbjzw"
           method="POST"
           onChange={handleForm}
@@ -114,7 +114,7 @@ const App = () => {
               id="email"
               type="email"
               name="email"
-              defaultValue={form.email}
+              value={form.email}
               placeholder="Email"
               tabIndex={1}
               required
@@ -140,7 +140,7 @@ const App = () => {
                 id="password"
                 type={isPasswordShown ? 'text' : 'password'}
                 name="password"
-                defaultValue={form.password}
+                value={form.password}
                 minLength="6"
                 tabIndex={2}
                 required
@@ -194,7 +194,7 @@ const App = () => {
       </section>
       {height < 680 ? null : <Footer theme={themeState} />}
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
