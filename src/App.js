@@ -3,6 +3,7 @@ import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
 import useWindowDimensions from './custom-hooks/useWindowDimensions'
+import nopeGif from './assets/nope-finger-wag.gif'
 
 const minPasswordLength = 6
 
@@ -18,6 +19,7 @@ function App() {
   const [isPasswordShown, setPasswordShown] = useState(false)
   const [showToast, setShowToast] = useState(false)
   const [emojiState, setEmojiState] = useState('em em-rolling_on_the_floor_laughing')
+  const [showGif, setShowGif] = useState(false)
   const [themeState, setThemeState] = useState(localStorage.getItem('theme') || 'bright')
 
   const handleForm = (e) => {
@@ -31,7 +33,11 @@ function App() {
   const annoyingSubmitButton = () => {
     if (form.password.length < minPasswordLength
       || !validateEmail(form.email)) {
+      setShowGif(true)
       setToggleClass((prevState) => !prevState)
+      setTimeout(() => {
+        setShowGif(false)
+      }, 2000)
     }
   }
 
@@ -185,10 +191,35 @@ function App() {
             </button>
           </div>
           <div
-            className={`toast ${showToast ? 'fadeIn' : 'fadeOut'
-            } ${themeState}-theme-toast`}
+            className={`toast ${showToast ? 'fadeIn' : 'fadeOut'} ${themeState}-theme-toast`}
           >
             You cannot submit until you fix all the validation errors...
+          </div>
+          <img
+            src={nopeGif}
+            alt="Nope finger wag gif"
+            style={{
+              display: 'block',
+              margin: '20px auto 0',
+              width: '150px',
+              visibility: showGif ? 'visible' : 'hidden',
+            }}
+          />
+          <div
+            style={{
+              visibility: showGif ? 'visible' : 'hidden',
+              textAlign: 'center',
+              fontSize: '1rem',
+              marginTop: '5px',
+            }}
+          >
+            <a href="https://tenor.com/view/nope-finger-wag-no-way-no-absolutely-not-gif-14388135" target="_blank" rel="noopener noreferrer">
+              Nope Finger Wag Sticker
+            </a>
+            {' from '}
+            <a href="https://tenor.com/search/nope-stickers" target="_blank" rel="noopener noreferrer">
+              Nope Stickers
+            </a>
           </div>
         </form>
       </section>
