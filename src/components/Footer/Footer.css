@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+footer {
+  width: 100%;
+  padding: 1.5vh 2vh 1vh 2vh;
+  max-height: 21vh;
+  min-height: 21px;
+  overflow: hidden;
+  background-color: var(--footer-background-color, rgb(0, 0, 0));
+  color: var(--footer-text-color, rgb(204, 198, 198));
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+  color: var(--footer-heading-color, #fff);
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 5px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: var(--footer-paragraph-color, #cacdd2);
+}
+
+
+@media screen and (min-width: 700px) {
+  .glitch {
+    font-size: 24px;
+  }
+}
+
+
+.glitch {
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  position: relative; 
+  color: #fff;
+  transform: translate(0%, 0%);
+  margin: 0;
+}
+
+.glitch::before,
+.glitch::after {
+  content: "Hacktoberfest 2023";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  mask-image: linear-gradient(to right, transparent 0%, transparent 50%, black 50%, black 100%);
+  mask-size: 200%; 
+  mask-position: 100%; 
+}
+
+.glitch::before {
+  color: #0ff;
+  z-index: -1;
+}
+
+.glitch::after {
+  color: #f0f;
+  z-index: -2;
+}
+
+.glitch:hover::before,
+.glitch:hover::after {
+  opacity: 0.8;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-5px, 5px);
+  }
+  40% {
+    transform: translate(-5px, -5px);
+  }
+  60% {
+    transform: translate(5px, 5px);
+  }
+  80% {
+    transform: translate(5px, -5px);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+.glitch:hover::before {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+.glitch:hover::after {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+  border: 1.5px solid white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.socials a i {
+  font-size: 1.3rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Invert colors when hover mouse */
+.socials a:hover {
+  transition: all ease 0.3s;
+  transform: scale(1.3);
+}
+
+.socials li:nth-child(1) a:hover {
+  background-color: #4267b2;
+}
+.socials li:nth-child(2) a:hover {
+  background-color: #1da1f2;
+}
+.socials li:nth-child(3) a:hover {
+  background-image: linear-gradient(#962fbf, #feda75);
+}
+
+.socials li:nth-child(4) a:hover {
+  background-color: #46c1f6;
+}
+
+.socials li:nth-child(5) a:hover {
+  background-color: #333;
+}
+
+.socials a:hover i {
+  color: white;
+}
+
+#hf-theme {
+  font-size: 2rem;
+  background-color: red;
+  background-image: linear-gradient(184deg, #d9bb81, #fde5f1, #2b1e3c);
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill_color: transparent;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
+  transition: margin-top 0.3s ease-in-out; 
+}
+
+@keyframes gradientAnimation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+/* aligning the text to center */
+@media (max-width: 500px) {
+  .footer-menu ul {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Additional styles based on your previous comments */
+.purple-footer {
+  background-color: rgb(97, 80, 117);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
+.green-footer {
+  background-color: rgb(15, 126, 43);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
+.pink-footer {
+  background-color: rgb(182, 77, 112);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
+.skin-footer {
+  background-color: rgb(185, 81, 90);
+  color: rgb(204, 198, 198);
+  transition: 0.5s ease-in-out;
+}
+
+.blue-footer {
+  color: rgb(45, 43, 43);
+  background-color: #1370a3;
+  transition: 0.5s ease-in-out;
+}
+
+.yellow-footer {
+  color: rgb(29, 28, 28);
+  background-color: #d29117;
+  transition: 0.5s ease-in-out;
+}
+
+.bright-footer {
+  color: rgb(45, 43, 43);
+  background: rgb(145, 143, 143);
+  transition: 0.5s ease-in-out;
+}
