@@ -1,14 +1,68 @@
 {
-  "name": "annoying-submit-button",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@fineanmol/annoying-submit-button",
+  "version": "1.0.0",
+  "description": "React submit button that slides away on hover until your form is valid — the classic annoying-submit UX.",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": "./dist/index.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:lib": "rollup -c rollup.config.mjs",
+    "prepublishOnly": "npm run build:lib",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint . ",
+    "lint-fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fineanmol/Annoying-submit-button.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fineanmol/Annoying-submit-button/issues"
+  },
+  "homepage": "https://github.com/fineanmol/Annoying-submit-button#readme",
+  "keywords": [
+    "react",
+    "form",
+    "submit",
+    "button",
+    "validation",
+    "ux"
+  ],
+  "author": "Anmol Agarwal",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.3.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,15 +72,13 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.10",
-    "eslint-plugin-react-hooks": "^4.6.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint . ",
-    "lint-fix": "eslint . --fix"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.49",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^2.79.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2"
   },
   "eslintConfig": {
     "extends": [

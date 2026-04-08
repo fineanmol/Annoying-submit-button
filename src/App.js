@@ -3,6 +3,7 @@ import './App.css'
 import Footer from './components/Footer'
 import ThemeButton from './components/ThemeButton'
 import useWindowDimensions from './custom-hooks/useWindowDimensions'
+import AnnoyingSubmitButton from './lib/AnnoyingSubmitButton'
 
 const minPasswordLength = 6
 
@@ -14,7 +15,6 @@ const validateEmail = (email) => {
 function App() {
   const { height, width } = useWindowDimensions()
   const [form, setForm] = useState({ email: '', password: '' })
-  const [toggleClass, setToggleClass] = useState(false)
   const [isPasswordShown, setPasswordShown] = useState(false)
   const [showToast, setShowToast] = useState(false)
   const [emojiState, setEmojiState] = useState('em em-rolling_on_the_floor_laughing')
@@ -27,18 +27,9 @@ function App() {
     })
   }
 
-  // Annoying button function
-  const annoyingSubmitButton = () => {
-    if (form.password.length < minPasswordLength
-      || !validateEmail(form.email)) {
-      setToggleClass((prevState) => !prevState)
-    }
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
     if (form.password.length < minPasswordLength || !validateEmail(form.email)) {
-      setToggleClass((prevState) => !prevState)
       setShowToast(true)
       setTimeout(() => {
         setShowToast(false)
@@ -47,6 +38,9 @@ function App() {
       // call the API here o whatever action you need to do
     }
   }
+
+  const isFormValid = form.password.length >= minPasswordLength
+    && validateEmail(form.email)
   // To remember user's selected theme.
   useEffect(() => {
     localStorage.setItem('theme', themeState)
@@ -157,33 +151,13 @@ function App() {
               </p>
             )}
           </div>
-          <div
-            style={{
-              transform: `translateX(${toggleClass
-
-                && !(
-                  form.password.length >= minPasswordLength
-                  && validateEmail(form.email)
-                )
-                ? '33vh'
-                : '0'
-              }`,
-              transition: 'transform 190ms ease-in-out',
-            }}
+          <AnnoyingSubmitButton
+            isValid={isFormValid}
+            className={`submit-button ${isFormValid ? 'button-success' : ''}`}
+            tabIndex={3}
           >
-            <button
-              type="submit"
-              tabIndex={3}
-              className={`submit-button ${form.password.length >= minPasswordLength
-                && validateEmail(form.email)
-                ? 'button-success'
-                : ''
-              }`}
-              onMouseEnter={annoyingSubmitButton}
-            >
-              Submit
-            </button>
-          </div>
+            Submit
+          </AnnoyingSubmitButton>
           <div
             className={`toast ${showToast ? 'fadeIn' : 'fadeOut'
             } ${themeState}-theme-toast`}

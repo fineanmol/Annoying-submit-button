@@ -29,6 +29,28 @@
 You won't be able to submit the form until you enter correct length of password and a valid email ID.  Enjoy playing with it. :)
 #Hacktoberfest
 
+## npm package
+
+Install the reusable component in your own React app:
+
+```bash
+npm install @fineanmol/annoying-submit-button
+```
+
+```jsx
+import AnnoyingSubmitButton from '@fineanmol/annoying-submit-button';
+import '@fineanmol/annoying-submit-button/style.css';
+
+<AnnoyingSubmitButton
+  isValid={emailValid && passwordOk}
+  className={`submit-button ${isValid ? 'button-success' : ''}`}
+>
+  Submit
+</AnnoyingSubmitButton>
+```
+
+- **`isValid`** — when `false`, the button slides on hover so the user cannot click it easily until the form is valid.
+
 ## Project Preview
 ![Preview video of project](./content/preview.gif)
 
