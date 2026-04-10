@@ -1,42 +1,77 @@
-name: Publish to npm
+name: Release
 
 on:
   push:
     branches: [main]
 
+# Skip if this is the version-bump commit we push at the end of a release.
+# [skip ci] in the commit message tells GitHub Actions not to run.
+# The 'if' below is a belt-and-suspenders guard in case [skip ci] is ignored.
 jobs:
-  publish:
+  release:
     runs-on: ubuntu-latest
+    if: "!startsWith(github.event.head_commit.message, 'chore(release):')"
+
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # need full history to read commits since last tag
 
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
       - name: Install dependencies
         run: npm install
 
-      - name: Check if this version is already on npm
-        id: check
+      - name: Determine version bump
+        id: bump
         run: |
-          PKG=$(node -p "require('./package.json').name")
-          VER=$(node -p "require('./package.json').version")
-          if npm view "${PKG}@${VER}" version 2>/dev/null | grep -q "${VER}"; then
-            echo "skip=true" >> $GITHUB_OUTPUT
-            echo "v${VER} already published — nothing to do"
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -n "$LAST_TAG" ]; then
+            COMMITS=$(git log "${LAST_TAG}..HEAD" --format="%s")
           else
-            echo "skip=false" >> $GITHUB_OUTPUT
-            echo "v${VER} is new, will publish"
+            COMMITS=$(git log --format="%s")
           fi
 
+          echo "Commits since last tag:"
+          echo "$COMMITS"
+
+          # Breaking change → major, feat → minor, everything else → patch
+          BUMP="patch"
+          if echo "$COMMITS" | grep -qE "^.+(\(.+\))?!:|BREAKING[- ]CHANGE"; then
+            BUMP="major"
+          elif echo "$COMMITS" | grep -qE "^feat(\([^)]*\))?:"; then
+            BUMP="minor"
+          fi
+
+          echo "bump=$BUMP" >> $GITHUB_OUTPUT
+          echo "Version bump: $BUMP"
+
+      - name: Bump version
+        id: version
+        run: |
+          NEW_VER=$(npm version ${{ steps.bump.outputs.bump }} --no-git-tag-version)
+          echo "new_version=${NEW_VER}" >> $GITHUB_OUTPUT
+          echo "New version: $NEW_VER"
+
       - name: Build
-        if: steps.check.outputs.skip == 'false'
         run: npm run build:lib
 
-      - name: Publish
-        if: steps.check.outputs.skip == 'false'
+      - name: Publish to npm
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Commit version bump, tag, and push
+        run: |
+          git add package.json
+          git commit -m "chore(release): ${{ steps.version.outputs.new_version }} [skip ci]"
+          git tag ${{ steps.version.outputs.new_version }}
+          git push origin main --follow-tags
