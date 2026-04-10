@@ -12,6 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     if: "!startsWith(github.event.head_commit.message, 'chore(release):')"
 
+    permissions:
+      contents: write   # push the release commit + tag
+      id-token: write   # required for registry-url token injection
+
     steps:
       - uses: actions/checkout@v4
         with:
