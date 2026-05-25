@@ -1,2 +1,4 @@
-export { default as AnnoyingSubmitButton } from "./AnnoyingSubmitButton.jsx";
-export { default } from "./AnnoyingSubmitButton.jsx";
+import AnnoyingSubmitButton from './AnnoyingSubmitButton'
+
+export { AnnoyingSubmitButton }
+export default AnnoyingSubmitButton

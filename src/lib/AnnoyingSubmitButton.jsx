@@ -1,5 +1,5 @@
-import { useState } from "react";
-import "./annoying-submit-button.css";
+import { useState } from 'react'
+import './annoying-submit-button.css'
 
 /**
  * Submit button that slides away on hover when the form is still invalid —
@@ -7,38 +7,38 @@ import "./annoying-submit-button.css";
  */
 export default function AnnoyingSubmitButton({
   isValid,
-  children = "Submit",
-  slideDistance = "33vh",
-  transition = "transform 190ms ease-in-out",
+  children = 'Submit',
+  slideDistance = '33vh',
+  transition = 'transform 190ms ease-in-out',
   wrapperClassName,
   className,
-  type = "submit",
+  type = 'submit',
   tabIndex = 3,
   ...buttonProps
 }) {
-  const [toggleSlide, setToggleSlide] = useState(false);
+  const [toggleSlide, setToggleSlide] = useState(false)
 
-  const { onMouseEnter, ...restButtonProps } = buttonProps;
+  const { onMouseEnter, ...restButtonProps } = buttonProps
 
   const handleMouseEnter = (e) => {
     if (!isValid) {
-      setToggleSlide((prev) => !prev);
+      setToggleSlide((prev) => !prev)
     }
-    onMouseEnter?.(e);
-  };
+    onMouseEnter?.(e)
+  }
 
   return (
     <div
       className={wrapperClassName}
       style={{
         transform: `translateX(${
-          toggleSlide && !isValid ? slideDistance : "0"
+          toggleSlide && !isValid ? slideDistance : '0'
         })`,
         transition,
       }}
     >
       <button
-        type={type}
+        type={type === 'button' ? 'button' : 'submit'}
         tabIndex={tabIndex}
         className={className}
         {...restButtonProps}
@@ -47,5 +47,5 @@ export default function AnnoyingSubmitButton({
         {children}
       </button>
     </div>
-  );
+  )
 }
