@@ -97,7 +97,8 @@ jobs:
       - name: Verify npm authentication
         run: |
           set -euo pipefail
-          echo "Authenticated as: $(npm whoami)"
+          NPM_USER="$(npm whoami)"
+          echo "Authenticated as: ${NPM_USER}"
           PKG="$(npm pkg get name | tr -d '"')"
           npm view "$PKG" version || echo "First publish for $PKG"
         env:
