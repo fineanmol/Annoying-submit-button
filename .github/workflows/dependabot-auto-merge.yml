@@ -48,18 +48,19 @@ jobs:
             core.setOutput('url', pr.html_url);
 
       - name: Dependabot metadata
-        if: steps.pr.outputs.number != ''
+        if: github.event_name == 'pull_request' && steps.pr.outputs.number != ''
         id: metadata
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
-          pull-request-number: ${{ steps.pr.outputs.number }}
 
       - name: Approve and auto-merge
-        if: steps.pr.outputs.number != '' && steps.metadata.outputs.update-type != 'version-update:semver-major'
+        if: |
+          steps.pr.outputs.number != '' &&
+          (github.event_name == 'workflow_run' || steps.metadata.outputs.update-type != 'version-update:semver-major')
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ steps.pr.outputs.url }}
         run: |
-          gh pr review --approve "$PR_URL"
+          gh pr review --approve "$PR_URL" || true
           gh pr merge --auto --squash "$PR_URL"
