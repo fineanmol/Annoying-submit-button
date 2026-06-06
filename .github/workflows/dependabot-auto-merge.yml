@@ -1,11 +1,10 @@
-name: Dependabot auto-merge
-
+name: Dependabot · Auto-merge PRs
 on:
   pull_request:
     branches: [main]
     types: [opened, synchronize, reopened]
   workflow_run:
-    workflows: [CI]
+    workflows: ["CI · Validate package"]
     types: [completed]
 
 permissions:
