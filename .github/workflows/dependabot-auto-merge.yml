@@ -4,7 +4,7 @@ on:
     branches: [main]
     types: [opened, synchronize, reopened]
   workflow_run:
-    workflows: ["CI · Validate package"]
+    workflows: ["CI · Validate package", "CI"]
     types: [completed]
 
 permissions:
@@ -52,6 +52,7 @@ jobs:
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+          skip-commit-verification: true
 
       - name: Approve and auto-merge
         if: |
