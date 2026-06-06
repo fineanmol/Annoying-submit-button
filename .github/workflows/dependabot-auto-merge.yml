@@ -57,10 +57,10 @@ jobs:
       - name: Approve and auto-merge
         if: |
           steps.pr.outputs.number != '' &&
-          (github.event_name == 'workflow_run' || steps.metadata.outputs.update-type != 'version-update:semver-major')
+          (github.event_name == 'workflow_run' || steps.metadata.outputs.update-type != 'version-update:semver-major' || steps.metadata.outputs.package-ecosystem == 'github_actions')
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_URL: ${{ steps.pr.outputs.url }}
         run: |
           gh pr review --approve "$PR_URL" || true
-          gh pr merge --auto --squash "$PR_URL"
+          gh pr merge --auto --squash "$PR_URL" || true
