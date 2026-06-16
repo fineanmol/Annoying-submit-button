@@ -22,6 +22,16 @@
       <img alt="GitHub pull requests" src="https://img.shields.io/badge/version-0.1.0-blue?color=0088ff" />
     </a>
 
+   <a href="https://www.npmjs.com/package/@fineanmol/annoying-submit-button">
+      <img alt="npm version" src="https://img.shields.io/npm/v/@fineanmol/annoying-submit-button?color=cb0000&logo=npm" />
+    </a>
+    <a href="https://www.npmjs.com/package/@fineanmol/annoying-submit-button">
+      <img alt="npm weekly downloads" src="https://img.shields.io/npm/dw/@fineanmol/annoying-submit-button?color=cb0000&logo=npm" />
+    </a>
+    <a href="https://bundlephobia.com/package/@fineanmol/annoying-submit-button">
+      <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/@fineanmol/annoying-submit-button?label=bundle%20size" />
+    </a>
+
    </p>
 </div>
 
