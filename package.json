@@ -1,6 +1,6 @@
 {
   "name": "@fineanmol/annoying-submit-button",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "React submit button that slides away on hover until your form is valid — the classic annoying-submit UX.",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
