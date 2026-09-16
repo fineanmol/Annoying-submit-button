@@ -19,6 +19,17 @@ function App() {
   const [showToast, setShowToast] = useState(false)
   const [emojiState, setEmojiState] = useState('em em-rolling_on_the_floor_laughing')
   const [themeState, setThemeState] = useState(localStorage.getItem('theme') || 'bright')
+  const [isCapsLockOn, setIsCapsLockOn] = useState(false)
+
+  const handleCapsLock = (e) => {
+    if (typeof e.getModifierState === 'function') {
+      setIsCapsLockOn(e.getModifierState('CapsLock'))
+    }
+  }
+
+  const handleBlur = () => {
+    setIsCapsLockOn(false)
+  }
 
   const handleForm = (e) => {
     setForm({
@@ -134,6 +145,10 @@ function App() {
                 id="password"
                 type={isPasswordShown ? 'text' : 'password'}
                 name="password"
+                placeholder="Enter your Password"
+                onKeyDown={handleCapsLock}
+                onKeyUp={handleCapsLock}
+                onBlur={handleBlur}
                 value={form.password}
                 minLength="6"
                 tabIndex={2}
@@ -143,6 +158,13 @@ function App() {
               <button className="toggle-btn" type="button" onClick={() => setPasswordShown(!isPasswordShown)}>{isPasswordShown ? <span className="fa fa-eye">{' '}</span> : <span className="fa fa-eye-slash">{' '}</span>}</button>
 
             </span>
+
+            {isCapsLockOn && (
+              <div className="caps-lock-warning" role="alert" aria-live="polite">
+                ⚠️ Caps Lock is ON
+              </div>
+            )}
+
           </div>
           <div>
             {form.password.length < minPasswordLength && (
