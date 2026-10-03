@@ -1,2 +1,4 @@
 .next
 *.scss
+build
+dist

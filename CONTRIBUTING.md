@@ -30,7 +30,7 @@
         git commit -m "{Message}"
 - Then push
 
-        git push devolp new-branch
+        git push develop new-branch
     
 - Create a new pull request from your forked repository by clicking New-Pull-Request.
 
