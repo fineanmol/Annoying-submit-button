@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './annoying-submit-button.css'
+import useBoing from '../custom-hooks/useBoing'
 
 /**
  * Submit button that slides away on hover when the form is still invalid —
@@ -14,14 +15,17 @@ export default function AnnoyingSubmitButton({
   className,
   type = 'submit',
   tabIndex = 3,
+  sound = false,
   ...buttonProps
 }) {
   const [toggleSlide, setToggleSlide] = useState(false)
+  const boing = useBoing(sound)
 
   const { onMouseEnter, ...restButtonProps } = buttonProps
 
   const handleMouseEnter = (e) => {
     if (!isValid) {
+      boing()
       setToggleSlide((prev) => !prev)
     }
     onMouseEnter?.(e)
