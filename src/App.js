@@ -20,6 +20,7 @@ function App() {
   const [emojiState, setEmojiState] = useState('em em-rolling_on_the_floor_laughing')
   const [themeState, setThemeState] = useState(localStorage.getItem('theme') || 'bright')
   const [isCapsLockOn, setIsCapsLockOn] = useState(false)
+  const [soundOn, setSoundOn] = useState(false)
 
   const handleCapsLock = (e) => {
     if (typeof e.getModifierState === 'function') {
@@ -173,10 +174,22 @@ function App() {
               </p>
             )}
           </div>
+          <button
+            type="button"
+            className="sound-toggle"
+            onClick={() => setSoundOn((s) => !s)}
+            aria-label={soundOn ? 'Turn sound off' : 'Turn sound on'}
+            aria-pressed={soundOn}
+            title={soundOn ? 'Sound on' : 'Sound off'}
+          >
+            {soundOn ? '🔊' : '🔇'}
+          </button>
+
           <AnnoyingSubmitButton
             isValid={isFormValid}
             className={`submit-button ${isFormValid ? 'button-success' : ''}`}
             tabIndex={3}
+            sound={soundOn}
           >
             Submit
           </AnnoyingSubmitButton>
