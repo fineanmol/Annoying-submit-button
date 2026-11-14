@@ -217,6 +217,25 @@ body {
   transition: 0.5s ease-in-out;
 }
 
+.night-theme {
+  background-color: #0b0d12;
+  color: #e6e9f0;
+  transition: 0.5s ease-in-out;
+}
+
+.night-theme input::-webkit-input-placeholder {
+  color: rgba(230, 233, 240, 0.45);
+}
+
+input.night-theme {
+  background-color: #161a23;
+  border-color: #2a3040;
+}
+
+.night-theme .title {
+  color: #7c8cff;
+}
+
 .skin-theme .title {
   color: rgb(153, 70, 70);
 }
@@ -240,6 +259,11 @@ body {
 }
 .dark-theme-toast {
   background-color: rgb(0, 0, 0);
+}
+
+.night-theme-toast {
+  background-color: #1b2030;
+  color: #e6e9f0;
 }
 
 .link {
